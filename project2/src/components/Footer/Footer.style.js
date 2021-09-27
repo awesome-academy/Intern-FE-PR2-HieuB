@@ -1,10 +1,11 @@
 import styled from "styled-components";
+import { colors } from "../../Page/constants/colors";
 
 export const Footer = styled.footer`
-    background: #202942;
+    background: ${colors.bgDark};
     padding: 6rem 0;
     position: relative;
-    color: #adb5bd;
+    color: ${colors.colorText};
 
     svg {
         font-size: 2rem;
@@ -15,7 +16,7 @@ export const Footer = styled.footer`
             padding: 1rem 0;
             font-size: 1.6rem;
             a {
-                color: white;
+                color: ${colors.whiteColor};
             }
         }
     }

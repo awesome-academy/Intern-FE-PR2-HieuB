@@ -1,5 +1,6 @@
 import React from "react";
 import RatingItem from "./RatingItem";
+import * as S from "./RatingList.style";
 
 function RatingList({ rating }) {
     const renderRating = (ratings) => {
@@ -10,9 +11,9 @@ function RatingList({ rating }) {
         return rating;
     };
     return (
-        <ul className="list-unstyled text-warning mb-0">
+        <S.RatingList className="list-unstyled text-warning mb-0">
             {renderRating(rating)}
-        </ul>
+        </S.RatingList>
     );
 }
 
