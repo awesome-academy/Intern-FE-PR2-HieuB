@@ -17,16 +17,15 @@ function ProductDetailSection() {
     const { id } = useParams();
 
     useEffect(() => {
-        const userId = JSON.parse(localStorage.getItem("user")).user.id;
-        if (localStorage.getItem("cart")) {
-            let check = JSON.parse(localStorage.getItem("cart")).find((e) => {
-                return e.userId === userId;
-            });
-            if (check) {
-                dispatch(setCart(check));
+        const cart = JSON.parse(localStorage.getItem("cart")) || [];
+        if (cart.length) {
+            const userId = JSON.parse(localStorage.getItem("user"));
+            if (userId) {
+                let check = cart.find((e) => {
+                    return e.userId === userId.user.id;
+                });
+                check ? dispatch(setCart(check)) : dispatch(setCart([]));
             }
-        } else {
-            dispatch(setCart([]));
         }
     }, [dispatch]);
 
@@ -53,7 +52,7 @@ function ProductDetailSection() {
             </Container>
             <Container className="mt-100 mt-60">
                 <Row className="mt-5">
-                    <Comment></Comment>
+                    <Comment product={product}></Comment>
                 </Row>
             </Container>
         </section>

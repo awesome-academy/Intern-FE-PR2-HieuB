@@ -6,14 +6,16 @@ import { useForm } from "react-hook-form";
 import { rules } from "../../../../Page/constants/rules";
 import Button from "react-bootstrap/Button";
 import { LocalStorage } from "../../../../Page/constants/localStorage";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { updateMe } from "../../../../slice/auth.slice";
 import { unwrapResult } from "@reduxjs/toolkit";
 import { useHistory } from "react-router";
 import { path } from "../../../../Page/constants/path";
 import { setCart } from "../../../../slice/cart.slice";
+import { toastAlert } from "../../../../utils/helper";
 
-function Info({ profile }) {
+function Info() {
+    const info = useSelector((value) => value.auth.profile.user);
     const dispatch = useDispatch();
     const history = useHistory();
     const {
@@ -22,10 +24,12 @@ function Info({ profile }) {
         getValues,
         formState: { errors }
     } = useForm({
-        firstName: profile.data && profile.data.firstName,
-        lastName: profile.data && profile.data.lastName,
-        phone: profile.data && profile.data.phone,
-        address: profile.data && profile.data.address
+        defaultValues: {
+            firstName: info.firstName || "",
+            lastName: info.lastName || "",
+            phone: info.phone || "",
+            address: info.address || ""
+        }
     });
 
     const handleSaveInfo = async (data) => {
@@ -52,6 +56,10 @@ function Info({ profile }) {
             history.push(path.login);
             localStorage.removeItem(LocalStorage.user);
             dispatch(setCart({}));
+            toastAlert(
+                "Thay đổi thông tin thành công, vui lòng đăng nhập lại",
+                "success"
+            );
         } catch (error) {
             console.log(error);
         }
@@ -87,9 +95,7 @@ function Info({ profile }) {
                                     className={`form-control pl-5 ${handleClass(
                                         "first-name"
                                     )}`}
-                                    defaultValue={
-                                        profile.data && profile.data.firstName
-                                    }
+                                    defaultValue={getValues("firstName")}
                                     {...register("firstName", {
                                         ...rules.firstName,
                                         validate: {
@@ -112,9 +118,7 @@ function Info({ profile }) {
                                     className={`form-control pl-5 ${handleClass(
                                         "last-name"
                                     )}`}
-                                    defaultValue={
-                                        profile.data && profile.data.lastName
-                                    }
+                                    defaultValue={getValues("lastName")}
                                     {...register("lastName", {
                                         ...rules.lastName,
                                         validate: {
@@ -137,9 +141,7 @@ function Info({ profile }) {
                                     className={`form-control pl-5 ${handleClass(
                                         "address"
                                     )}`}
-                                    defaultValue={
-                                        profile.data && profile.data.address
-                                    }
+                                    defaultValue={getValues("address")}
                                     {...register("address", {
                                         ...rules.address
                                     })}
@@ -161,9 +163,7 @@ function Info({ profile }) {
                                     className={`form-control pl-5 ${handleClass(
                                         "phone"
                                     )}`}
-                                    defaultValue={
-                                        profile.data && profile.data.phone
-                                    }
+                                    defaultValue={getValues("phone")}
                                     {...register("phone", {
                                         ...rules.phone,
                                         validate: {

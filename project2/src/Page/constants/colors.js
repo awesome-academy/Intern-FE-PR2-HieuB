@@ -4,5 +4,7 @@ export const colors = {
     whiteColor: "#ffffff",
     blackColor: "#000000",
     colorGray: "#6c757d",
-    primaryColor: "#0d6efd"
+    primaryColor: "#0d6efd",
+    colorDanger: "#d9534f",
+    colorSuccess: "#5cb85c"
 };

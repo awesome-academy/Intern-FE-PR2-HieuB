@@ -1,3 +1,5 @@
+import { toast } from "react-toastify";
+
 export const isEmail = (value) => {
     const regex =
         /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
@@ -31,4 +33,18 @@ export const formatCurrency = (value) => {
         style: "currency",
         currency: "VND"
     });
+};
+
+export const toastAlert = (message, type) => {
+    if (type === "success") {
+        toast.success(message, {
+            position: "top-right",
+            autoClose: 3000
+        });
+    } else {
+        toast.error(message, {
+            position: "top-right",
+            autoClose: 3000
+        });
+    }
 };

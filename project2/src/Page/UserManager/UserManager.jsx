@@ -22,10 +22,9 @@ function UserManager() {
         };
         _getUser();
     }, [dispatch]);
-    console.log(userInfo);
     return (
         <>
-            <BreadCrum></BreadCrum>
+            <BreadCrum title="Thông tin cá nhân"></BreadCrum>
             <AccountSection profile={userInfo}></AccountSection>
         </>
     );

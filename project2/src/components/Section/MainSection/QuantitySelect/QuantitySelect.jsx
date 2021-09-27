@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
 import { LocalStorage } from "../../../../Page/constants/localStorage";
 import { setCart } from "../../../../slice/cart.slice";
+import { toastAlert } from "../../../../utils/helper";
 
 function QuantitySelect({ handleSetQuantity, count, cartItem, product }) {
     const dispatch = useDispatch();
@@ -84,6 +85,7 @@ function QuantitySelect({ handleSetQuantity, count, cartItem, product }) {
                     });
                 }
             }
+            toastAlert("Cập nhật số lượng thành công", "success");
             localStorage.setItem(LocalStorage.cart, JSON.stringify(cartList));
         } else {
             if (type === "minus") {
@@ -98,6 +100,7 @@ function QuantitySelect({ handleSetQuantity, count, cartItem, product }) {
                 setQuantity(Number(quantity) + 1);
                 handleSetQuantity(Number(quantity) + 1);
             }
+            toastAlert("Cập nhật số lượng thành công", "success");
         }
     };
     return (

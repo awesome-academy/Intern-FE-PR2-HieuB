@@ -5,7 +5,7 @@ import ProductDetailSection from "../../components/Section/ProducDetail/ProductD
 function ProductDetail() {
     return (
         <>
-            <BreadCrum></BreadCrum>
+            <BreadCrum title="Chi tiết sản phẩm"></BreadCrum>
             <ProductDetailSection></ProductDetailSection>
         </>
     );

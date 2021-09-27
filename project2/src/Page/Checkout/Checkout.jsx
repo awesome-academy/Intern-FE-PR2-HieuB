@@ -5,7 +5,7 @@ import CheckoutSection from "../../components/Section/Checkout/CheckoutSection";
 function Checkout() {
     return (
         <>
-            <BreadCrum></BreadCrum>
+            <BreadCrum title="Thanh toán"></BreadCrum>
             <CheckoutSection></CheckoutSection>
         </>
     );

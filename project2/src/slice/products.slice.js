@@ -12,11 +12,19 @@ export const getProducts = createAsyncThunk(
 const productsSlice = createSlice({
     name: "products",
     initialState: {
-        products: []
+        products: [],
+        loading: false,
+        error: ""
     },
     extraReducers: {
         [getProducts.fulfilled]: (state, action) => {
             state.products = action.payload;
+        },
+        [getProducts.pending]: (state, action) => {
+            state.loading = true;
+        },
+        [getProducts.rejected]: (state, action) => {
+            state.error = action.error;
         }
     }
 });

@@ -1,6 +1,6 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
 import productsAPI from "../api/productsAPI";
-import purchaseAPI from "../api/purchase.api";
+import purchaseAPI from "../api/purchaseApi";
 
 export const getProductDetail = createAsyncThunk(
     "productDetail",

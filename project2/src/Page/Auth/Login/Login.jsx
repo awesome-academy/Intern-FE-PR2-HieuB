@@ -9,16 +9,16 @@ import Col from "react-bootstrap/Col";
 import Card from "react-bootstrap/Card";
 import Form from "react-bootstrap/Form";
 import * as S from "../auth.style";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { useForm } from "react-hook-form";
 import { rules } from "../../constants/rules";
 import { postLogin } from "../../../slice/auth.slice";
 import { unwrapResult } from "@reduxjs/toolkit";
+import { toastAlert } from "../../../utils/helper";
 
 function Login() {
     const dispatch = useDispatch();
     const history = useHistory();
-    const error = useSelector((value) => value.auth.error);
     const {
         handleSubmit,
         register,
@@ -35,8 +35,9 @@ function Login() {
             const res = await dispatch(postLogin(body));
             unwrapResult(res);
             history.push(path.home);
-        } catch (error) {
-            console.log(error);
+            toastAlert("Đăng nhập thành công", "success");
+        } catch (err) {
+            toastAlert(err ? "Email hoặc mật khẩu không đúng" : "", "err");
         }
     };
 
@@ -90,7 +91,7 @@ function Login() {
                                             <Col xs="12">
                                                 <Form.Group>
                                                     <S.FormLabel>
-                                                        Your Email{" "}
+                                                        Email
                                                         <span className="text-danger">
                                                             *
                                                         </span>
@@ -177,12 +178,6 @@ function Login() {
                                                     </Link>
                                                 </p>
                                             </Col>
-                                            <Form.Control.Feedback
-                                                type="invalid"
-                                                className="d-block mb-4"
-                                            >
-                                                {error}
-                                            </Form.Control.Feedback>
                                         </Row>
                                     </Form>
                                 </Card.Body>

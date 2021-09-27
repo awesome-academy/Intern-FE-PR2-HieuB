@@ -7,7 +7,7 @@ import Table from "react-bootstrap/Table";
 import Button from "react-bootstrap/Button";
 import * as S from "./CheckoutSection.style";
 import { useForm } from "react-hook-form";
-import { formatCurrency } from "../../../utils/helper";
+import { formatCurrency, toastAlert } from "../../../utils/helper";
 import { rules } from "../../../Page/constants/rules";
 import { useDispatch, useSelector } from "react-redux";
 import { unwrapResult } from "@reduxjs/toolkit";
@@ -68,7 +68,13 @@ function CheckoutSection() {
                 console.log(result);
                 localStorage.setItem(LocalStorage.cart, JSON.stringify(result));
             }
-            dispatch(setCart({}));
+            dispatch(
+                setCart({
+                    userId,
+                    product: []
+                })
+            );
+            toastAlert("Thanh toán thành công", "success");
         } catch (error) {
             console.log(error);
         }

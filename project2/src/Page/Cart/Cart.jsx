@@ -5,7 +5,7 @@ import CartSection from "../../components/Section/Cart/CartSection";
 function Cart() {
     return (
         <>
-            <BreadCrum></BreadCrum>
+            <BreadCrum title="Giỏ hàng"></BreadCrum>
             <CartSection></CartSection>
         </>
     );
