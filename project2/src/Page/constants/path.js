@@ -7,5 +7,6 @@ export const path = {
     productDetail: "/product/:id",
     cart: "/cart",
     checkout: "/checkout",
+    thankyou: "/thankyou",
     notFound: "*"
 };

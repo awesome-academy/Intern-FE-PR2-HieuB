@@ -10,9 +10,11 @@ import Navbar from "react-bootstrap/Navbar";
 import Nav from "react-bootstrap/Nav";
 import { Link, NavLink } from "react-router-dom";
 import { path } from "../../Page/constants/path";
+import { useSelector } from "react-redux";
 
 function Header() {
     const [isLogged, setIsLogged] = useState(false);
+    const data = useSelector((value) => value.cart.product);
     useEffect(() => {
         localStorage.getItem("user") ? setIsLogged(true) : setIsLogged(false);
     }, []);
@@ -51,7 +53,9 @@ function Header() {
                                             id="collasible-nav-dropdown-cart"
                                             className="btn btn-icon btn-primary"
                                         >
-                                            <HeaderCartList></HeaderCartList>
+                                            <HeaderCartList
+                                                data={data}
+                                            ></HeaderCartList>
                                         </S.NavDropDownIcon>
                                         <S.NavDropDownIcon
                                             title={

@@ -10,6 +10,7 @@ import ProductDetail from "./Page/ProductDetail/ProductDetail";
 import ProductList from "./Page/ProductList/ProductList";
 import Cart from "./Page/Cart/Cart";
 import Checkout from "./Page/Checkout/Checkout";
+import ThankYou from "./Page/Checkout/ThankYou";
 
 function Routes() {
     return (
@@ -21,6 +22,9 @@ function Routes() {
             </Route>
             <Route path={path.login}>
                 <Login></Login>
+            </Route>
+            <Route path={path.thankyou}>
+                <ThankYou></ThankYou>
             </Route>
             <Route path={path.register}>
                 <Register></Register>
