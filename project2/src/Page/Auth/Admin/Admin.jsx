@@ -3,6 +3,7 @@ import Tab from "react-bootstrap/Tab";
 import Container from "react-bootstrap/Container";
 import * as S from "./Admin.style";
 import {
+    getCountPagePayment,
     getCountPageProduct,
     getTotalCountAdmin,
     getUserAll
@@ -20,17 +21,20 @@ import { addUser } from "../../../slice/manager.slice";
 import ProductForm from "../../../components/Admin/TaskForm/ProductForm";
 import ProductTaskList from "../../../components/Admin/Task/ProductTaskList";
 import PaymentTaskList from "../../../components/Admin/Task/PaymentTaskList";
+import PaymentDetailList from "../../../components/Admin/PaymentDetail/PaymentDetailList";
 
 function Admin() {
     const [isDisplayForm, setIsDisplayForm] = useState(false);
     const [filterAd, setFilterAd] = useState({});
     const [userList, setUserList] = useState([]);
     const [profile, setProfile] = useState({});
+    const [show, setShow] = useState(true);
 
     const dispatch = useDispatch();
 
     const filterAdmin = useSelector((state) => state.filterAdmin);
     const filterAdminProduct = useSelector((state) => state.filterAdminProduct);
+    const filterAdminPayment = useSelector((state) => state.filterAdminPayment);
 
     useEffect(() => {
         const _getUserAll = async () => {
@@ -56,6 +60,16 @@ function Admin() {
         };
         _getTotalCount();
     }, [dispatch, filterAdminProduct]);
+
+    useEffect(() => {
+        const _getTotalCount = async () => {
+            const count = await dispatch(
+                getCountPagePayment(filterAdminPayment)
+            );
+            unwrapResult(count);
+        };
+        _getTotalCount();
+    }, [dispatch, filterAdminPayment]);
 
     const handleEdit = (type, data) => {
         setProfile({
@@ -118,7 +132,7 @@ function Admin() {
                             </Col>
                         </Row>
                     </Tab>
-                    <Tab eventKey="payment" title="Quản lý sản phẩm">
+                    <Tab eventKey="product" title="Quản lý sản phẩm">
                         <Row className="mt-5">
                             {isDisplayForm === true ? (
                                 <Col xs="4">
@@ -162,13 +176,28 @@ function Admin() {
                             </Col>
                         </Row>
                     </Tab>
-                    <Tab eventKey="product" title="Quản lý đơn hàng">
-                        <PaymentTaskList></PaymentTaskList>
-                        <Pagination
-                            admin={true}
-                            type="product"
-                            filterAdmin={filterAdminProduct}
-                        ></Pagination>
+                    <Tab eventKey="payment" title="Quản lý đơn hàng">
+                        <PaymentTaskList
+                            show={show}
+                            handleShow={(stt) => setShow(stt)}
+                        ></PaymentTaskList>
+                        {show ? (
+                            <Pagination
+                                admin={true}
+                                type="payment"
+                                filterAdmin={filterAdminPayment}
+                            ></Pagination>
+                        ) : (
+                            <>
+                                <PaymentDetailList></PaymentDetailList>
+                                <Button
+                                    className="mt-5"
+                                    onClick={() => setShow(true)}
+                                >
+                                    Quay lại
+                                </Button>
+                            </>
+                        )}
                     </Tab>
                 </S.AdminTabs>
             </Container>

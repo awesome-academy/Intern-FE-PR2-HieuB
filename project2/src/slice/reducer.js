@@ -8,6 +8,7 @@ import filterAdminReducer from "./filterAdmin.slice";
 import filterAdminPaymentReducer from "./filterAdminPayment.slice";
 import filterAdminProductReducer from "./filterAdminProduct.slice";
 import managerReducer from "./manager.slice";
+import paymentAdminReducer from "./paymentAdmin.slice";
 import productsReducer from "./products.slice";
 
 const rootReducer = {
@@ -21,7 +22,8 @@ const rootReducer = {
     adminUser: adminUserReducer,
     manager: managerReducer,
     filterAdminProduct: filterAdminProductReducer,
-    filterAdminPayment: filterAdminPaymentReducer
+    filterAdminPayment: filterAdminPaymentReducer,
+    paymentAdmin: paymentAdminReducer
 };
 
 export default rootReducer;

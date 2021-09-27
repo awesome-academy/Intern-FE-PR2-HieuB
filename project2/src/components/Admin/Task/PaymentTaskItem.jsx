@@ -1,20 +1,13 @@
-import React, { useState } from "react";
+import React from "react";
 import CreateIcon from "@mui/icons-material/Create";
 import * as S from "./TaskItem.style";
 import Button from "react-bootstrap/Button";
-import DeleteForeverIcon from "@mui/icons-material/DeleteForever";
 import { formatCurrency } from "../../../utils/helper";
 import { useDispatch } from "react-redux";
-import { editProduct } from "../../../slice/manager.slice";
+import { showPayment } from "../../../slice/paymentAdmin.slice";
 
-function PaymentTaskItem({ payment, setDisplayForm }) {
+function PaymentTaskItem({ payment, handleShowPayment }) {
     const dispatch = useDispatch();
-
-    const [show, setShow] = useState(false);
-
-    const handleClose = () => setShow(false);
-    const handleShow = () => setShow(true);
-
     const {
         id,
         address,
@@ -40,6 +33,15 @@ function PaymentTaskItem({ payment, setDisplayForm }) {
         return type === "pay-home" ? "Thanh toán tại nhà" : "Chuyển khoản";
     };
 
+    const handleShowDetail = (products, id) => {
+        handleShowPayment(false);
+        const params = {
+            products,
+            id
+        };
+        dispatch(showPayment(params));
+    };
+
     return (
         <tr>
             <td className="text-center h4">{id}</td>
@@ -61,6 +63,9 @@ function PaymentTaskItem({ payment, setDisplayForm }) {
                     <Button
                         type="button"
                         className="btn-warning d-flex align-items-center mx-2"
+                        onClick={() => {
+                            handleShowDetail(product, id);
+                        }}
                     >
                         <CreateIcon></CreateIcon>
                         Xem chi tiết

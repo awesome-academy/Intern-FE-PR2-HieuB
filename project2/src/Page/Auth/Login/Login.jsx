@@ -15,6 +15,7 @@ import { rules } from "../../constants/rules";
 import { postLogin } from "../../../slice/auth.slice";
 import { unwrapResult } from "@reduxjs/toolkit";
 import { toastAlert } from "../../../utils/helper";
+import { LocalStorage } from "../../constants/localStorage";
 
 function Login() {
     const dispatch = useDispatch();
@@ -34,8 +35,14 @@ function Login() {
         try {
             const res = await dispatch(postLogin(body));
             unwrapResult(res);
-            history.push(path.home);
-            toastAlert("Đăng nhập thành công", "success");
+            if (res.payload.data.user.role === "notactive") {
+                history.push(path.login);
+                toastAlert("Tài khoản của bạn đã bị vô hiệu hoá", "error");
+                localStorage.setItem(LocalStorage.user, []);
+            } else {
+                history.push(path.home);
+                toastAlert("Đăng nhập thành công", "success");
+            }
         } catch (err) {
             toastAlert(err ? "Email hoặc mật khẩu không đúng" : "", "err");
         }

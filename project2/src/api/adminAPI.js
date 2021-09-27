@@ -37,9 +37,21 @@ const adminAPI = {
             return response;
         });
     },
+    getTotalCountPayment: async (params) => {
+        const url = "/payments/";
+        return configAPI.get(url, { params }).then(function (response) {
+            return response.headers["x-total-count"];
+        });
+    },
     getPayment: async (params) => {
         const url = "/payments/";
         return configAPI.get(url, { params }).then(function (response) {
+            return response;
+        });
+    },
+    updatePayment: async (params) => {
+        const url = `/payments/${params.id}`;
+        return configAPI.patch(url, params.body).then(function (response) {
             return response;
         });
     }

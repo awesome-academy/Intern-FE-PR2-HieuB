@@ -2,18 +2,18 @@ import React from "react";
 import RatingList from "../Rating/RatingList";
 import * as S from "./CommentItem.style";
 import { Link } from "react-router-dom";
-import logo from "../../../../assets/images/user/01.jpg";
+import Avatar from "../../../../assets/images/user/01.jpg";
 
 function CommentItem({ comment }) {
     return (
-        <S.CommentItem>
+        <S.CommentItem className="mb-5">
             <div className="d-flex justify-content-between">
                 <div className="d-flex align-items-center">
                     <Link className="pr-3" to="/">
                         <img
-                            src={logo}
+                            src={Avatar}
                             className="img-fluid avatar avatar-md-sm rounded-circle shadow"
-                            alt="avatar"
+                            alt="img"
                         />
                     </Link>
                     <div className="commentor-detail">

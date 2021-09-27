@@ -19,7 +19,7 @@ function AccountSection({ profile }) {
                                 src={Avatar}
                                 className="avatar avatar-md-md rounded-circle"
                                 width="50"
-                                alt="a"
+                                alt="avatar"
                             />
                             <div className="ml-3">
                                 <h6 className="text-muted mb-0">Hello,</h6>

@@ -20,7 +20,7 @@ function CategoryItem({ category, setActive, active }) {
         setActive(id);
         let _filter;
         if (id === categoryItem) {
-            setCategoryItem(null);
+            setCategoryItem([]);
             _filter = { ...filter, categoryID: [] };
         } else {
             setCategoryItem(id);

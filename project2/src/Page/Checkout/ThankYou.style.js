@@ -6,6 +6,6 @@ export const Icon = styled.div`
 
     svg {
         font-size: 10rem;
-        color: ${colors.primaryColor};
+        color: ${colors.colorText};
     }
 `;

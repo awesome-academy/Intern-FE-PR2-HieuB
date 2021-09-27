@@ -20,9 +20,9 @@ import { changePageAdmin } from "../../../slice/filterAdmin.slice";
 function TaskForm({ setDisplayForm }) {
     const userList = useSelector((state) => state.adminUser.profile);
     const filterAdmin = useSelector((state) => state.filterAdmin);
-    const profile = useSelector((state) => state.manager);
 
     const dispatch = useDispatch();
+    const profile = useSelector((state) => state.manager);
 
     const {
         handleSubmit,
