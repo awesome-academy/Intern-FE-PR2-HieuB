@@ -4,11 +4,51 @@ import Col from "react-bootstrap/Col";
 import Card from "react-bootstrap/Card";
 import AddShoppingCartIcon from "@mui/icons-material/AddShoppingCart";
 import * as S from "./ProductItem.style";
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 import { path } from "../../../../Page/constants/path";
 import { generateNameId } from "../../../../utils/helper";
+import { LocalStorage } from "../../../../Page/constants/localStorage";
 
 function ProductItem({ product }) {
+    const history = useHistory();
+    const handleAddToCart = () => {
+        if (localStorage.getItem("user")) {
+            const data = JSON.parse(localStorage.getItem("user"));
+            let cartList = JSON.parse(
+                localStorage.getItem(LocalStorage.cart)
+            ) || { userID: data.user.id, product: [] };
+            if (cartList.product.length < 1) {
+                cartList.product.push({
+                    product: {
+                        id: product.id,
+                        image: product.image,
+                        price: product.price
+                    },
+                    count: 1
+                });
+            } else {
+                let itemCart = cartList.product.find((item) => {
+                    return item.product.id === product.id;
+                });
+                if (itemCart) {
+                    itemCart.count += 1;
+                } else {
+                    cartList.product.push({
+                        product: {
+                            id: product.id,
+                            image: product.image,
+                            price: product.price
+                        },
+                        count: 1
+                    });
+                }
+            }
+            localStorage.setItem(LocalStorage.cart, JSON.stringify(cartList));
+        } else {
+            history.push(path.login);
+        }
+    };
+
     return (
         <Col xs="12" lg="3" md="6" className="mt-4 pt-2">
             <Card className="shop-list border-0 position-relative">
@@ -21,13 +61,10 @@ function ProductItem({ product }) {
                         />
                     </Link>
                     <S.ShopIcon className="list-unstyled">
-                        <li className="mt-2">
-                            <Link
-                                to="/"
-                                className="btn btn-icon btn-pills btn-soft-danger"
-                            >
+                        <li className="mt-2" onClick={handleAddToCart}>
+                            <span className="btn btn-icon btn-pills btn-soft-danger">
                                 <AddShoppingCartIcon></AddShoppingCartIcon>
-                            </Link>
+                            </span>
                         </li>
                     </S.ShopIcon>
                 </S.CardImage>

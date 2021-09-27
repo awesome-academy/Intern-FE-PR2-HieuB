@@ -4,9 +4,12 @@ import { Link } from "react-router-dom";
 
 function HeaderCartItem() {
     return (
-        <Link to="/" className="media align-items-center">
+        <Link
+            to="/"
+            className="media align-items-center d-flex justify-content-around"
+        >
             <S.MediaImg
-                src="images/shop/product/s-1.jpg"
+                src="https://api-ecom.duthanhduoc.com/images/bbea6d3e-e5b1-494f-ab16-02eece816d50.jpg"
                 className="shadow rounded"
                 alt="s1"
             />
