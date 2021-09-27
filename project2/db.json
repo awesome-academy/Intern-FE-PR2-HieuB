@@ -1,7 +1,7 @@
 {
     "products": [
         {
-            "id": "60afb2c76ef5b902180aacba",
+            "id": 1,
             "images": [
                 "https://api-ecom.duthanhduoc.com/images/bbea6d3e-e5b1-494f-ab16-02eece816d50.jpg",
                 "https://api-ecom.duthanhduoc.com/images/6c4f6bde-6242-40fd-be52-d06033636e04.jpg",
@@ -15,22 +15,19 @@
             ],
             "price": 3190000,
             "rating": 1,
+            "description": "Dòng này để mọi người biết product có description :v",
             "price_before_discount": 3990000,
             "quantity": 138,
             "sold": 1200,
             "view": 1055,
             "name": "Điện Thoại Vsmart Active 3 6GB/64GB - Hàng Chính Hãng",
-            "category": {
-                "id": "60afafe76ef5b902180aacb5",
-                "name": "Điện thoại",
-                "__v": 0
-            },
             "image": "https://api-ecom.duthanhduoc.com/images/bbea6d3e-e5b1-494f-ab16-02eece816d50.jpg",
             "createdAt": "2021-05-27T14:55:03.113Z",
-            "updatedAt": "2021-09-27T06:46:02.375Z"
+            "updatedAt": "2021-09-27T06:46:02.375Z",
+            "categoryID": 3
         },
         {
-            "id": "60afb2426ef5b902180aacb9",
+            "id": 2,
             "images": [
                 "https://api-ecom.duthanhduoc.com/images/aa374023-7a5b-46ea-aca3-dad1b29fb015.jpg",
                 "https://api-ecom.duthanhduoc.com/images/b997dac2-2674-4e20-b5ee-459566b077e7.jpg",
@@ -42,22 +39,20 @@
             ],
             "price": 2590000,
             "rating": 2,
+            "description": "Dòng này để mọi người biết product có description :v",
             "price_before_discount": 3490000,
             "quantity": 73,
             "sold": 6800,
             "view": 837,
             "name": "Điện thoại OPPO A12 (3GB/32GB) - Hàng chính hãng",
-            "category": {
-                "id": "60afafe76ef5b902180aacb5",
-                "name": "Điện thoại",
-                "__v": 0
-            },
+
             "image": "https://api-ecom.duthanhduoc.com/images/aa374023-7a5b-46ea-aca3-dad1b29fb015.jpg",
             "createdAt": "2021-05-27T14:52:50.392Z",
-            "updatedAt": "2021-09-28T02:45:18.835Z"
+            "updatedAt": "2021-09-28T02:45:18.835Z",
+            "categoryID": 3
         },
         {
-            "id": "60afb1c56ef5b902180aacb8",
+            "id": 3,
             "images": [
                 "https://api-ecom.duthanhduoc.com/images/a7fb7a18-743a-42bb-bead-36370c1d1aba.jpg",
                 "https://api-ecom.duthanhduoc.com/images/b09ff60d-c6bd-4d3a-b778-0fc2708a65fb.jpg",
@@ -67,22 +62,20 @@
             ],
             "price": 20990000,
             "rating": 5,
+            "description": "Dòng này để mọi người biết product có description :v",
             "price_before_discount": 26990000,
             "quantity": 17,
             "sold": 482,
             "view": 348,
             "name": "Điện thoại Apple Iphone 12 64GB - Hàng chính hãng VNA",
-            "category": {
-                "id": "60afafe76ef5b902180aacb5",
-                "name": "Điện thoại",
-                "__v": 0
-            },
+
             "image": "https://api-ecom.duthanhduoc.com/images/a7fb7a18-743a-42bb-bead-36370c1d1aba.jpg",
             "createdAt": "2021-05-27T14:50:45.708Z",
-            "updatedAt": "2021-09-27T09:35:38.909Z"
+            "updatedAt": "2021-09-27T09:35:38.909Z",
+            "categoryID": 3
         },
         {
-            "id": "60afb14d6ef5b902180aacb7",
+            "id": 4,
             "images": [
                 "https://api-ecom.duthanhduoc.com/images/51ef469d-0eb5-48fb-958d-ce2b9c664adc.jpg",
                 "https://api-ecom.duthanhduoc.com/images/32d2b004-6a6c-4605-af12-8f8f2e4f6aff.jpg",
@@ -94,22 +87,20 @@
             ],
             "price": 2130000,
             "rating": 5,
+            "description": "Dòng này để mọi người biết product có description :v",
             "price_before_discount": 2690000,
             "quantity": 269,
             "sold": 5600,
             "view": 592,
             "name": "Điện Thoại Realme C11 (2GB/32GB) - Hàng Chính Hãng",
-            "category": {
-                "id": "60afafe76ef5b902180aacb5",
-                "name": "Điện thoại",
-                "__v": 0
-            },
+
             "image": "https://api-ecom.duthanhduoc.com/images/51ef469d-0eb5-48fb-958d-ce2b9c664adc.jpg",
             "createdAt": "2021-05-27T14:48:45.577Z",
-            "updatedAt": "2021-09-24T10:15:46.589Z"
+            "updatedAt": "2021-09-24T10:15:46.589Z",
+            "categoryID": 3
         },
         {
-            "id": "60afb07e6ef5b902180aacb6",
+            "id": 5,
             "images": [
                 "https://api-ecom.duthanhduoc.com/images/4e9c8364-7604-4b61-8658-9f18655bae40.jpg",
                 "https://api-ecom.duthanhduoc.com/images/794c2b24-922a-4cc2-8c24-87551af917df.jpg",
@@ -123,22 +114,20 @@
             ],
             "price": 1949000,
             "rating": 5,
+            "description": "Dòng này để mọi người biết product có description :v",
             "price_before_discount": 1990000,
             "quantity": 409,
             "sold": 1000,
             "view": 517,
             "name": "Điện Thoại Xiaomi Redmi 9A 2GB/32GB - Hàng Chính Hãng",
-            "category": {
-                "id": "60afafe76ef5b902180aacb5",
-                "name": "Điện thoại",
-                "__v": 0
-            },
+
             "image": "https://api-ecom.duthanhduoc.com/images/4e9c8364-7604-4b61-8658-9f18655bae40.jpg",
             "createdAt": "2021-05-27T14:45:18.517Z",
-            "updatedAt": "2021-09-26T02:54:14.090Z"
+            "updatedAt": "2021-09-26T02:54:14.090Z",
+            "categoryID": 3
         },
         {
-            "id": "60afafb76ef5b902180aacb4",
+            "id": 6,
             "images": [
                 "https://api-ecom.duthanhduoc.com/images/1881b221-e9df-4b91-8d13-9d46c995a5d6.jpg",
                 "https://api-ecom.duthanhduoc.com/images/806160a8-f96b-4bfd-bfa5-a821016e5b30.jpg",
@@ -151,22 +140,20 @@
             ],
             "price": 244550,
             "rating": 3,
+            "description": "Dòng này để mọi người biết product có description :v",
             "price_before_discount": 489000,
             "quantity": 9920,
             "sold": 728,
             "view": 707,
             "name": "Đồng Hồ Nam WWOOR 8826 Máy Nhật Dây Thép Mành Cao Cấp - Nhiều Màu",
-            "category": {
-                "id": "60afacca6ef5b902180aacaf",
-                "name": "Đồng hồ",
-                "__v": 0
-            },
+
             "image": "https://api-ecom.duthanhduoc.com/images/1881b221-e9df-4b91-8d13-9d46c995a5d6.jpg",
             "createdAt": "2021-05-27T14:41:59.307Z",
-            "updatedAt": "2021-09-27T09:21:57.031Z"
+            "updatedAt": "2021-09-27T09:21:57.031Z",
+            "categoryID": 2
         },
         {
-            "id": "60afaf286ef5b902180aacb3",
+            "id": 7,
             "images": [
                 "https://api-ecom.duthanhduoc.com/images/ffa092a6-c35e-4de3-b955-99f368f57546.jpg",
                 "https://api-ecom.duthanhduoc.com/images/c8a8c12e-aef6-436b-b114-4db528ca3542.jpg",
@@ -180,22 +167,20 @@
             ],
             "price": 300000,
             "rating": 5,
+            "description": "Dòng này để mọi người biết product có description :v",
             "price_before_discount": 450000,
             "quantity": 4034,
             "sold": 2400,
             "view": 393,
             "name": "Đồng Hồ Nam CRRJU CR8940 Dây Thép Cao Cấp",
-            "category": {
-                "id": "60afacca6ef5b902180aacaf",
-                "name": "Đồng hồ",
-                "__v": 0
-            },
+
             "image": "https://api-ecom.duthanhduoc.com/images/ffa092a6-c35e-4de3-b955-99f368f57546.jpg",
             "createdAt": "2021-05-27T14:39:36.099Z",
-            "updatedAt": "2021-09-15T08:31:49.672Z"
+            "updatedAt": "2021-09-15T08:31:49.672Z",
+            "categoryID": 2
         },
         {
-            "id": "60afae906ef5b902180aacb2",
+            "id": 8,
             "images": [
                 "https://api-ecom.duthanhduoc.com/images/37256021-1e7c-40f4-8e0f-d665f7cb95bd.jpg",
                 "https://api-ecom.duthanhduoc.com/images/cae19f00-7a2a-4d79-9446-2868a613b4b7.jpg",
@@ -209,22 +194,20 @@
             ],
             "price": 199000,
             "rating": 5,
+            "description": "Dòng này để mọi người biết product có description :v",
             "price_before_discount": 250000,
             "quantity": 3091,
             "sold": 2500,
             "view": 444,
             "name": "Đồng Hồ Nam FNGEEN Dây Thép Cao Cấp Không Gỉ, Có Lịch Ngày, Phong Cách Doanh Nhân Sang Trọng",
-            "category": {
-                "id": "60afacca6ef5b902180aacaf",
-                "name": "Đồng hồ",
-                "__v": 0
-            },
+
             "image": "https://api-ecom.duthanhduoc.com/images/37256021-1e7c-40f4-8e0f-d665f7cb95bd.jpg",
             "createdAt": "2021-05-27T14:37:04.282Z",
-            "updatedAt": "2021-09-27T03:19:13.994Z"
+            "updatedAt": "2021-09-27T03:19:13.994Z",
+            "categoryID": 2
         },
         {
-            "id": "60afadff6ef5b902180aacb1",
+            "id": 9,
             "images": [
                 "https://api-ecom.duthanhduoc.com/images/a7dfed1e-6beb-4390-af5e-24413bf619a6.jpg",
                 "https://api-ecom.duthanhduoc.com/images/29fe140f-3280-4724-a246-ede984d75559.jpg",
@@ -238,22 +221,20 @@
             ],
             "price": 260000,
             "rating": 5,
+            "description": "Dòng này để mọi người biết product có description :v",
             "price_before_discount": 500000,
             "quantity": 4050,
             "sold": 2300,
             "view": 401,
             "name": "Đồng Hồ Điện Tử Thể Thao Nam Chính Hãng SMAEL JAPAN 2020 - Phong Cách Quân Đội",
-            "category": {
-                "id": "60afacca6ef5b902180aacaf",
-                "name": "Đồng hồ",
-                "__v": 0
-            },
+
             "image": "https://api-ecom.duthanhduoc.com/images/a7dfed1e-6beb-4390-af5e-24413bf619a6.jpg",
             "createdAt": "2021-05-27T14:34:39.366Z",
-            "updatedAt": "2021-09-26T02:43:43.607Z"
+            "updatedAt": "2021-09-26T02:43:43.607Z",
+            "categoryID": 2
         },
         {
-            "id": "60afad846ef5b902180aacb0",
+            "id": 10,
             "images": [
                 "https://api-ecom.duthanhduoc.com/images/a04c55a2-9569-4a59-a6de-2b3bbdcb570a.jpg",
                 "https://api-ecom.duthanhduoc.com/images/7d131757-51eb-43af-bc2a-4eb479186fc9.jpg",
@@ -267,22 +248,20 @@
             ],
             "price": 229000,
             "rating": 5,
+            "description": "Dòng này để mọi người biết product có description :v",
             "price_before_discount": 399000,
             "quantity": 100123,
             "sold": 31500,
             "view": 2667,
             "name": "Đồng Hồ Nam WWOOR 8018 Dây Thép Nhật Cao Cấp Nhiều Màu",
-            "category": {
-                "id": "60afacca6ef5b902180aacaf",
-                "name": "Đồng hồ",
-                "__v": 0
-            },
+
             "image": "https://api-ecom.duthanhduoc.com/images/a04c55a2-9569-4a59-a6de-2b3bbdcb570a.jpg",
             "createdAt": "2021-05-27T14:32:36.605Z",
-            "updatedAt": "2021-09-27T09:33:29.031Z"
+            "updatedAt": "2021-09-27T09:33:29.031Z",
+            "categoryID": 2
         },
         {
-            "id": "60af722af1a3041b289d8ba1",
+            "id": 11,
             "images": [
                 "https://api-ecom.duthanhduoc.com/images/8fdcc6d3-70ea-4853-954e-b8776fbab6fa.jpg",
                 "https://api-ecom.duthanhduoc.com/images/531834bf-0bc0-4cdc-941e-9b5204d97b0d.jpg",
@@ -296,22 +275,20 @@
             ],
             "price": 194555,
             "rating": 4,
+            "description": "Dòng này để mọi người biết product có description :v",
             "price_before_discount": 299999,
             "quantity": 75,
             "sold": 55,
             "view": 115,
             "name": "[KHUYẾN MÃI 35%] Áo Thun POLO Nam, Tay Ngắn Áo Cổ Sọc, Chất Liệu Cá Sấu Cao Cấp - Nhiều màu- Đủ Size",
-            "category": {
-                "id": "60aba4e24efcc70f8892e1c6",
-                "name": "Áo thun",
-                "__v": 0
-            },
+
             "image": "https://api-ecom.duthanhduoc.com/images/8fdcc6d3-70ea-4853-954e-b8776fbab6fa.jpg",
             "createdAt": "2021-05-27T10:19:22.177Z",
-            "updatedAt": "2021-09-13T03:12:39.877Z"
+            "updatedAt": "2021-09-13T03:12:39.877Z",
+            "categoryID": 1
         },
         {
-            "id": "60af70fbf1a3041b289d8ba0",
+            "id": 12,
             "images": [
                 "https://api-ecom.duthanhduoc.com/images/93ac7b62-52e9-4846-9d51-9bc227a96923.jpg",
                 "https://api-ecom.duthanhduoc.com/images/555c5f7a-493e-4419-b586-d0a1cb0b6b75.jpg",
@@ -325,22 +302,20 @@
             ],
             "price": 169000,
             "rating": 4,
+            "description": "Dòng này để mọi người biết product có description :v",
             "price_before_discount": 279000,
             "quantity": 2988,
             "sold": 456,
             "view": 79,
             "name": "Áo Thun Polo Kẻ Ngang Trẻ Trung Sành Điệu Áo Phông Nam Có Cổ Tay Cộc Vải 100% Cotton Mềm Mịn Thoáng Mát HK016",
-            "category": {
-                "id": "60aba4e24efcc70f8892e1c6",
-                "name": "Áo thun",
-                "__v": 0
-            },
+
             "image": "https://api-ecom.duthanhduoc.com/images/93ac7b62-52e9-4846-9d51-9bc227a96923.jpg",
             "createdAt": "2021-05-27T10:14:19.185Z",
-            "updatedAt": "2021-09-28T02:51:55.809Z"
+            "updatedAt": "2021-09-28T02:51:55.809Z",
+            "categoryID": 1
         },
         {
-            "id": "60af6f7bf1a3041b289d8b9c",
+            "id": 13,
             "images": [
                 "https://api-ecom.duthanhduoc.com/images/edbdcca1-7a53-47fe-b3b5-4f356992eb36.jpg",
                 "https://api-ecom.duthanhduoc.com/images/6d0eac12-c3c2-40e9-b72c-27b3c4b40482.jpg",
@@ -354,22 +329,20 @@
             ],
             "price": 399000,
             "rating": 4,
+            "description": "Dòng này để mọi người biết product có description :v",
             "price_before_discount": 500000,
             "quantity": 552,
             "sold": 11,
             "view": 10,
             "name": "Áo Polo nam HEBOZ vải cotton pha co giãn 4 chiều đẹp in logo cao bên ngực trái cao cấp, form slimfit basic - 00000673",
-            "category": {
-                "id": "60aba4e24efcc70f8892e1c6",
-                "name": "Áo thun",
-                "__v": 0
-            },
+
             "image": "https://api-ecom.duthanhduoc.com/images/edbdcca1-7a53-47fe-b3b5-4f356992eb36.jpg",
             "createdAt": "2021-05-27T10:07:55.092Z",
-            "updatedAt": "2021-07-19T07:38:24.125Z"
+            "updatedAt": "2021-07-19T07:38:24.125Z",
+            "categoryID": 1
         },
         {
-            "id": "60af6f12f1a3041b289d8b9b",
+            "id": 14,
             "images": [
                 "https://api-ecom.duthanhduoc.com/images/b18506cc-3d5f-4160-aee3-8e4242ed5717.jpg",
                 "https://api-ecom.duthanhduoc.com/images/0e91ba6d-8e35-4fee-8812-6f81bbe0e3de.jpg",
@@ -380,22 +353,20 @@
             ],
             "price": 75000,
             "rating": 5,
+            "description": "Dòng này để mọi người biết product có description :v",
             "price_before_discount": 150000,
             "quantity": 52,
             "sold": 5,
             "view": 7,
             "name": "Áo thun Polo nam cổ bẻ BASIC vải cá sấu Cotton xuất xịn, chuẩn đẹp, màu HỒNG",
-            "category": {
-                "id": "60aba4e24efcc70f8892e1c6",
-                "name": "Áo thun",
-                "__v": 0
-            },
+
             "image": "https://api-ecom.duthanhduoc.com/images/b18506cc-3d5f-4160-aee3-8e4242ed5717.jpg",
             "createdAt": "2021-05-27T10:06:10.339Z",
-            "updatedAt": "2021-08-29T15:02:53.089Z"
+            "updatedAt": "2021-08-29T15:02:53.089Z",
+            "categoryID": 1
         },
         {
-            "id": "60ad06ba2fb52902585972b0",
+            "id": 15,
             "images": [
                 "https://api-ecom.duthanhduoc.com/images/fc830d4a-c616-4928-9b30-ff7cca7fa4d4.jpg",
                 "https://api-ecom.duthanhduoc.com/images/c1ede578-0057-4ddc-9d35-9204787f4c8b.jpg",
@@ -409,22 +380,20 @@
             ],
             "price": 69000,
             "rating": 3,
+            "description": "Dòng này để mọi người biết product có description :v",
             "price_before_discount": 139000,
             "quantity": 17659,
             "sold": 497,
             "view": 231,
             "name": "[Mã FAMAYMA2 giảm 10K đơn 50K] Áo Thun ngắn tay unisex Tie Dye, form oversize, vải cotton loang mầu 2SClothing.",
-            "category": {
-                "id": "60aba4e24efcc70f8892e1c6",
-                "name": "Áo thun",
-                "__v": 0
-            },
+
             "image": "https://api-ecom.duthanhduoc.com/images/fc830d4a-c616-4928-9b30-ff7cca7fa4d4.jpg",
             "createdAt": "2021-05-25T14:16:26.462Z",
-            "updatedAt": "2021-09-12T16:37:57.392Z"
+            "updatedAt": "2021-09-12T16:37:57.392Z",
+            "categoryID": 1
         },
         {
-            "id": "60ad061d2fb52902585972af",
+            "id": 16,
             "images": [
                 "https://api-ecom.duthanhduoc.com/images/ee1f61e3-2029-43fd-a66d-d746c8fd637c.jpg",
                 "https://api-ecom.duthanhduoc.com/images/8437f3b8-46b7-49b6-a362-0f58691d9ba9.jpg",
@@ -438,22 +407,20 @@
             ],
             "price": 69000,
             "rating": 2,
+            "description": "Dòng này để mọi người biết product có description :v",
             "price_before_discount": 138000,
             "quantity": 107962,
             "sold": 5655,
             "view": 5027,
             "name": "[Mã FADI5K245 giảm 5K đơn 0đ] Áo thun tay lỡ Gấu194 unisex form rộng trơn chữ vải coton mềm mịn co dãn 4 chiều - GAU1994",
-            "category": {
-                "id": "60aba4e24efcc70f8892e1c6",
-                "name": "Áo thun",
-                "__v": 0
-            },
+
             "image": "https://api-ecom.duthanhduoc.com/images/ee1f61e3-2029-43fd-a66d-d746c8fd637c.jpg",
             "createdAt": "2021-05-25T14:13:49.042Z",
-            "updatedAt": "2021-09-27T10:13:14.996Z"
+            "updatedAt": "2021-09-27T10:13:14.996Z",
+            "categoryID": 1
         },
         {
-            "id": "60ad056c2fb52902585972ae",
+            "id": 17,
             "images": [
                 "https://api-ecom.duthanhduoc.com/images/e647d83e-4d1b-4297-b1cb-2b87bdad7963.jpg",
                 "https://api-ecom.duthanhduoc.com/images/f83deef7-4be7-4d7d-91f0-d4dbc2178a88.jpg",
@@ -467,22 +434,20 @@
             ],
             "price": 130000,
             "rating": 1,
+            "description": "Dòng này để mọi người biết product có description :v",
             "price_before_discount": 150000,
             "quantity": 6982,
             "sold": 0,
             "view": 32,
             "name": "Áo Thun Tay Lỡ Form Rộng Mon Mon Siêu Hot🍁 Unisex nam nữ đều mặc được)",
-            "category": {
-                "id": "60aba4e24efcc70f8892e1c6",
-                "name": "Áo thun",
-                "__v": 0
-            },
+
             "image": "https://api-ecom.duthanhduoc.com/images/e647d83e-4d1b-4297-b1cb-2b87bdad7963.jpg",
             "createdAt": "2021-05-25T14:10:52.503Z",
-            "updatedAt": "2021-08-27T14:08:08.246Z"
+            "updatedAt": "2021-08-27T14:08:08.246Z",
+            "categoryID": 1
         },
         {
-            "id": "60ad04e32fb52902585972ad",
+            "id": 18,
             "images": [
                 "https://api-ecom.duthanhduoc.com/images/a1c873c9-a1e3-477e-8a09-e9bd6e43b1cf.jpg",
                 "https://api-ecom.duthanhduoc.com/images/a55c3d25-d976-4a13-9cb8-853d86ab5973.jpg",
@@ -495,22 +460,20 @@
             ],
             "price": 37000,
             "rating": 1,
+            "description": "Dòng này để mọi người biết product có description :v",
             "price_before_discount": 70000,
             "quantity": 724,
             "sold": 75,
             "view": 17,
             "name": "Áo Cotton Nam Đông Xuân Cộc Tay Và Ba Lỗ ( Video+ Ảnh Thật )",
-            "category": {
-                "id": "60aba4e24efcc70f8892e1c6",
-                "name": "Áo thun",
-                "__v": 0
-            },
+
             "image": "https://api-ecom.duthanhduoc.com/images/a1c873c9-a1e3-477e-8a09-e9bd6e43b1cf.jpg",
             "createdAt": "2021-05-25T14:08:35.273Z",
-            "updatedAt": "2021-05-25T14:08:35.273Z"
+            "updatedAt": "2021-05-25T14:08:35.273Z",
+            "categoryID": 1
         },
         {
-            "id": "60ad04392fb52902585972ac",
+            "id": 19,
             "images": [
                 "https://api-ecom.duthanhduoc.com/images/ef8fcfa8-c006-486e-9660-462efa93ad43.jpg",
                 "https://api-ecom.duthanhduoc.com/images/5d172cad-1bcf-4d9d-99d1-0181e3aafdae.jpg",
@@ -521,22 +484,20 @@
             ],
             "price": 79000,
             "rating": 2,
+            "description": "Dòng này để mọi người biết product có description :v",
             "price_before_discount": 150000,
             "quantity": 23210,
             "sold": 898,
             "view": 206,
             "name": "[XẢ KHO GIÁ SỐC] Áo thun nam cổ tim ngắn tay đẹp nhiều màu đủ size ( có size lớn cho người 100 kg )",
-            "category": {
-                "id": "60aba4e24efcc70f8892e1c6",
-                "name": "Áo thun",
-                "__v": 0
-            },
+
             "image": "https://api-ecom.duthanhduoc.com/images/ef8fcfa8-c006-486e-9660-462efa93ad43.jpg",
             "createdAt": "2021-05-25T14:05:45.785Z",
-            "updatedAt": "2021-09-21T11:31:30.029Z"
+            "updatedAt": "2021-09-21T11:31:30.029Z",
+            "categoryID": 1
         },
         {
-            "id": "60ad03872fb52902585972ab",
+            "id": 20,
             "images": [
                 "https://api-ecom.duthanhduoc.com/images/d2fe4691-1d73-4bb2-8aec-afff5f13e83d.jpg",
                 "https://api-ecom.duthanhduoc.com/images/09e9a588-c37f-4f8c-8e71-526740463197.jpg",
@@ -550,22 +511,20 @@
             ],
             "price": 982350,
             "rating": 3,
+            "description": "Dòng này để mọi người biết product có description :v",
             "price_before_discount": 189000,
             "quantity": 3224,
             "sold": 523,
             "view": 293,
             "name": "Áo thun nam nữ cotton co giãn unisex Giisel phông trơn basic tee tay lỡ oversize form rộng 10 màu",
-            "category": {
-                "id": "60aba4e24efcc70f8892e1c6",
-                "name": "Áo thun",
-                "__v": 0
-            },
+
             "image": "https://api-ecom.duthanhduoc.com/images/d2fe4691-1d73-4bb2-8aec-afff5f13e83d.jpg",
             "createdAt": "2021-05-25T14:02:47.426Z",
-            "updatedAt": "2021-09-27T09:33:25.760Z"
+            "updatedAt": "2021-09-27T09:33:25.760Z",
+            "categoryID": 1
         },
         {
-            "id": "60ad02f62fb52902585972aa",
+            "id": 21,
             "images": [
                 "https://api-ecom.duthanhduoc.com/images/e81c7a6a-b3a4-470d-bc3a-e5a5bda78f97.jpg",
                 "https://api-ecom.duthanhduoc.com/images/fea67f75-a44d-463f-9b6f-d6d72d841f89.jpg",
@@ -576,22 +535,20 @@
             ],
             "price": 106000,
             "rating": 4,
+            "description": "Dòng này để mọi người biết product có description :v",
             "price_before_discount": 189000,
             "quantity": 3000,
             "sold": 0,
             "view": 1,
             "name": "[MS 027] Áo thun nam cổ tròn siêu đẹp- Áo phông nam với chất liệu thun lạnh cực kì mát mẻ",
-            "category": {
-                "id": "60aba4e24efcc70f8892e1c6",
-                "name": "Áo thun",
-                "__v": 0
-            },
+
             "image": "https://api-ecom.duthanhduoc.com/images/e81c7a6a-b3a4-470d-bc3a-e5a5bda78f97.jpg",
             "createdAt": "2021-05-25T14:00:22.209Z",
-            "updatedAt": "2021-07-19T04:54:06.921Z"
+            "updatedAt": "2021-07-19T04:54:06.921Z",
+            "categoryID": 1
         },
         {
-            "id": "60ad02422fb52902585972a9",
+            "id": 22,
             "images": [
                 "https://api-ecom.duthanhduoc.com/images/08b79b1d-169d-4de1-85a2-4e5e8ff535b7.jpg",
                 "https://api-ecom.duthanhduoc.com/images/182d6e25-65fa-4abe-b822-70d87550bf4e.jpg",
@@ -603,22 +560,20 @@
             ],
             "price": 279000,
             "rating": 5,
+            "description": "Dòng này để mọi người biết product có description :v",
             "price_before_discount": 315000,
             "quantity": 1959,
             "sold": 36,
             "view": 19,
             "name": "[Mã FAMALLT5 giảm 15% đơn 150K] Áo thun tay lỡ GENZ phông Unisex nam nữ Cotton oversize form rộng Racing Genz GZT021",
-            "category": {
-                "id": "60aba4e24efcc70f8892e1c6",
-                "name": "Áo thun",
-                "__v": 0
-            },
+
             "image": "https://api-ecom.duthanhduoc.com/images/08b79b1d-169d-4de1-85a2-4e5e8ff535b7.jpg",
             "createdAt": "2021-05-25T13:57:22.760Z",
-            "updatedAt": "2021-09-14T01:54:12.548Z"
+            "updatedAt": "2021-09-14T01:54:12.548Z",
+            "categoryID": 1
         },
         {
-            "id": "60ad01992fb52902585972a8",
+            "id": 23,
             "images": [
                 "https://api-ecom.duthanhduoc.com/images/ccb7fdb4-af25-4a4e-a13c-c4e1ca44682e.jpg",
                 "https://api-ecom.duthanhduoc.com/images/b67d1471-d3ac-4677-b5ac-7519088b8e52.jpg",
@@ -632,22 +587,20 @@
             ],
             "price": 100000,
             "rating": 4,
+            "description": "Dòng này để mọi người biết product có description :v",
             "price_before_discount": 10000,
             "quantity": 22396,
             "sold": 0,
             "view": 34,
             "name": "Áo Thun Tay Lỡ Basic Nhiều Màu Siêu Hot🍁 Unisex nam nữ đều mặc được",
-            "category": {
-                "id": "60aba4e24efcc70f8892e1c6",
-                "name": "Áo thun",
-                "__v": 0
-            },
+
             "image": "https://api-ecom.duthanhduoc.com/images/ccb7fdb4-af25-4a4e-a13c-c4e1ca44682e.jpg",
             "createdAt": "2021-05-25T13:54:33.233Z",
-            "updatedAt": "2021-09-03T08:51:50.761Z"
+            "updatedAt": "2021-09-03T08:51:50.761Z",
+            "categoryID": 1
         },
         {
-            "id": "60ad01102fb52902585972a7",
+            "id": 24,
             "images": [
                 "https://api-ecom.duthanhduoc.com/images/05f090b8-736e-4100-b4f4-7a09f48e718a.jpg",
                 "https://api-ecom.duthanhduoc.com/images/594a2d08-04f4-4902-873f-e9ba865bc497.jpg",
@@ -661,22 +614,20 @@
             ],
             "price": 53000,
             "rating": 5,
+            "description": "Dòng này để mọi người biết product có description :v",
             "price_before_discount": 106000,
             "quantity": 16746,
             "sold": 2255,
             "view": 42,
             "name": "Áo thun nam nữ tay lỡ YINXX, áo phông nam nữ form rộng A304",
-            "category": {
-                "id": "60aba4e24efcc70f8892e1c6",
-                "name": "Áo thun",
-                "__v": 0
-            },
+
             "image": "https://api-ecom.duthanhduoc.com/images/b1c008a6-bb10-46a6-8caf-2b0e9ca4e175.jpg",
             "createdAt": "2021-05-25T13:52:16.271Z",
-            "updatedAt": "2021-09-13T09:27:17.734Z"
+            "updatedAt": "2021-09-13T09:27:17.734Z",
+            "categoryID": 1
         },
         {
-            "id": "60ad004c2fb52902585972a6",
+            "id": 25,
             "images": [
                 "https://api-ecom.duthanhduoc.com/images/b1c008a6-bb10-46a6-8caf-2b0e9ca4e175.jpg",
                 "https://api-ecom.duthanhduoc.com/images/2df345c5-4381-4863-9510-17f44572ad45.jpg",
@@ -690,22 +641,20 @@
             ],
             "price": 49000,
             "rating": 5,
+            "description": "Dòng này để mọi người biết product có description :v",
             "price_before_discount": 70000,
             "quantity": 6797,
             "sold": 21,
             "view": 19,
             "name": "Mẫu Mới Khuyến Mãi Sốc 3 Ngày ⚡ Áo Thun Tay Lỡ In Bướm Dirty Coins Ao Thun Unisex From Rộng -BONSEN STORE",
-            "category": {
-                "id": "60aba4e24efcc70f8892e1c6",
-                "name": "Áo thun",
-                "__v": 0
-            },
+
             "image": "https://api-ecom.duthanhduoc.com/images/b1c008a6-bb10-46a6-8caf-2b0e9ca4e175.jpg",
             "createdAt": "2021-05-25T13:49:00.060Z",
-            "updatedAt": "2021-09-19T14:21:29.301Z"
+            "updatedAt": "2021-09-19T14:21:29.301Z",
+            "categoryID": 1
         },
         {
-            "id": "60acffba2fb52902585972a5",
+            "id": 26,
             "images": [
                 "https://api-ecom.duthanhduoc.com/images/305f556f-31b3-45cc-b977-0448b1f82344.jpg",
                 "https://api-ecom.duthanhduoc.com/images/e2ef5d37-514d-43f0-aca0-b61c4dcd42de.jpg",
@@ -714,22 +663,20 @@
             ],
             "price": 64000,
             "rating": 5,
+            "description": "Dòng này để mọi người biết product có description :v",
             "price_before_discount": 90000,
             "quantity": 27995,
             "sold": 5,
             "view": 8,
             "name": "Thun cotton , cực kỳ thoáng mát - Size: XS - S - M - L - XL - XXL - XXXL",
-            "category": {
-                "id": "60aba4e24efcc70f8892e1c6",
-                "name": "Áo thun",
-                "__v": 0
-            },
+
             "image": "https://api-ecom.duthanhduoc.com/images/305f556f-31b3-45cc-b977-0448b1f82344.jpg",
             "createdAt": "2021-05-25T13:46:34.195Z",
-            "updatedAt": "2021-08-02T08:50:14.126Z"
+            "updatedAt": "2021-08-02T08:50:14.126Z",
+            "categoryID": 1
         },
         {
-            "id": "60acff3c2fb52902585972a4",
+            "id": 27,
             "images": [
                 "https://api-ecom.duthanhduoc.com/images/d178114b-aaa8-4dae-adb6-8a92ba92bb13.jpg",
                 "https://api-ecom.duthanhduoc.com/images/a57ca1fd-010a-48e1-b505-a5ebff6e3bd8.jpg",
@@ -743,22 +690,20 @@
             ],
             "price": 54000,
             "rating": 3,
+            "description": "Dòng này để mọi người biết product có description :v",
             "price_before_discount": 60000,
             "quantity": 799914,
             "sold": 86,
             "view": 14,
             "name": "Áo Thun Trơn Đen-Trắng Form Chuẩn Tay Ngắn, Chất COTTON Cao Cấp, AT09.1",
-            "category": {
-                "id": "60aba4e24efcc70f8892e1c6",
-                "name": "Áo thun",
-                "__v": 0
-            },
+
             "image": "https://api-ecom.duthanhduoc.com/images/d178114b-aaa8-4dae-adb6-8a92ba92bb13.jpg",
             "createdAt": "2021-05-25T13:44:28.020Z",
-            "updatedAt": "2021-09-12T16:21:27.996Z"
+            "updatedAt": "2021-09-12T16:21:27.996Z",
+            "categoryID": 1
         },
         {
-            "id": "60acfe9c2fb52902585972a3",
+            "id": 28,
             "images": [
                 "https://api-ecom.duthanhduoc.com/images/c49a6a50-b8a2-421b-86a6-fc73f438d9a2.jpg",
                 "https://api-ecom.duthanhduoc.com/images/e444abbd-db41-42a6-84b0-009355f6f2de.jpg",
@@ -772,22 +717,20 @@
             ],
             "price": 98000,
             "rating": 2,
+            "description": "Dòng này để mọi người biết product có description :v",
             "price_before_discount": 196000,
             "quantity": 8201,
             "sold": 4250,
             "view": 56,
             "name": "Áo thun nam mã TT5 💖FREESHIP💖 Áo tay lỡ nam form rộng thể thao cộc tay đẹp mùa hè ngắn tay tập gym vải cotton",
-            "category": {
-                "id": "60aba4e24efcc70f8892e1c6",
-                "name": "Áo thun",
-                "__v": 0
-            },
+
             "image": "https://api-ecom.duthanhduoc.com/images/c49a6a50-b8a2-421b-86a6-fc73f438d9a2.jpg",
             "createdAt": "2021-05-25T13:41:48.165Z",
-            "updatedAt": "2021-09-20T16:18:03.696Z"
+            "updatedAt": "2021-09-20T16:18:03.696Z",
+            "categoryID": 1
         },
         {
-            "id": "60acfdd42fb52902585972a2",
+            "id": 29,
             "images": [
                 "https://api-ecom.duthanhduoc.com/images/cd0a26e1-3792-458f-914c-8692dbb26b7a.jpg",
                 "https://api-ecom.duthanhduoc.com/images/4a52af18-bd03-461b-8526-84219686541c.jpg",
@@ -799,22 +742,20 @@
             ],
             "price": 139000,
             "rating": 1,
+            "description": "Dòng này để mọi người biết product có description :v",
             "price_before_discount": 240000,
             "quantity": 1598,
             "sold": 36,
             "view": 18,
             "name": "Áo thun nam Havis cổ bẻ thun cá sấu 76 logo dập nổi cao cấp AXK038",
-            "category": {
-                "id": "60aba4e24efcc70f8892e1c6",
-                "name": "Áo thun",
-                "__v": 0
-            },
+
             "image": "https://api-ecom.duthanhduoc.com/images/cd0a26e1-3792-458f-914c-8692dbb26b7a.jpg",
             "createdAt": "2021-05-25T13:38:28.959Z",
-            "updatedAt": "2021-05-25T13:38:28.959Z"
+            "updatedAt": "2021-05-25T13:38:28.959Z",
+            "categoryID": 1
         },
         {
-            "id": "60acfd4d2fb52902585972a1",
+            "id": 30,
             "images": [
                 "https://api-ecom.duthanhduoc.com/images/960a6e64-c6eb-491f-a9cc-1a06acffdeef.jpg",
                 "https://api-ecom.duthanhduoc.com/images/2966ecc3-b0b9-44b2-8fb8-684ea44f7816.jpg",
@@ -824,22 +765,20 @@
             ],
             "price": 69000,
             "rating": 3,
+            "description": "Dòng này để mọi người biết product có description :v",
             "price_before_discount": 91000,
             "quantity": 29150,
             "sold": 16501,
             "view": 83,
             "name": "Áo thun nam thể thao cotton lạnh cao cấp tay ngắn Xanh AD03 Phong Cảnh Mẫu Trend Trẻ Trung Cá Tính (44-70KG)",
-            "category": {
-                "id": "60aba4e24efcc70f8892e1c6",
-                "name": "Áo thun",
-                "__v": 0
-            },
+
             "image": "https://api-ecom.duthanhduoc.com/images/960a6e64-c6eb-491f-a9cc-1a06acffdeef.jpg",
             "createdAt": "2021-05-25T13:36:13.145Z",
-            "updatedAt": "2021-09-10T09:28:38.332Z"
+            "updatedAt": "2021-09-10T09:28:38.332Z",
+            "categoryID": 1
         },
         {
-            "id": "60acfb7c2fb52902585972a0",
+            "id": 31,
             "images": [
                 "https://api-ecom.duthanhduoc.com/images/c29f5baf-c506-45a8-84db-571c83e0ed2a.jpg",
                 "https://api-ecom.duthanhduoc.com/images/70ed2e25-103a-4c5d-92f5-7100c4e7fa1a.jpg",
@@ -851,22 +790,20 @@
             ],
             "price": 89000,
             "rating": 5,
+            "description": "Dòng này để mọi người biết product có description :v",
             "price_before_discount": 150000,
             "quantity": 359987,
             "sold": 183,
             "view": 139,
             "name": "Áo polo nam cao cấp cổ viền, áo thun nam ngắn tay bo viền năng động, Kiểu dáng ôm slimfit",
-            "category": {
-                "id": "60aba4e24efcc70f8892e1c6",
-                "name": "Áo thun",
-                "__v": 0
-            },
+
             "image": "https://api-ecom.duthanhduoc.com/images/c29f5baf-c506-45a8-84db-571c83e0ed2a.jpg",
             "createdAt": "2021-05-25T13:28:28.419Z",
-            "updatedAt": "2021-09-15T03:19:05.974Z"
+            "updatedAt": "2021-09-15T03:19:05.974Z",
+            "categoryID": 1
         },
         {
-            "id": "60acfac72fb529025859729f",
+            "id": 32,
             "images": [
                 "https://api-ecom.duthanhduoc.com/images/ad82b185-5c18-41ca-90ec-1c54c846fd49.jpg",
                 "https://api-ecom.duthanhduoc.com/images/04001c71-9d8f-4e68-b9ac-cbb47406f30f.jpg",
@@ -876,22 +813,20 @@
             ],
             "price": 39000,
             "rating": 4,
+            "description": "Dòng này để mọi người biết product có description :v",
             "price_before_discount": 60000,
             "quantity": 17453,
             "sold": 97,
             "view": 60,
             "name": "[Có video] Áo phông form rộng tay lỡ unisex - Áo thun orange soda - Sỉ áo thun số lượng lớn",
-            "category": {
-                "id": "60aba4e24efcc70f8892e1c6",
-                "name": "Áo thun",
-                "__v": 0
-            },
+
             "image": "https://api-ecom.duthanhduoc.com/images/ad82b185-5c18-41ca-90ec-1c54c846fd49.jpg",
             "createdAt": "2021-05-25T13:25:27.965Z",
-            "updatedAt": "2021-09-10T09:27:48.657Z"
+            "updatedAt": "2021-09-10T09:27:48.657Z",
+            "categoryID": 1
         },
         {
-            "id": "60acfa312fb529025859729e",
+            "id": 33,
             "images": [
                 "https://api-ecom.duthanhduoc.com/images/dd734e18-ac0e-4a67-97b3-195fb8a4be5f.jpg",
                 "https://api-ecom.duthanhduoc.com/images/59c6824c-ac7a-42cf-9a64-ed75b25a9a4e.jpg",
@@ -899,22 +834,20 @@
             ],
             "price": 99000,
             "rating": 3,
+            "description": "Dòng này để mọi người biết product có description :v",
             "price_before_discount": 179000,
             "quantity": 19,
             "sold": 28,
             "view": 16,
             "name": "Áo thun Đầu Lâu Tím MECHAY unisex nam nữ tay lỡ form rộng",
-            "category": {
-                "id": "60aba4e24efcc70f8892e1c6",
-                "name": "Áo thun",
-                "__v": 0
-            },
+
             "image": "https://api-ecom.duthanhduoc.com/images/dd734e18-ac0e-4a67-97b3-195fb8a4be5f.jpg",
             "createdAt": "2021-05-25T13:22:57.124Z",
-            "updatedAt": "2021-08-15T14:29:59.613Z"
+            "updatedAt": "2021-08-15T14:29:59.613Z",
+            "categoryID": 1
         },
         {
-            "id": "60acf4262fb529025859729d",
+            "id": 34,
             "images": [
                 "https://api-ecom.duthanhduoc.com/images/4413eb8a-ef68-4a43-913a-b9df40ea7add.jpg",
                 "https://api-ecom.duthanhduoc.com/images/5aa797f5-1a69-4fc8-b178-3be77e6bb4fc.jpg",
@@ -924,22 +857,20 @@
             ],
             "price": 19000,
             "rating": 2,
+            "description": "Dòng này để mọi người biết product có description :v",
             "price_before_discount": 30000,
             "quantity": 54986,
             "sold": 49,
             "view": 158,
             "name": "Áo thun nam tay ngắn chất cổ tròn, Áo phông nam cộc tay in hình siêu đẹp",
-            "category": {
-                "id": "60aba4e24efcc70f8892e1c6",
-                "name": "Áo thun",
-                "__v": 0
-            },
+
             "image": "https://api-ecom.duthanhduoc.com/images/4413eb8a-ef68-4a43-913a-b9df40ea7add.jpg",
             "createdAt": "2021-05-25T12:57:10.573Z",
-            "updatedAt": "2021-08-21T15:17:48.880Z"
+            "updatedAt": "2021-08-21T15:17:48.880Z",
+            "categoryID": 1
         },
         {
-            "id": "60acf3712fb529025859729c",
+            "id": 35,
             "images": [
                 "https://api-ecom.duthanhduoc.com/images/e6dbd5d6-87ce-4b9d-893d-2faca0310c4f.jpg",
                 "https://api-ecom.duthanhduoc.com/images/72eb9bbd-01d2-4011-9161-28a86a384c3d.jpg",
@@ -950,22 +881,20 @@
             ],
             "price": 149000,
             "rating": 4,
+            "description": "Dòng này để mọi người biết product có description :v",
             "price_before_discount": 215000,
             "quantity": 11980,
             "sold": 19,
             "view": 84,
             "name": "Áo thun nam nữ unisex form rộng tay ngắn chất cotton mềm ADS 1225",
-            "category": {
-                "id": "60aba4e24efcc70f8892e1c6",
-                "name": "Áo thun",
-                "__v": 0
-            },
+
             "image": "https://api-ecom.duthanhduoc.com/images/e6dbd5d6-87ce-4b9d-893d-2faca0310c4f.jpg",
             "createdAt": "2021-05-25T12:54:09.336Z",
-            "updatedAt": "2021-09-24T08:05:46.941Z"
+            "updatedAt": "2021-09-24T08:05:46.941Z",
+            "categoryID": 1
         },
         {
-            "id": "60acf26c2fb529025859729b",
+            "id": 36,
             "images": [
                 "https://api-ecom.duthanhduoc.com/images/235a703e-304f-484a-b0e6-357688801d77.jpg",
                 "https://api-ecom.duthanhduoc.com/images/b4b0d556-60b5-4b9e-ab1b-fa0a27562925.jpg",
@@ -974,22 +903,20 @@
             ],
             "price": 25000,
             "rating": 3,
+            "description": "Dòng này để mọi người biết product có description :v",
             "price_before_discount": 45000,
             "quantity": 48,
             "sold": 74,
             "view": 21,
             "name": "Áo Thun Cộc Tay COTTON Thoáng Mát - Trắng | HN052",
-            "category": {
-                "id": "60aba4e24efcc70f8892e1c6",
-                "name": "Áo thun",
-                "__v": 0
-            },
+
             "image": "https://api-ecom.duthanhduoc.com/images/235a703e-304f-484a-b0e6-357688801d77.jpg",
             "createdAt": "2021-05-25T12:49:48.386Z",
-            "updatedAt": "2021-09-12T04:15:46.310Z"
+            "updatedAt": "2021-09-12T04:15:46.310Z",
+            "categoryID": 1
         },
         {
-            "id": "60acf1a12fb529025859729a",
+            "id": 37,
             "images": [
                 "https://api-ecom.duthanhduoc.com/images/a0418771-e082-4daf-a4fd-fcf93407e7bf.jpg",
                 "https://api-ecom.duthanhduoc.com/images/b1361843-e699-49eb-a292-d7a1ecca949f.jpg",
@@ -998,22 +925,20 @@
             ],
             "price": 110000,
             "rating": 2,
+            "description": "Dòng này để mọi người biết product có description :v",
             "price_before_discount": 180000,
             "quantity": 195,
             "sold": 185,
             "view": 79,
             "name": "áo thun form rộng in chữ NIRVANA",
-            "category": {
-                "id": "60aba4e24efcc70f8892e1c6",
-                "name": "Áo thun",
-                "__v": 0
-            },
+
             "image": "https://api-ecom.duthanhduoc.com/images/a0418771-e082-4daf-a4fd-fcf93407e7bf.jpg",
             "createdAt": "2021-05-25T12:46:25.071Z",
-            "updatedAt": "2021-09-26T07:40:54.602Z"
+            "updatedAt": "2021-09-26T07:40:54.602Z",
+            "categoryID": 1
         },
         {
-            "id": "60acf0ec2fb5290258597299",
+            "id": 38,
             "images": [
                 "https://api-ecom.duthanhduoc.com/images/25c409a5-9e6c-4e2d-a49e-23a8c291f749.jpg",
                 "https://api-ecom.duthanhduoc.com/images/85e6928d-9e7f-4ff9-8105-8389448f6a48.jpg",
@@ -1027,44 +952,40 @@
             ],
             "price": 119000,
             "rating": 5,
+            "description": "Dòng này để mọi người biết product có description :v",
             "price_before_discount": 198000,
             "quantity": 234,
             "sold": 24,
             "view": 206,
             "name": "Áo thun nam ngắn tay thể thao chất liệu thun lạnh 4 chiều AT39",
-            "category": {
-                "id": "60aba4e24efcc70f8892e1c6",
-                "name": "Áo thun",
-                "__v": 0
-            },
+
             "image": "https://api-ecom.duthanhduoc.com/images/25c409a5-9e6c-4e2d-a49e-23a8c291f749.jpg",
             "createdAt": "2021-05-25T12:43:24.537Z",
-            "updatedAt": "2021-09-24T08:05:44.208Z"
+            "updatedAt": "2021-09-24T08:05:44.208Z",
+            "categoryID": 1
         },
         {
-            "id": "60acf0412fb5290258597298",
+            "id": 39,
             "images": [
                 "https://api-ecom.duthanhduoc.com/images/ff8f5319-92c1-4675-80a4-793a17fd3eb0.jpg",
                 "https://api-ecom.duthanhduoc.com/images/7d880933-9603-48c3-a66e-cb7488f46292.jpg"
             ],
             "price": 68000,
             "rating": 1,
+            "description": "Dòng này để mọi người biết product có description :v",
             "price_before_discount": 120000,
             "quantity": 7571,
             "sold": 58,
             "view": 339,
             "name": "Áo thun 3d thái lan giá sỉ - Áo phông nam big size Việt Nam - Áo dành cho người mập lùn",
-            "category": {
-                "id": "60aba4e24efcc70f8892e1c6",
-                "name": "Áo thun",
-                "__v": 0
-            },
+
             "image": "https://api-ecom.duthanhduoc.com/images/ff8f5319-92c1-4675-80a4-793a17fd3eb0.jpg",
             "createdAt": "2021-05-25T12:40:33.614Z",
-            "updatedAt": "2021-09-27T09:33:31.932Z"
+            "updatedAt": "2021-09-27T09:33:31.932Z",
+            "categoryID": 1
         },
         {
-            "id": "60abb7acdbfa6e153cb99630",
+            "id": 40,
             "images": [
                 "https://api-ecom.duthanhduoc.com/images/a3d10f20-3533-4619-9259-ffa8be9a9ac2.jpg",
                 "https://api-ecom.duthanhduoc.com/images/ee4069e9-dc26-4069-8136-839f594a3ed5.jpg",
@@ -1076,22 +997,20 @@
             ],
             "price": 140000,
             "rating": 2,
+            "description": "Dòng này để mọi người biết product có description :v",
             "price_before_discount": 150000,
             "quantity": 2119,
             "sold": 2200,
             "view": 578,
             "name": "Áo thun nam cổ tròn POLOMAN vải Cotton co giãn,dày dặn, form regular fit thoải mái",
-            "category": {
-                "id": "60aba4e24efcc70f8892e1c6",
-                "name": "Áo thun",
-                "__v": 0
-            },
+
             "image": "https://api-ecom.duthanhduoc.com/images/a3d10f20-3533-4619-9259-ffa8be9a9ac2.jpg",
             "createdAt": "2021-05-24T14:26:52.402Z",
-            "updatedAt": "2021-09-27T06:42:49.171Z"
+            "updatedAt": "2021-09-27T06:42:49.171Z",
+            "categoryID": 1
         },
         {
-            "id": "60abae5ddbfa6e153cb9962f",
+            "id": 41,
             "images": [
                 "https://api-ecom.duthanhduoc.com/images/bc59c0ee-980d-4c3e-a53c-12bca82340c6.jpg",
                 "https://api-ecom.duthanhduoc.com/images/6d75544b-51b8-46cd-80d3-1d3d2399eea0.jpg",
@@ -1105,22 +1024,20 @@
             ],
             "price": 57000,
             "rating": 3,
+            "description": "Dòng này để mọi người biết product có description :v",
             "price_before_discount": 59000,
             "quantity": 1610,
             "sold": 12500,
             "view": 85,
             "name": "[Mã FAXANH245 giảm 10K đơn từ 50K] Áo Thun Nam Thể Thao Dập Vân CT AN298",
-            "category": {
-                "id": "60aba4e24efcc70f8892e1c6",
-                "name": "Áo thun",
-                "__v": 0
-            },
+
             "image": "https://api-ecom.duthanhduoc.com/images/bc59c0ee-980d-4c3e-a53c-12bca82340c6.jpg",
             "createdAt": "2021-05-24T13:47:09.028Z",
-            "updatedAt": "2021-09-10T16:30:26.082Z"
+            "updatedAt": "2021-09-10T16:30:26.082Z",
+            "categoryID": 1
         },
         {
-            "id": "60abab74dbfa6e153cb9962d",
+            "id": 42,
             "images": [
                 "https://api-ecom.duthanhduoc.com/images/06b90bb6-8dc5-4f04-aae7-4b8dd15cb80c.jpg",
                 "https://api-ecom.duthanhduoc.com/images/1ced481c-f5bb-4fc2-b14d-c47c616b9ec3.jpg",
@@ -1134,22 +1051,20 @@
             ],
             "price": 96000,
             "rating": 4,
+            "description": "Dòng này để mọi người biết product có description :v",
             "price_before_discount": 198000,
             "quantity": 46486,
             "sold": 5652,
             "view": 110,
             "name": "[Mã FAGREEN245 giảm 10% tối đa 30K đơn từ 99K] Áo thun nam POLO trơn vải cá sấu cotton cao cấp ngắn tay màu pastel",
-            "category": {
-                "id": "60aba4e24efcc70f8892e1c6",
-                "name": "Áo thun",
-                "__v": 0
-            },
+
             "image": "https://api-ecom.duthanhduoc.com/images/06b90bb6-8dc5-4f04-aae7-4b8dd15cb80c.jpg",
             "createdAt": "2021-05-24T13:34:44.836Z",
-            "updatedAt": "2021-09-17T11:45:00.326Z"
+            "updatedAt": "2021-09-17T11:45:00.326Z",
+            "categoryID": 1
         },
         {
-            "id": "60abaa9adbfa6e153cb9962c",
+            "id": 43,
             "images": [
                 "https://api-ecom.duthanhduoc.com/images/c9e6cdf9-5d7c-4767-ab19-5d64b133fd3b.jpg",
                 "https://api-ecom.duthanhduoc.com/images/d938561d-9ad1-4f61-822a-9d29b3cb663e.jpg",
@@ -1159,22 +1074,20 @@
             ],
             "price": 69000,
             "rating": 5,
+            "description": "Dòng này để mọi người biết product có description :v",
             "price_before_discount": 80000,
             "quantity": 8129,
             "sold": 4100,
             "view": 61,
             "name": "[Mã FAMAYMA2 giảm 10K đơn 50K] Áo thun nam nữ form rộng Yinxx, áo phông tay lỡ ATL43",
-            "category": {
-                "id": "60aba4e24efcc70f8892e1c6",
-                "name": "Áo thun",
-                "__v": 0
-            },
+
             "image": "https://api-ecom.duthanhduoc.com/images/c9e6cdf9-5d7c-4767-ab19-5d64b133fd3b.jpg",
             "createdAt": "2021-05-24T13:31:06.769Z",
-            "updatedAt": "2021-09-10T09:30:10.993Z"
+            "updatedAt": "2021-09-10T09:30:10.993Z",
+            "categoryID": 1
         },
         {
-            "id": "60aba9a2dbfa6e153cb9962b",
+            "id": 44,
             "images": [
                 "https://api-ecom.duthanhduoc.com/images/2b5e1bfa-b202-46b3-b68b-f6c8a19cb1cf.jpg",
                 "https://api-ecom.duthanhduoc.com/images/71ff840e-80bd-4d01-b997-f409392c3901.jpg",
@@ -1188,22 +1101,20 @@
             ],
             "price": 69000,
             "rating": 5,
+            "description": "Dòng này để mọi người biết product có description :v",
             "price_before_discount": 100000,
             "quantity": 23565,
             "sold": 3800,
             "view": 224,
             "name": "[Mã FAMAYMA2 giảm 10K đơn 50K] Áo thun tay lỡ unisex Yinxx, áo phông form rộng ATL187",
-            "category": {
-                "id": "60aba4e24efcc70f8892e1c6",
-                "name": "Áo thun",
-                "__v": 0
-            },
+
             "image": "https://api-ecom.duthanhduoc.com/images/2b5e1bfa-b202-46b3-b68b-f6c8a19cb1cf.jpg",
             "createdAt": "2021-05-24T13:26:58.072Z",
-            "updatedAt": "2021-09-26T07:31:46.269Z"
+            "updatedAt": "2021-09-26T07:31:46.269Z",
+            "categoryID": 1
         },
         {
-            "id": "60aba7e3dbfa6e153cb9962a",
+            "id": 45,
             "images": [
                 "https://api-ecom.duthanhduoc.com/images/c6258617-02d0-427d-951c-52132ba4b48b.jpg",
                 "https://api-ecom.duthanhduoc.com/images/275d1158-c2c0-431b-b583-4b607da53939.jpg",
@@ -1217,32 +1128,30 @@
             ],
             "price": 78000,
             "rating": 4,
+            "description": "Dòng này để mọi người biết product có description :v",
             "price_before_discount": 150000,
             "quantity": 8623,
             "sold": 4900,
             "view": 113,
             "name": "[Mã FAMAYMA2 giảm 10K đơn 50K] Áo thun bò sữa tay lỡ, form rộng Unisex ATLBO",
-            "category": {
-                "id": "60aba4e24efcc70f8892e1c6",
-                "name": "Áo thun",
-                "__v": 0
-            },
+
             "image": "https://api-ecom.duthanhduoc.com/images/c6258617-02d0-427d-951c-52132ba4b48b.jpg",
             "createdAt": "2021-05-24T13:19:31.521Z",
-            "updatedAt": "2021-08-18T02:19:32.491Z"
+            "updatedAt": "2021-08-18T02:19:32.491Z",
+            "categoryID": 1
         }
     ],
     "categories": [
         {
-            "id": "60aba4e24efcc70f8892e1c6",
+            "id": 1,
             "name": "Áo thun"
         },
         {
-            "id": "60afacca6ef5b902180aacaf",
+            "id": 2,
             "name": "Đồng hồ"
         },
         {
-            "id": "60afafe76ef5b902180aacb5",
+            "id": 3,
             "name": "Điện thoại"
         }
     ]

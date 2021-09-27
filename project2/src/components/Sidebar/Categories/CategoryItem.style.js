@@ -7,4 +7,7 @@ export const SibarCategoryItem = styled.li`
     font-weight: bold;
     line-height: 1.5;
     color: ${colors.colorGray};
+    &.active {
+        color: ${colors.primaryColor};
+    }
 `;

@@ -85,10 +85,10 @@ export const footerItemList = {
 };
 
 export const sidebarPriceList = [
-    { title: "≤50.000", start: [], end: 50000 },
-    { title: "50.000 - 200.000", start: 50000, end: 200000 },
-    { title: "200.000 - 500.000", start: 200000, end: 500000 },
-    { title: "500.000 - 1.000.000", start: 500000, end: 1000000 },
-    { title: "1000.000 - 5.000.000", start: 1000000, end: 5000000 },
-    { title: "≥5.000.000", start: 5000000, end: [] }
+    { title: "≤50.000", start: null, end: "50000" },
+    { title: "50.000 - 200.000", start: "50000", end: "200000" },
+    { title: "200.000 - 500.000", start: "200000", end: "500000" },
+    { title: "500.000 - 1.000.000", start: "500000", end: "1000000" },
+    { title: "1000.000 - 5.000.000", start: "1000000", end: "5000000" },
+    { title: "≥5.000.000", start: "5000000", end: null }
 ];
