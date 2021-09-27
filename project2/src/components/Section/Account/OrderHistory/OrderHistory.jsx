@@ -5,7 +5,7 @@ import { useDispatch } from "react-redux";
 import { LocalStorage } from "../../../../Page/constants/localStorage";
 import { getPayment } from "../../../../slice/auth.slice";
 import * as S from "./OrderHistory.style";
-import OrderHistoryItem from "./OrderHistoryItem";
+import OrderHistoryList from "./OrderHistoryList";
 
 function OrderHistory() {
     const [payments, setPayments] = useState([]);
@@ -25,6 +25,27 @@ function OrderHistory() {
         _getPayment();
     }, [dispatch]);
 
+    const renderOrderItem = () => {
+        let result = payments.map((item) => {
+            return {
+                id: item.id,
+                paymentType: item.paymentType,
+                products: item.product
+            };
+        });
+        let arr = result.map((item, index) => {
+            return (
+                <OrderHistoryList
+                    paymentId={item.id}
+                    paymentType={item.paymentType}
+                    list={item.products}
+                    key={index}
+                ></OrderHistoryList>
+            );
+        });
+        return arr;
+    };
+
     return (
         <S.PurChaseTable className="table-responsive bg-white shadow">
             <Table className="table-center table-padding mb-0">
@@ -42,9 +63,7 @@ function OrderHistory() {
                         </th>
                     </tr>
                 </thead>
-                <tbody>
-                    <OrderHistoryItem></OrderHistoryItem>
-                </tbody>
+                <tbody>{renderOrderItem()}</tbody>
             </Table>
         </S.PurChaseTable>
     );
