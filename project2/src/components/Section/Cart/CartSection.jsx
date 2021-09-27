@@ -13,6 +13,7 @@ import { path } from "../../../Page/constants/path";
 
 function CartSection() {
     const dispatch = useDispatch();
+
     useEffect(() => {
         const cart = JSON.parse(localStorage.getItem("cart")) || [];
         if (cart.length) {
@@ -31,7 +32,9 @@ function CartSection() {
             dispatch(setCart([]));
         }
     }, [dispatch]);
+
     const data = useSelector((value) => value.cart.product);
+
     const getTotalMoney = () => {
         let totalCost = 0;
         if (data) {
@@ -43,6 +46,7 @@ function CartSection() {
         }
         return totalCost;
     };
+
     return (
         <section className="section">
             <Container>

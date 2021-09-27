@@ -5,6 +5,7 @@ import Button from "react-bootstrap/Button";
 import { useDispatch } from "react-redux";
 import { changeQAdmin } from "../../../slice/filterAdmin.slice";
 import { changeQAdminProduct } from "../../../slice/filterAdminProduct.slice";
+
 function Search({ type }) {
     const [keyword, setKeyword] = useState("");
 

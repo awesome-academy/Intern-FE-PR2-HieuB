@@ -36,7 +36,6 @@ function ProductTaskItem({ product, setDisplayForm }) {
             return "label-default";
         }
     };
-
     const renderCategory = (id) => {
         if (id === 1) {
             return "Áo Thun";

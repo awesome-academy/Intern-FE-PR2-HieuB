@@ -19,6 +19,7 @@ import TaskList from "../../../components/Admin/Task/TaskList";
 import { addUser } from "../../../slice/manager.slice";
 import ProductForm from "../../../components/Admin/TaskForm/ProductForm";
 import ProductTaskList from "../../../components/Admin/Task/ProductTaskList";
+import PaymentTaskList from "../../../components/Admin/Task/PaymentTaskList";
 
 function Admin() {
     const [isDisplayForm, setIsDisplayForm] = useState(false);
@@ -162,7 +163,12 @@ function Admin() {
                         </Row>
                     </Tab>
                     <Tab eventKey="product" title="Quản lý đơn hàng">
-                        Quản lý sản phẩm
+                        <PaymentTaskList></PaymentTaskList>
+                        <Pagination
+                            admin={true}
+                            type="product"
+                            filterAdmin={filterAdminProduct}
+                        ></Pagination>
                     </Tab>
                 </S.AdminTabs>
             </Container>
