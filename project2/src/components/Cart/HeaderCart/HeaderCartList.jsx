@@ -3,10 +3,8 @@ import HeaderCartItem from "./HeaderCartItem";
 import * as S from "./HeaderCartList.style";
 import { NavLink } from "react-router-dom";
 import { path } from "../../../Page/constants/path";
-import { useSelector } from "react-redux";
 
-function HeaderCartList() {
-    const data = useSelector((value) => value.cart.product);
+function HeaderCartList({ data }) {
     return (
         <S.DropDownMenu className="dd-menu dropdown-menu-cart bg-white shadow rounded border-0 mt-3 p-4">
             <div className="pb-4">

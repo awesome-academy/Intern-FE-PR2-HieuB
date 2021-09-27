@@ -7,6 +7,7 @@ import RatingItem from "./RatingItem";
 import * as S from "./RatingList.style";
 import qs from "query-string";
 import useQuery from "../../../../hook/useQuery";
+import CheckIcon from "@mui/icons-material/Check";
 
 function RatingList({ rating, sidebar }) {
     const query = useQuery();
@@ -39,7 +40,7 @@ function RatingList({ rating, sidebar }) {
     };
     return (
         <S.RatingList
-            className="list-unstyled text-warning mb-0 my-3"
+            className="list-unstyled text-warning my-3 d-flex"
             onClick={() => handleRating(rating)}
         >
             {renderRating(rating)}

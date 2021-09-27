@@ -9,5 +9,6 @@ export const path = {
     checkout: "/checkout",
     thankyou: "/thankyou",
     usermanager: "/user/profile",
+    admin: "/admin",
     notFound: "*"
 };
