@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-function QuantitySelect() {
+function QuantitySelect({ handleSetQuantity }) {
     const [quantity, setQuantity] = useState(1);
 
     const handleChangeQuantity = (e) => {
@@ -15,17 +15,19 @@ function QuantitySelect() {
         if (type === "minus") {
             if (quantity > 1) {
                 setQuantity(quantity - 1);
+                handleSetQuantity(quantity - 1);
             } else {
                 setQuantity(1);
+                handleSetQuantity(1);
             }
         } else {
             setQuantity(quantity + 1);
+            handleSetQuantity(quantity + 1);
         }
     };
 
     return (
         <div className="d-flex shop-list align-items-center">
-            <h6 className="mb-0">Quantity:</h6>
             <div className="ml-3">
                 <input
                     type="button"

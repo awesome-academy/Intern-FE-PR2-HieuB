@@ -7,40 +7,67 @@ import * as S from "./ProductItem.style";
 import { Link, useHistory } from "react-router-dom";
 import { path } from "../../../../Page/constants/path";
 import { generateNameId } from "../../../../utils/helper";
+import { useDispatch } from "react-redux";
 import { LocalStorage } from "../../../../Page/constants/localStorage";
+import { setCart } from "../../../../slice/cart.slice";
 
 function ProductItem({ product }) {
     const history = useHistory();
+    const dispatch = useDispatch();
     const handleAddToCart = () => {
         if (localStorage.getItem("user")) {
             const data = JSON.parse(localStorage.getItem("user"));
-            let cartList = JSON.parse(
-                localStorage.getItem(LocalStorage.cart)
-            ) || { userID: data.user.id, product: [] };
-            if (cartList.product.length < 1) {
-                cartList.product.push({
-                    product: {
-                        id: product.id,
-                        image: product.image,
-                        price: product.price
-                    },
-                    count: 1
-                });
-            } else {
-                let itemCart = cartList.product.find((item) => {
-                    return item.product.id === product.id;
-                });
-                if (itemCart) {
-                    itemCart.count += 1;
-                } else {
-                    cartList.product.push({
-                        product: {
+            let cartList =
+                JSON.parse(localStorage.getItem(LocalStorage.cart)) || [];
+            if (cartList.length < 1) {
+                cartList.push({
+                    userId: data.user.id,
+                    product: [
+                        {
                             id: product.id,
                             image: product.image,
-                            price: product.price
-                        },
-                        count: 1
+                            price: product.price,
+                            count: 1
+                        }
+                    ]
+                });
+                dispatch(setCart(cartList));
+            } else {
+                let userId = cartList.find((user) => {
+                    return user.userId === data.user.id;
+                });
+                if (userId) {
+                    cartList.forEach((item) => {
+                        if (item.userId === data.user.id) {
+                            let itemCart = item.product.find((e) => {
+                                return e.id === product.id;
+                            });
+                            if (itemCart) {
+                                itemCart.count += 1;
+                            } else {
+                                item.product.push({
+                                    id: product.id,
+                                    image: product.image,
+                                    price: product.price,
+                                    count: 1
+                                });
+                            }
+                            dispatch(setCart(item));
+                        }
                     });
+                } else {
+                    cartList.push({
+                        userId: data.user.id,
+                        product: [
+                            {
+                                id: product.id,
+                                image: product.image,
+                                price: product.price,
+                                count: 1
+                            }
+                        ]
+                    });
+                    dispatch(setCart(cartList));
                 }
             }
             localStorage.setItem(LocalStorage.cart, JSON.stringify(cartList));

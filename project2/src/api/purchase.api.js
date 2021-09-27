@@ -6,6 +6,13 @@ const purchaseAPI = {
         return configAPI.post(url, body).then(function (response) {
             return response;
         });
+    },
+
+    getOrders: async (params) => {
+        const url = "/orders/?";
+        return configAPI.get(url, { params }).then(function (response) {
+            return response;
+        });
     }
 };
 
