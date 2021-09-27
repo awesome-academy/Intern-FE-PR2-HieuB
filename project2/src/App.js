@@ -1,8 +1,17 @@
+import { BrowserRouter } from "react-router-dom";
+import Header from "./components/Header/Header";
+import Footer from "./components/Footer/Footer";
+import Routes from "./Routes";
+
 function App() {
     return (
-        <div className="App">
-            <h1>Hiếu</h1>
-        </div>
+        <>
+            <BrowserRouter>
+                <Header></Header>
+                <Routes></Routes>
+                <Footer></Footer>
+            </BrowserRouter>
+        </>
     );
 }
 
