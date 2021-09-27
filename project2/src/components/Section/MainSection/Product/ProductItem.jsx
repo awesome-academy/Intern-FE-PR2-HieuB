@@ -5,13 +5,15 @@ import Card from "react-bootstrap/Card";
 import AddShoppingCartIcon from "@mui/icons-material/AddShoppingCart";
 import * as S from "./ProductItem.style";
 import { Link } from "react-router-dom";
+import { path } from "../../../../Page/constants/path";
+import { generateNameId } from "../../../../utils/helper";
 
 function ProductItem({ product }) {
     return (
         <Col xs="12" lg="3" md="6" className="mt-4 pt-2">
             <Card className="shop-list border-0 position-relative">
                 <S.CardImage className="shop-image position-relative overflow-hidden rounded shadow">
-                    <Link to="/">
+                    <Link to={path.product + `/${generateNameId(product)}`}>
                         <img
                             src={product.image}
                             className="img-fluid"
@@ -30,7 +32,10 @@ function ProductItem({ product }) {
                     </S.ShopIcon>
                 </S.CardImage>
                 <Card.Body className="content pt-4 p-2">
-                    <S.CardName to="/" className="text-dark product-name h5">
+                    <S.CardName
+                        to={path.product + `/${generateNameId(product)}`}
+                        className="text-dark product-name h5"
+                    >
                         {product.name}
                     </S.CardName>
                     <div className="d-flex justify-content-between mt-1">

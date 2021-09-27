@@ -30,6 +30,12 @@ const productsAPI = {
         return configAPI.get(url, { params }).then(function (response) {
             return response.headers["x-total-count"];
         });
+    },
+    getProductDetail: async (id) => {
+        const url = `/products/${id}`;
+        return configAPI.get(url).then(function (response) {
+            return response.data;
+        });
     }
 };
 

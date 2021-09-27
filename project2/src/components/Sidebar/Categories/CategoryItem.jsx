@@ -21,7 +21,7 @@ function CategoryItem({ category, setActive, active }) {
         let _filter;
         if (id === categoryItem) {
             setCategoryItem(null);
-            _filter = { ...filter, categoryID: null };
+            _filter = { ...filter, categoryID: [] };
         } else {
             setCategoryItem(id);
             _filter = { ...filter, categoryID: id };
