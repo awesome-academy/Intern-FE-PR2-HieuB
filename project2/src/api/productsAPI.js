@@ -7,8 +7,14 @@ const productsAPI = {
             return response.data;
         });
     },
-    getMostViewedProducts: async () => {
-        const url = "/products?_sort=view&_page=1&_limit=8&_order=desc";
+    getMostViewedProducts: async (limit, order) => {
+        const url = `/products?_sort=view&_page=1&_limit=${limit}&_order=${order}`;
+        return configAPI.get(url).then(function (response) {
+            return response.data;
+        });
+    },
+    getPopularProducts: async (limit, order) => {
+        const url = `/products?_sort=sold&_page=1&_limit=${limit}&_order=${order}`;
         return configAPI.get(url).then(function (response) {
             return response.data;
         });
