@@ -13,7 +13,7 @@ import {
     changeSortAdminProduct
 } from "../../../slice/filterAdminProduct.slice";
 
-function ProductTaskList() {
+function ProductTaskList({ setDisplayForm }) {
     const [productTaskList, setProductTaskList] = useState([]);
 
     const dispatch = useDispatch();
@@ -28,7 +28,6 @@ function ProductTaskList() {
         };
         _getProduct();
     }, [filterAdminProduct, dispatch]);
-
     return (
         <S.TaskTable className="table-responsive bg-white shadow mt-5">
             <Table className="table-center table-padding mb-0 table">
@@ -210,6 +209,7 @@ function ProductTaskList() {
                                 <ProductTaskItem
                                     key={item.id}
                                     product={item}
+                                    setDisplayForm={setDisplayForm}
                                 ></ProductTaskItem>
                             );
                         })}

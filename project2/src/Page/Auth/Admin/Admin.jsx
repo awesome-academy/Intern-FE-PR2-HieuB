@@ -23,7 +23,6 @@ import ProductTaskList from "../../../components/Admin/Task/ProductTaskList";
 function Admin() {
     const [isDisplayForm, setIsDisplayForm] = useState(false);
     const [filterAd, setFilterAd] = useState({});
-    const [filterProduct, setFilterProduct] = useState({});
     const [userList, setUserList] = useState([]);
     const [profile, setProfile] = useState({});
 
@@ -39,7 +38,6 @@ function Admin() {
             setUserList(res.data);
         };
         _getUserAll();
-
         const _getTotalCount = async () => {
             const count = await dispatch(getTotalCountAdmin(filterAdmin));
             const res = unwrapResult(count);
@@ -53,8 +51,7 @@ function Admin() {
             const count = await dispatch(
                 getCountPageProduct(filterAdminProduct)
             );
-            const res = unwrapResult(count);
-            setFilterProduct({ ...filterAdminProduct, count: res });
+            unwrapResult(count);
         };
         _getTotalCount();
     }, [dispatch, filterAdminProduct]);

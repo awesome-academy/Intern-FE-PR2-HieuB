@@ -4,7 +4,8 @@ const managerSlice = createSlice({
     name: "manager",
     initialState: {
         profile: {},
-        type: ""
+        type: "",
+        product: {}
     },
     reducers: {
         editUser: (state, action) => {
@@ -15,6 +16,11 @@ const managerSlice = createSlice({
             state.profile = action.payload;
             state.type = "new";
         },
+        editProduct: (state, action) => {
+            state.product = action.payload;
+            state.type = "editProduct";
+        },
+
         refreshUser: (state, action) => {
             state.profile = {
                 ...state.profile,
@@ -29,4 +35,5 @@ const managerReducer = managerSlice.reducer;
 export default managerReducer;
 export const editUser = managerSlice.actions.editUser;
 export const addUser = managerSlice.actions.addUser;
+export const editProduct = managerSlice.actions.editProduct;
 export const refreshUser = managerSlice.actions.refreshUser;
