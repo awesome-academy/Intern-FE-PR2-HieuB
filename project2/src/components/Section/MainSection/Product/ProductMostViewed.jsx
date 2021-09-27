@@ -4,7 +4,7 @@ import Row from "react-bootstrap/Row";
 import Container from "react-bootstrap/Container";
 import Col from "react-bootstrap/Col";
 
-function ProductMostViewed() {
+function ProductMostViewed({ products }) {
     return (
         <Container>
             <div className="row">
@@ -13,7 +13,13 @@ function ProductMostViewed() {
                 </Col>
             </div>
             <Row>
-                <ProductItem></ProductItem>
+                {products &&
+                    products.map((product) => (
+                        <ProductItem
+                            key={product.id}
+                            product={product}
+                        ></ProductItem>
+                    ))}
             </Row>
         </Container>
     );

@@ -4,7 +4,7 @@ import Card from "react-bootstrap/Card";
 import * as S from "./CategoryItem.style";
 import { Link } from "react-router-dom";
 
-function CategoryItem() {
+function CategoryItem({ category }) {
     return (
         <Col xs="6" lg="2" md="4" className="mt-4 pt-2">
             <Card className="explore-feature border-0 rounded text-center bg-white">
@@ -17,7 +17,7 @@ function CategoryItem() {
                     <div className="content mt-3">
                         <h6 className="mb-0">
                             <Link to="/" className="title text-dark">
-                                Fashion
+                                {category.name}
                             </Link>
                         </h6>
                     </div>

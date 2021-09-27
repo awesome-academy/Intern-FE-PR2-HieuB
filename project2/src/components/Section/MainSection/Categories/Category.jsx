@@ -4,7 +4,7 @@ import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 
-function Category() {
+function Category({ categories }) {
     return (
         <Container className="py-5">
             <Row>
@@ -12,8 +12,14 @@ function Category() {
                     <h5 className="mb-0">Top Categories</h5>
                 </Col>
             </Row>
-            <Row>
-                <CategoryItem></CategoryItem>
+            <Row className="justify-content-center align-items-center">
+                {categories &&
+                    categories.map((category) => (
+                        <CategoryItem
+                            key={category.id}
+                            category={category}
+                        ></CategoryItem>
+                    ))}
             </Row>
         </Container>
     );
