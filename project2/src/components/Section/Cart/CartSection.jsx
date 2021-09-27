@@ -9,6 +9,7 @@ import * as S from "./CartSection.style";
 import { useDispatch, useSelector } from "react-redux";
 import { setCart } from "../../../slice/cart.slice";
 import { formatCurrency } from "../../../utils/helper";
+import { path } from "../../../Page/constants/path";
 
 function CartSection() {
     const dispatch = useDispatch();
@@ -96,7 +97,10 @@ function CartSection() {
                             </Table>
                         </S.CartTable>
                         <div className="mt-4 pt-2 text-right">
-                            <Link to="/" className="btn btn-primary">
+                            <Link
+                                to={path.checkout}
+                                className="btn btn-primary"
+                            >
                                 Thanh Toán
                             </Link>
                         </div>
