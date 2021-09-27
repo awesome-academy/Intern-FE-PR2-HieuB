@@ -11,6 +11,7 @@ import ProductList from "./Page/ProductList/ProductList";
 import Cart from "./Page/Cart/Cart";
 import Checkout from "./Page/Checkout/Checkout";
 import ThankYou from "./Page/Checkout/ThankYou";
+import UserManager from "./Page/UserManager/UserManager";
 
 function Routes() {
     return (
@@ -47,6 +48,11 @@ function Routes() {
             <Route path={path.checkout}>
                 <MainLayout>
                     <Checkout></Checkout>
+                </MainLayout>
+            </Route>
+            <Route path={path.usermanager}>
+                <MainLayout>
+                    <UserManager></UserManager>
                 </MainLayout>
             </Route>
             <Route path={path.notFound}>
