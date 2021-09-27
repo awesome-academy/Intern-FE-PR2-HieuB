@@ -4,16 +4,11 @@ import { useHistory } from "react-router-dom";
 import HeaderAccountItem from "./HeaderAccountItem";
 import { LocalStorage } from "../../../Page/constants/localStorage";
 import { path } from "../../../Page/constants/path";
-import { useDispatch } from "react-redux";
-import { addToCart } from "../../../slice/productDetail.slice";
-import { setCart } from "../../../slice/cart.slice";
 
 function HeaderAccountList() {
     const history = useHistory();
-    const dispatch = useDispatch();
     const handleLogOut = () => {
         localStorage.removeItem(LocalStorage.user);
-        dispatch(setCart([]));
         history.push(path.login);
     };
     return (

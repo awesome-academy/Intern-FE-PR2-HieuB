@@ -33,11 +33,27 @@ function ProductInformation({ product }) {
                             id: product.id,
                             image: product.image,
                             price: product.price,
-                            count: 1
+                            name: product.name,
+                            count: quantity,
+                            status: 0
                         }
                     ]
                 });
-                dispatch(setCart(cartList));
+                dispatch(
+                    setCart({
+                        userId: data.user.id,
+                        product: [
+                            {
+                                id: product.id,
+                                image: product.image,
+                                price: product.price,
+                                count: quantity,
+                                name: product.name,
+                                status: 0
+                            }
+                        ]
+                    })
+                );
             } else {
                 let userId = cartList.find((user) => {
                     return user.userId === data.user.id;
@@ -55,7 +71,9 @@ function ProductInformation({ product }) {
                                     id: product.id,
                                     image: product.image,
                                     price: product.price,
-                                    count: 1
+                                    name: product.name,
+                                    count: quantity,
+                                    status: 0
                                 });
                             }
                             dispatch(setCart(item));
@@ -69,11 +87,27 @@ function ProductInformation({ product }) {
                                 id: product.id,
                                 image: product.image,
                                 price: product.price,
-                                count: 1
+                                name: product.name,
+                                count: quantity,
+                                status: 0
                             }
                         ]
                     });
-                    dispatch(setCart(cartList));
+                    dispatch(
+                        setCart({
+                            userId: data.user.id,
+                            product: [
+                                {
+                                    id: product.id,
+                                    image: product.image,
+                                    price: product.price,
+                                    count: quantity,
+                                    name: product.name,
+                                    status: 0
+                                }
+                            ]
+                        })
+                    );
                 }
             }
             localStorage.setItem(LocalStorage.cart, JSON.stringify(cartList));

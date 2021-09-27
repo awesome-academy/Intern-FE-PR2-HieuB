@@ -3,7 +3,8 @@ import Button from "react-bootstrap/Button";
 import * as S from "./CartItem.styled";
 import QuantitySelect from "../../Section/MainSection/QuantitySelect/QuantitySelect";
 
-function CartItem() {
+function CartItem({ product }) {
+    const { count, image, price, name } = product;
     return (
         <tr>
             <td className="h6">
@@ -14,18 +15,20 @@ function CartItem() {
             <td>
                 <div className="d-flex align-items-center">
                     <S.CartImage
-                        src="https://api-ecom.duthanhduoc.com/images/bbea6d3e-e5b1-494f-ab16-02eece816d50.jpg"
+                        src={image}
                         className="img-fluid rounded shadow"
-                        alt=""
+                        alt="s"
                     />
-                    <h6 className="mb-0 ml-3 h4">T-Shirt</h6>
+                    <h6 className="mb-0 ml-3 h4">{name}</h6>
                 </div>
             </td>
-            <td className="text-center h4">$ 255.00</td>
+            <td className="text-center h4">{price}</td>
             <td className="text-center">
-                <QuantitySelect></QuantitySelect>
+                <QuantitySelect count={count}></QuantitySelect>
             </td>
-            <td className="text-center font-weight-bold h4">$510.00</td>
+            <td className="text-center font-weight-bold h4">
+                {Number(price * count)}
+            </td>
         </tr>
     );
 }

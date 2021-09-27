@@ -4,10 +4,10 @@ import Col from "react-bootstrap/Col";
 import Card from "react-bootstrap/Card";
 import Row from "react-bootstrap/Row";
 import RatingList from "../Rating/RatingList";
-import AddShoppingCartIcon from "@mui/icons-material/AddShoppingCart";
 import * as S from "./ProductItem.style";
 import { path } from "../../../../Page/constants/path";
 import { generateNameId } from "../../../../utils/helper";
+import ButtonAddToCart from "../../../Button/ButtonAddToCart";
 
 function ProductItemList({ product }) {
     return (
@@ -55,14 +55,9 @@ function ProductItemList({ product }) {
                                 {product.description}
                             </p>
                             <ul className="list-unstyled mb-0">
-                                <li className="mt-2 list-inline-item">
-                                    <Link
-                                        to="/"
-                                        className="btn btn-icon btn-pills btn-soft-danger"
-                                    >
-                                        <AddShoppingCartIcon></AddShoppingCartIcon>
-                                    </Link>
-                                </li>
+                                <ButtonAddToCart
+                                    product={product}
+                                ></ButtonAddToCart>
                             </ul>
                         </Card.Body>
                     </Col>
