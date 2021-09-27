@@ -18,6 +18,8 @@ import { useSelector } from "react-redux";
 import { changePageAdmin } from "../../../slice/filterAdmin.slice";
 
 function ProductForm({ setDisplayForm }) {
+    const dispatch = useDispatch();
+
     const {
         handleSubmit,
         register,
@@ -40,6 +42,10 @@ function ProductForm({ setDisplayForm }) {
         return null;
     };
 
+    const handleAddProduct = async (data) => {
+        console.log(data);
+    };
+
     return (
         <S.Panel>
             <div className="panel-heading d-flex align-items-center justify-content-between">
@@ -51,95 +57,157 @@ function ProductForm({ setDisplayForm }) {
                 ></HighlightOffIcon>
             </div>
             <div className="panel-body">
-                <Form>
+                <Form onSubmit={handleSubmit(handleAddProduct)}>
                     <Form.Group className="form-group mb-4 mb-4">
-                        <Form.Label>Email :</Form.Label>
+                        <Form.Label>Tên sản phẩm :</Form.Label>
                         <input
                             type="text"
-                            className={`form-control ${handleClass("email")}`}
-                            name="email"
-                            {...register("email", {
-                                ...rules.email,
-                                validate: {
-                                    email: rules.validate.email
-                                }
+                            className={`form-control ${handleClass("name")}`}
+                            name="name"
+                            {...register("name", {
+                                ...rules.required
                             })}
                         />
-                        <ErrorMessage name="email"></ErrorMessage>
+                        <ErrorMessage name="name"></ErrorMessage>
                     </Form.Group>
                     <Form.Group className="form-group mb-4">
-                        <Form.Label>Họ :</Form.Label>
+                        <Form.Label>Hình ảnh chính :</Form.Label>
                         <input
                             type="text"
-                            className={`form-control ${handleClass(
-                                "firstName"
-                            )}`}
-                            name="firstName"
-                            {...register("firstName", {
-                                ...rules.firstName,
-                                validate: {
-                                    firstName: rules.validate.name
-                                }
+                            className={`form-control ${handleClass("image")}`}
+                            name="image"
+                            {...register("image", {
+                                ...rules.required
                             })}
                         />
-                        <ErrorMessage name="firstName"></ErrorMessage>
+                        <ErrorMessage name="image"></ErrorMessage>
                     </Form.Group>
                     <Form.Group className="form-group mb-4">
-                        <Form.Label>Tên :</Form.Label>
+                        <Form.Label>Hình ảnh phụ 1 :</Form.Label>
                         <input
                             type="text"
-                            className={`form-control ${handleClass(
-                                "lastName"
-                            )}`}
-                            name="lastName"
-                            {...register("lastName", {
-                                ...rules.lastName,
-                                validate: {
-                                    lastName: rules.validate.name
-                                }
+                            className={`form-control ${handleClass("image1")}`}
+                            name="image1"
+                            {...register("image1", {
+                                ...rules.required
                             })}
                         />
-                        <ErrorMessage name="lastName"></ErrorMessage>
+                        <ErrorMessage name="image1"></ErrorMessage>
                     </Form.Group>
                     <Form.Group className="form-group mb-4">
-                        <Form.Label>Số điện thoại :</Form.Label>
+                        <Form.Label>Hình ảnh phụ 2 :</Form.Label>
                         <input
                             type="text"
-                            className={`form-control ${handleClass("phone")}`}
-                            name="phone"
-                            {...register("phone", {
-                                ...rules.phone,
+                            className={`form-control ${handleClass("image2")}`}
+                            name="image2"
+                            {...register("image2", {
+                                ...rules.required
+                            })}
+                        />
+                        <ErrorMessage name="image2"></ErrorMessage>
+                    </Form.Group>
+                    <Form.Group className="form-group mb-4">
+                        <Form.Label>Hình ảnh phụ 3 :</Form.Label>
+                        <input
+                            type="text"
+                            className={`form-control ${handleClass("image3")}`}
+                            name="image3"
+                            {...register("image3", {
+                                ...rules.required
+                            })}
+                        />
+                        <ErrorMessage name="image3"></ErrorMessage>
+                    </Form.Group>
+                    <Form.Group className="form-group mb-4">
+                        <Form.Label>Hình ảnh phụ 4 :</Form.Label>
+                        <input
+                            type="text"
+                            className={`form-control ${handleClass("image4")}`}
+                            name="image4"
+                            {...register("image4", {
+                                ...rules.required
+                            })}
+                        />
+                        <ErrorMessage name="image4"></ErrorMessage>
+                    </Form.Group>
+                    <Form.Group className="form-group mb-4">
+                        <Form.Label>Giá :</Form.Label>
+                        <input
+                            type="text"
+                            className={`form-control ${handleClass("price")}`}
+                            name="price"
+                            {...register("price", {
+                                ...rules.required,
                                 validate: {
-                                    phone: rules.validate.phone
+                                    number: rules.validate.number
                                 }
                             })}
                         />
 
-                        <ErrorMessage name="phone"></ErrorMessage>
+                        <ErrorMessage name="price"></ErrorMessage>
                     </Form.Group>
                     <Form.Group className="form-group mb-4">
-                        <Form.Label>Địa chỉ :</Form.Label>
+                        <Form.Label>Mô tả :</Form.Label>
                         <input
                             type="text"
-                            className={`form-control ${handleClass("address")}`}
-                            name="address"
-                            {...register("address", {
-                                ...rules.address
+                            className={`form-control ${handleClass(
+                                "description"
+                            )}`}
+                            name="description"
+                            {...register("description", {
+                                ...rules.required
                             })}
                         />
-                        <ErrorMessage name="address"></ErrorMessage>
+                        <ErrorMessage name="description"></ErrorMessage>
                     </Form.Group>
-
-                    <Form.Label>Vai trò :</Form.Label>
                     <Form.Group className="form-group mb-4">
+                        <Form.Label>Giá trước khi giảm :</Form.Label>
+
+                        <input
+                            type="text"
+                            className={`form-control ${handleClass(
+                                "priceBeforeDisCount"
+                            )}`}
+                            name="priceBeforeDisCount"
+                            {...register("priceBeforeDisCount", {
+                                ...rules.required,
+                                validate: {
+                                    number: rules.validate.number
+                                }
+                            })}
+                        />
+                        <ErrorMessage name="priceBeforeDisCount"></ErrorMessage>
+                    </Form.Group>
+                    <Form.Group className="form-group mb-4">
+                        <Form.Label>Số lượng :</Form.Label>
+
+                        <input
+                            type="text"
+                            className={`form-control ${handleClass(
+                                "quantity"
+                            )}`}
+                            name="quantity"
+                            {...register("quantity", {
+                                ...rules.required,
+                                validate: {
+                                    number: rules.validate.number
+                                }
+                            })}
+                        />
+                        <ErrorMessage name="quantity"></ErrorMessage>
+                    </Form.Group>
+                    <Form.Group className="form-group mb-4">
+                        <Form.Label>Thể loại :</Form.Label>
                         <Form.Select
-                            className={`form-control ${handleClass("role")}`}
-                            name="role"
-                            {...register("role")}
+                            className={`form-control ${handleClass(
+                                "category"
+                            )}`}
+                            name="category"
+                            {...register("category")}
                         >
-                            <option value="user">Người dùng</option>
-                            <option value="admin">Admin</option>
-                            <option value="notactive">Huỷ kích hoạt</option>
+                            <option value={1}>Áo thun</option>
+                            <option value={2}>Đồng hồ</option>
+                            <option value={3}>Điện thoại</option>
                         </Form.Select>
                     </Form.Group>
                     <div className="text-center mt-5">

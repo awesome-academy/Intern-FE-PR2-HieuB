@@ -231,8 +231,8 @@ function TaskForm({ setDisplayForm }) {
                         </Form.Group>
                     )}
 
-                    <Form.Label>Vai trò :</Form.Label>
                     <Form.Group className="form-group mb-4">
+                        <Form.Label>Vai trò :</Form.Label>
                         <Form.Select
                             className={`form-control ${handleClass("role")}`}
                             name="role"
