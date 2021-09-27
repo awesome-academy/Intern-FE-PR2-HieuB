@@ -4,13 +4,18 @@ import SearchIcon from "@mui/icons-material/Search";
 import Button from "react-bootstrap/Button";
 import { useDispatch } from "react-redux";
 import { changeQAdmin } from "../../../slice/filterAdmin.slice";
-function Search() {
+import { changeQAdminProduct } from "../../../slice/filterAdminProduct.slice";
+function Search({ type }) {
     const [keyword, setKeyword] = useState("");
 
     const dispatch = useDispatch();
 
     const handleSearch = (e) => {
-        dispatch(changeQAdmin(e.target.value));
+        if (type === "user") {
+            dispatch(changeQAdmin(e.target.value));
+        } else if (type === "product") {
+            dispatch(changeQAdminProduct(e.target.value));
+        }
         setKeyword(e.target.value);
     };
 

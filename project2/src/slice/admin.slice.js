@@ -1,6 +1,7 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import adminAPI from "../api/adminAPI";
 import authAPI from "../api/authAPI";
+import productsAPI from "../api/productsAPI";
 
 export const getUserAll = createAsyncThunk(
     "admin/getUser",
@@ -60,13 +61,26 @@ export const updateUser = createAsyncThunk(
     }
 );
 
+export const getCountPageProduct = createAsyncThunk(
+    "admin/getCountProduct",
+    async (params, thunkAPI) => {
+        try {
+            const response = await productsAPI.getTotalCount(params);
+            return response;
+        } catch (error) {
+            return thunkAPI.rejectWithValue(error);
+        }
+    }
+);
+
 const adminUser = createSlice({
     name: "admin",
     initialState: {
         profile: [],
         loading: false,
         error: "",
-        countPage: ""
+        countPage: "",
+        countPageProduct: ""
     },
     extraReducers: {
         [getUserAll.fulfilled]: (state, action) => {
@@ -90,6 +104,18 @@ const adminUser = createSlice({
             state.loading = true;
         },
         [getTotalCountAdmin.rejected]: (state, action) => {
+            state.loading = false;
+            state.error = action.error.message;
+        },
+        [getCountPageProduct.fulfilled]: (state, action) => {
+            state.loading = false;
+            state.countPageProduct = action.payload;
+            state.error = "";
+        },
+        [getCountPageProduct.pending]: (state, action) => {
+            state.loading = true;
+        },
+        [getCountPageProduct.rejected]: (state, action) => {
             state.loading = false;
             state.error = action.error.message;
         }

@@ -5,6 +5,7 @@ import categoriesReducer from "./categories.slice";
 import commentReducer from "./comment.slice";
 import filterReducer from "./filter.slice";
 import filterAdminReducer from "./filterAdmin.slice";
+import filterAdminProductReducer from "./filterAdminProduct.slice";
 import managerReducer from "./manager.slice";
 import productsReducer from "./products.slice";
 
@@ -17,7 +18,8 @@ const rootReducer = {
     comment: commentReducer,
     filterAdmin: filterAdminReducer,
     adminUser: adminUserReducer,
-    manager: managerReducer
+    manager: managerReducer,
+    filterAdminProduct: filterAdminProductReducer
 };
 
 export default rootReducer;

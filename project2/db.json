@@ -1149,7 +1149,7 @@
       "lastName": "hieu",
       "phone": "0935062414",
       "address": "40 An Hải Bắc",
-      "role": "user",
+      "role": "notactive",
       "id": 4
     },
     {
@@ -1193,13 +1193,13 @@
       "id": 8
     },
     {
-      "email": "dang.thi.thu1y.hang@sun-asterisk.com",
-      "password": "$2a$10$/reiwb0xdICR5x1Tewt0ouX5CK3yvuHG9w5VqhbIUn.cj0Iwb90au",
+      "email": "nguyen.min22h.hieu-b@sun-asterisk.com",
+      "password": "$2a$10$V/2ZDJjWIcf2MJfPiqmk4Oo0bvsszzp4Okkei4w7UZFjXRFKxkfR.",
       "firstName": "jjjjjj",
       "lastName": "hieu",
       "phone": "0935062414",
       "address": "40 An Hải Bắc",
-      "role": "admin",
+      "role": "user",
       "id": 9
     }
   ],
@@ -1219,150 +1219,48 @@
           "count": 2,
           "name": "Áo Thun Cộc Tay COTTON Thoáng Mát - Trắng | HN052"
         }
-    ],
-    "payments": [
+      ],
+      "id": 1
+    },
+    {
+      "fullname": "Nguyen minh hieu",
+      "email": "nguyen.minh.hieu-b@sun-asterisk.com",
+      "address": "40 An Hải Bắc",
+      "phone": "0935062414",
+      "paymentType": "pay-home",
+      "userId": 1,
+      "product": [
         {
-            "fullname": "Nguyen minh hieu",
-            "email": "nguyen.minh.hieu-b@sun-asterisk.com",
-            "address": "40 An Hải Bắc",
-            "phone": "0935062414",
-            "paymentType": "pay-home",
-            "userId": 1,
-            "product": [
-                {
-                    "id": 36,
-                    "image": "https://api-ecom.duthanhduoc.com/images/235a703e-304f-484a-b0e6-357688801d77.jpg",
-                    "price": 25000,
-                    "count": 2,
-                    "name": "Áo Thun Cộc Tay COTTON Thoáng Mát - Trắng | HN052"
-                }
-            ],
-            "id": 1
-        },
-        {
-            "fullname": "Nguyen minh hieu",
-            "email": "nguyen.minh.hieu-b@sun-asterisk.com",
-            "address": "40 An Hải Bắc",
-            "phone": "0935062414",
-            "paymentType": "pay-home",
-            "userId": 1,
-            "product": [
-                {
-                    "id": 4,
-                    "image": "https://api-ecom.duthanhduoc.com/images/51ef469d-0eb5-48fb-958d-ce2b9c664adc.jpg",
-                    "price": 2130000,
-                    "count": 1,
-                    "name": "Điện Thoại Realme C11 (2GB/32GB) - Hàng Chính Hãng"
-                }
-            ],
-            "id": 2
-        },
-        {
-            "fullname": "Nguyen minh hieu",
-            "email": "nguyen.minh.hieu-b@sun-asterisk.com",
-            "address": "40 An Hải Bắc",
-            "phone": "0935062414",
-            "paymentType": "pay-bank",
-            "userId": 1,
-            "product": [
-                {
-                    "id": 16,
-                    "image": "https://api-ecom.duthanhduoc.com/images/ee1f61e3-2029-43fd-a66d-d746c8fd637c.jpg",
-                    "price": 69000,
-                    "count": 1,
-                    "name": "[Mã FADI5K245 giảm 5K đơn 0đ] Áo thun tay lỡ Gấu194 unisex form rộng trơn chữ vải coton mềm mịn co dãn 4 chiều - GAU1994"
-                },
-                {
-                    "id": 10,
-                    "image": "https://api-ecom.duthanhduoc.com/images/a04c55a2-9569-4a59-a6de-2b3bbdcb570a.jpg",
-                    "price": 229000,
-                    "count": 1,
-                    "name": "Đồng Hồ Nam WWOOR 8018 Dây Thép Nhật Cao Cấp Nhiều Màu"
-                }
-            ],
-            "id": 3
+          "id": 4,
+          "image": "https://api-ecom.duthanhduoc.com/images/51ef469d-0eb5-48fb-958d-ce2b9c664adc.jpg",
+          "price": 2130000,
+          "count": 1,
+          "name": "Điện Thoại Realme C11 (2GB/32GB) - Hàng Chính Hãng"
         }
-    ],
-    "comments": [
+      ],
+      "id": 2
+    },
+    {
+      "fullname": "Nguyen minh hieu",
+      "email": "nguyen.minh.hieu-b@sun-asterisk.com",
+      "address": "40 An Hải Bắc",
+      "phone": "0935062414",
+      "paymentType": "pay-bank",
+      "userId": 1,
+      "product": [
         {
-            "userId": 1,
-            "rating": 5,
-            "comment": "hế lô",
-            "productId": 5,
-            "name": "jjjjjjhieu",
-            "id": 4
+          "id": 16,
+          "image": "https://api-ecom.duthanhduoc.com/images/ee1f61e3-2029-43fd-a66d-d746c8fd637c.jpg",
+          "price": 69000,
+          "count": 1,
+          "name": "[Mã FADI5K245 giảm 5K đơn 0đ] Áo thun tay lỡ Gấu194 unisex form rộng trơn chữ vải coton mềm mịn co dãn 4 chiều - GAU1994"
         },
         {
-            "userId": 1,
-            "rating": 4,
-            "comment": "aloooo",
-            "productId": 5,
-            "name": "jjjjjjhieu",
-            "id": 5
-        },
-        {
-            "userId": 1,
-            "rating": 2,
-            "comment": "cádsdsd",
-            "productId": 5,
-            "name": "jjjjjjhieu",
-            "id": 6
-        },
-        {
-            "userId": 1,
-            "rating": 5,
-            "comment": "ưewewe",
-            "productId": 5,
-            "name": "jjjjjjhieu",
-            "id": 7
-        },
-        {
-            "userId": 1,
-            "rating": 5,
-            "comment": "dưqdwadasdasd",
-            "productId": 5,
-            "name": "jjjjjjhieu",
-            "id": 8
-        },
-        {
-            "userId": 1,
-            "rating": 5,
-            "comment": "aaaaaaaaaaaa",
-            "productId": 5,
-            "name": "jjjjjjhieu",
-            "id": 9
-        },
-        {
-            "userId": 1,
-            "rating": 5,
-            "comment": "bbbbbbbb",
-            "productId": 5,
-            "name": "jjjjjjhieu",
-            "id": 10
-        },
-        {
-            "userId": 1,
-            "rating": 1,
-            "comment": "hihihihihihi",
-            "productId": 5,
-            "name": "jjjjjjhieu",
-            "id": 11
-        },
-        {
-            "userId": 1,
-            "rating": 5,
-            "comment": "hihihihihihi",
-            "productId": 34,
-            "name": "jjjjjjhieu",
-            "id": 12
-        },
-        {
-            "userId": 1,
-            "rating": 5,
-            "comment": "aaaaa",
-            "productId": 36,
-            "name": "jjjjjjhieu",
-            "id": 13
+          "id": 10,
+          "image": "https://api-ecom.duthanhduoc.com/images/a04c55a2-9569-4a59-a6de-2b3bbdcb570a.jpg",
+          "price": 229000,
+          "count": 1,
+          "name": "Đồng Hồ Nam WWOOR 8018 Dây Thép Nhật Cao Cấp Nhiều Màu"
         }
       ],
       "id": 3

@@ -6,7 +6,7 @@ import Row from "react-bootstrap/Row";
 function Control({ type }) {
     return (
         <Row className="mt-4">
-            <Search></Search>
+            <Search type={type}></Search>
             <Sort type={type}></Sort>
         </Row>
     );
