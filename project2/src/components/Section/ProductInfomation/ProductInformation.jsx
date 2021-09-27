@@ -11,10 +11,10 @@ function ProductInformation({ product }) {
             <div className="section-title ml-md-4">
                 <h4 className="title h3">{name}</h4>
                 <h5 className="text-muted">
-                    {price}{" "}
+                    {price}
                     <del className="text-danger ml-4">
                         {price_before_discount}
-                    </del>{" "}
+                    </del>
                 </h5>
                 <RatingList rating={rating}></RatingList>
                 <h5 className="mt-4 py-2">Overview :</h5>
