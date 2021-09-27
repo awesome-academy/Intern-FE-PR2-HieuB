@@ -9,13 +9,16 @@ import Col from "react-bootstrap/Col";
 import Card from "react-bootstrap/Card";
 import Form from "react-bootstrap/Form";
 import * as S from "../auth.style";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { useForm } from "react-hook-form";
 import { rules } from "../../constants/rules";
+import { postLogin } from "../../../slice/auth.slice";
+import { unwrapResult } from "@reduxjs/toolkit";
 
 function Login() {
     const dispatch = useDispatch();
     const history = useHistory();
+    const error = useSelector((value) => value.auth.error);
     const {
         handleSubmit,
         register,
@@ -23,7 +26,18 @@ function Login() {
     } = useForm();
 
     const handleLogin = async (data) => {
-        console.log(data);
+        const { email, password } = data;
+        const body = {
+            email,
+            password
+        };
+        try {
+            const res = await dispatch(postLogin(body));
+            unwrapResult(res);
+            history.push(path.home);
+        } catch (error) {
+            console.log(error);
+        }
     };
 
     const handleClass = (name, baseClass = "form-control") => {
@@ -163,6 +177,12 @@ function Login() {
                                                     </Link>
                                                 </p>
                                             </Col>
+                                            <Form.Control.Feedback
+                                                type="invalid"
+                                                className="d-block mb-4"
+                                            >
+                                                {error}
+                                            </Form.Control.Feedback>
                                         </Row>
                                     </Form>
                                 </Card.Body>

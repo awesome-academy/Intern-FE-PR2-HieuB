@@ -14,6 +14,18 @@ export const postRegister = createAsyncThunk(
     }
 );
 
+export const postLogin = createAsyncThunk(
+    "auth/login",
+    async (params, thunkAPI) => {
+        try {
+            const response = await authAPI.login(params);
+            return response;
+        } catch (error) {
+            return thunkAPI.rejectWithValue(error);
+        }
+    }
+);
+
 const auth = createSlice({
     name: "auth",
     initialState: {
@@ -23,18 +35,32 @@ const auth = createSlice({
     },
     extraReducers: {
         [postRegister.fulfilled]: (state, action) => {
+            state.loading = false;
             state.profile = action.payload.data;
-            localStorage.setItem(
-                LocalStorage.user,
-                JSON.stringify(state.profile)
-            );
+            state.error = "";
         },
         [postRegister.pending]: (state, action) => {
             state.loading = true;
         },
         [postRegister.rejected]: (state, action) => {
+            state.loading = false;
+            state.error = action.payload.message;
+        },
+        [postLogin.fulfilled]: (state, action) => {
+            state.loading = false;
             state.profile = action.payload.data;
-            state.error = action.payload;
+            localStorage.setItem(
+                LocalStorage.user,
+                JSON.stringify(state.profile)
+            );
+            state.error = "";
+        },
+        [postLogin.pending]: (state, action) => {
+            state.loading = true;
+        },
+        [postLogin.rejected]: (state, action) => {
+            state.loading = false;
+            state.error = action.payload.message;
         }
     }
 });
