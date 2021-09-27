@@ -23,7 +23,9 @@ function AccountSection() {
                             />
                             <div className="ml-3">
                                 <h6 className="text-muted mb-0">Hello,</h6>
-                                <h5 className="mb-0">Cally Joseph</h5>
+                                <h5 className="mb-0">
+                                    {profile.data && profile.data.lastName}
+                                </h5>
                             </div>
                         </div>
                     </Col>
@@ -59,7 +61,7 @@ function AccountSection() {
                                 <Col sm={9} className="border-left">
                                     <Tab.Content>
                                         <Tab.Pane eventKey="user">
-                                            <Info></Info>
+                                            <Info profile={profile}></Info>
                                         </Tab.Pane>
                                         <Tab.Pane eventKey="orderHistory">
                                             <OrderHistory></OrderHistory>

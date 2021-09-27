@@ -31,7 +31,9 @@ function Register() {
             firstName,
             lastName,
             email,
-            password
+            password,
+            address: "",
+            phone: ""
         };
         try {
             const res = await dispatch(postRegister(body));

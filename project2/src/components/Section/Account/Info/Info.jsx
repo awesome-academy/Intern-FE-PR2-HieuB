@@ -5,17 +5,56 @@ import Col from "react-bootstrap/Col";
 import { useForm } from "react-hook-form";
 import { rules } from "../../../../Page/constants/rules";
 import Button from "react-bootstrap/Button";
+import { LocalStorage } from "../../../../Page/constants/localStorage";
+import { useDispatch } from "react-redux";
+import { updateMe } from "../../../../slice/auth.slice";
+import { unwrapResult } from "@reduxjs/toolkit";
+import { useHistory } from "react-router";
+import { path } from "../../../../Page/constants/path";
+import { setCart } from "../../../../slice/cart.slice";
 
-function Info() {
+function Info({ profile }) {
+    const dispatch = useDispatch();
+    const history = useHistory();
     const {
         handleSubmit,
         register,
         getValues,
         formState: { errors }
-    } = useForm();
-    console.log(errors);
+    } = useForm({
+        firstName: profile.data && profile.data.firstName,
+        lastName: profile.data && profile.data.lastName,
+        phone: profile.data && profile.data.phone,
+        address: profile.data && profile.data.address
+    });
+
     const handleSaveInfo = async (data) => {
-        console.log(data);
+        const userId = JSON.parse(localStorage.getItem(LocalStorage.user)).user
+            .id;
+        const token = JSON.parse(
+            localStorage.getItem(LocalStorage.user)
+        ).accessToken;
+        const { firstName, lastName, phone, address, newPassword } = data;
+        const params = {
+            id: userId,
+            token,
+            body: {
+                firstName,
+                lastName,
+                phone,
+                address,
+                password: newPassword
+            }
+        };
+        try {
+            const res = await dispatch(updateMe(params));
+            unwrapResult(res);
+            history.push(path.login);
+            localStorage.removeItem(LocalStorage.user);
+            dispatch(setCart({}));
+        } catch (error) {
+            console.log(error);
+        }
     };
 
     const handleClass = (name, baseClass = "form-control") => {
@@ -42,14 +81,16 @@ function Info() {
                             <Form.Label className="h4">Họ</Form.Label>
                             <div className="position-relative">
                                 <input
-                                    name="first-name"
+                                    name="firstName"
                                     id="first-name"
                                     type="text"
                                     className={`form-control pl-5 ${handleClass(
                                         "first-name"
                                     )}`}
-                                    defaultValue="Cally"
-                                    {...register("first-name", {
+                                    defaultValue={
+                                        profile.data && profile.data.firstName
+                                    }
+                                    {...register("firstName", {
                                         ...rules.firstName,
                                         validate: {
                                             name: rules.validate.name
@@ -58,21 +99,23 @@ function Info() {
                                 />
                             </div>
                         </Form.Group>
-                        <ErrorMessage name="first-name"></ErrorMessage>
+                        <ErrorMessage name="firstName"></ErrorMessage>
                     </Col>
                     <Col md="6">
                         <Form.Group className="mb-4">
                             <Form.Label className="h4">Tên</Form.Label>
                             <div className="position-relative">
                                 <input
-                                    name="last-name"
+                                    name="lastName"
                                     id="last-name"
                                     type="text"
                                     className={`form-control pl-5 ${handleClass(
                                         "last-name"
                                     )}`}
-                                    defaultValue="Joseph"
-                                    {...register("last-name", {
+                                    defaultValue={
+                                        profile.data && profile.data.lastName
+                                    }
+                                    {...register("lastName", {
                                         ...rules.lastName,
                                         validate: {
                                             name: rules.validate.name
@@ -81,30 +124,29 @@ function Info() {
                                 />
                             </div>
                         </Form.Group>
-                        <ErrorMessage name="last-name"></ErrorMessage>
+                        <ErrorMessage name="lastName"></ErrorMessage>
                     </Col>
                     <Col md="6">
                         <Form.Group className="mb-4">
-                            <Form.Label className="h4">Email</Form.Label>
+                            <Form.Label className="h4">Địa chỉ</Form.Label>
                             <div className="position-relative">
                                 <input
-                                    name="email"
-                                    id="email"
-                                    type="email"
+                                    name="address"
+                                    id="address"
+                                    type="text"
                                     className={`form-control pl-5 ${handleClass(
-                                        "email"
+                                        "address"
                                     )}`}
-                                    defaultValue="callyjoseph@gmail.com"
-                                    {...register("email", {
-                                        ...rules.email,
-                                        validate: {
-                                            email: rules.validate.email
-                                        }
+                                    defaultValue={
+                                        profile.data && profile.data.address
+                                    }
+                                    {...register("address", {
+                                        ...rules.address
                                     })}
                                 />
                             </div>
                         </Form.Group>
-                        <ErrorMessage name="email"></ErrorMessage>
+                        <ErrorMessage name="address"></ErrorMessage>
                     </Col>
                     <Col md="6">
                         <Form.Group className="mb-4">
@@ -119,7 +161,9 @@ function Info() {
                                     className={`form-control pl-5 ${handleClass(
                                         "phone"
                                     )}`}
-                                    defaultValue="0935062414"
+                                    defaultValue={
+                                        profile.data && profile.data.phone
+                                    }
                                     {...register("phone", {
                                         ...rules.phone,
                                         validate: {
@@ -140,17 +184,17 @@ function Info() {
                                 <input
                                     type="password"
                                     className={`form-control pl-5 ${handleClass(
-                                        "password"
+                                        "oldPassword"
                                     )}`}
                                     placeholder="Old password"
-                                    name="old-password"
-                                    {...register("old-password", {
+                                    name="oldPassword"
+                                    {...register("oldPassword", {
                                         ...rules.confirmPassword
                                     })}
                                 />
                             </div>
                         </Form.Group>
-                        <ErrorMessage name="old-password"></ErrorMessage>
+                        <ErrorMessage name="oldPassword"></ErrorMessage>
                     </Col>
                     <Col xs="12">
                         <Form.Group className="mb-4">
@@ -161,23 +205,23 @@ function Info() {
                                 <input
                                     type="password"
                                     className={`form-control pl-5 ${handleClass(
-                                        "new-password"
+                                        "newPassword"
                                     )}`}
                                     placeholder="New password"
-                                    name="new-password"
-                                    {...register("new-password", {
+                                    name="newPassword"
+                                    {...register("newPassword", {
                                         ...rules.confirmPassword,
                                         validate: {
                                             confirmPassword: (value) =>
-                                                value ===
-                                                    getValues("old-password") ||
-                                                "Mật khẩu không khớp"
+                                                value !==
+                                                    getValues("oldPassword") ||
+                                                "Mật khẩu không được trùng với mật khẩu cũ"
                                         }
                                     })}
                                 />
                             </div>
                         </Form.Group>
-                        <ErrorMessage name="new-password"></ErrorMessage>
+                        <ErrorMessage name="newPassword"></ErrorMessage>
                     </Col>
                     <Col xs="12">
                         <Form.Group className="mb-4">
@@ -188,23 +232,23 @@ function Info() {
                                 <input
                                     type="password"
                                     className={`form-control pl-5 ${handleClass(
-                                        "confirm-newpassword"
+                                        "confirmNewPassword"
                                     )}`}
                                     placeholder="Re-type New password"
-                                    name="confirm-newpassword"
-                                    {...register("new-password", {
+                                    name="confirmNewPassword"
+                                    {...register("confirmNewPassword", {
                                         ...rules.confirmPassword,
                                         validate: {
                                             confirmPassword: (value) =>
                                                 value ===
-                                                    getValues("new-password") ||
+                                                    getValues("newPassword") ||
                                                 "Mật khẩu phải khớp với mật khẩu mới"
                                         }
                                     })}
                                 />
                             </div>
                         </Form.Group>
-                        <ErrorMessage name="confirm-newpassword"></ErrorMessage>
+                        <ErrorMessage name="confirmNewPassword"></ErrorMessage>
                     </Col>
                     <Col xs="12" className="mt-2 mb-0">
                         <Button type="submit" className="btn btn-primary">
