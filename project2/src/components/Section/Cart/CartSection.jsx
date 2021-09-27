@@ -8,6 +8,7 @@ import { Link } from "react-router-dom";
 import * as S from "./CartSection.style";
 import { useDispatch, useSelector } from "react-redux";
 import { setCart } from "../../../slice/cart.slice";
+import { formatCurrency } from "../../../utils/helper";
 
 function CartSection() {
     const dispatch = useDispatch();
@@ -86,9 +87,9 @@ function CartSection() {
                             <Table className="table table-center table-padding mb-0">
                                 <tbody>
                                     <tr className="bg-light">
-                                        <td className="h6">Total</td>
+                                        <td className="h6">Tổng thanh toán</td>
                                         <td className="text-center font-weight-bold h4">
-                                            {getTotalMoney()}
+                                            {formatCurrency(getTotalMoney())}
                                         </td>
                                     </tr>
                                 </tbody>

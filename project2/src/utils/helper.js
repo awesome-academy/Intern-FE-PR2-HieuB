@@ -20,3 +20,10 @@ export const getIdFromNameID = (url) => {
     const arr = url.split("-i.");
     return arr[arr.length - 1];
 };
+
+export const formatCurrency = (value) => {
+    return value.toLocaleString("it-IT", {
+        style: "currency",
+        currency: "VND"
+    });
+};
