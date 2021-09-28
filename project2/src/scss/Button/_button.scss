@@ -1,0 +1,40 @@
+.btn {
+    padding: 0.8rem 2rem;
+    outline: none;
+    text-decoration: none;
+    font-size: 1.6rem;
+    letter-spacing: 0.05rem;
+    transition: all 0.3s;
+    font-weight: 600;
+    border-radius: 0.6rem;
+}
+
+.btn.btn-icon {
+    height: 3.6rem;
+    width: 3.6rem;
+    padding: 0;
+    margin-right: 1rem;
+
+    &::after {
+        display: none;
+    }
+
+    .icons {
+        height: 1.6rem;
+        width: 1.6rem;
+        font-size: 1.6rem;
+        color: $text-white;
+    }
+}
+
+button:not(:disabled) {
+    outline: none;
+}
+
+.btn-soft-danger {
+    background-color: rgba(228, 63, 82, 0.692) !important;
+    border: 1px solid rgba(228, 63, 82, 0.945) !important;
+    color: $text-white;
+    box-shadow: 0 3px 5px rgba(228, 63, 82, 0.884);
+    padding-top: 0.2rem !important;
+}

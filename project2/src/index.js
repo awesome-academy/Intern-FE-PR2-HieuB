@@ -2,9 +2,8 @@ import React from "react";
 import ReactDOM from "react-dom";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
-import "../src/assets/styles/bootstrap.min.css";
-import "../src/assets/styles/style.css";
-import "../src/assets/styles/materialdesignicons.min.css";
+import "bootstrap/dist/css/bootstrap.min.css";
+import "./scss/style.scss";
 
 ReactDOM.render(
     <React.StrictMode>
