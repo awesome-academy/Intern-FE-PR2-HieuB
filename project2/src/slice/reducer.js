@@ -1,7 +1,7 @@
-import mostViewedProductsReducer from "./mostViewedProducts.slice";
+import categoriesReducer from "./categories.slice";
 
 const rootReducer = {
-    mostViewedProducts: mostViewedProductsReducer
+    categories: categoriesReducer
 };
 
 export default rootReducer;
