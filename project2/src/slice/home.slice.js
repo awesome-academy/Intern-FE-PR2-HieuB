@@ -1,18 +1,24 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
 import productsAPI from "../api/productsAPI";
 
-export const getPopularProducts = createAsyncThunk(
-    "PopularProducts",
-    async () => {
-        const response = await productsAPI.getPopularProducts();
+export const getProductsMostViewed = createAsyncThunk(
+    "MostViewedProducts",
+    async (params) => {
+        const response = await productsAPI.getMostViewedProducts(
+            params.limit,
+            params.order
+        );
         return response;
     }
 );
 
-export const getProductsMostViewed = createAsyncThunk(
-    "MostViewedProducts",
-    async () => {
-        const response = await productsAPI.getMostViewedProducts();
+export const getPopularProducts = createAsyncThunk(
+    "PopularProducts",
+    async (params) => {
+        const response = await productsAPI.getPopularProducts(
+            params.limit,
+            params.order
+        );
         return response;
     }
 );

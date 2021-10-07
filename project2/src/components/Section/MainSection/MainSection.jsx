@@ -3,12 +3,12 @@ import Category from "./Categories/Category";
 import PopularProduct from "./Product/PopularProduct";
 import ProductMostViewed from "./Product/ProductMostViewed";
 
-function MainSection() {
+function MainSection({ categories, popularProducts, mostViewProducts }) {
     return (
         <section className="section">
-            <ProductMostViewed></ProductMostViewed>
-            <Category></Category>
-            <PopularProduct></PopularProduct>
+            <ProductMostViewed products={mostViewProducts}></ProductMostViewed>
+            <Category categories={categories}></Category>
+            <PopularProduct products={popularProducts}></PopularProduct>
         </section>
     );
 }

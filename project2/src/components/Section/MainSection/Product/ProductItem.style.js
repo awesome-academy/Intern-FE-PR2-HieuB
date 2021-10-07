@@ -1,7 +1,16 @@
 import styled from "styled-components";
+import { Link } from "react-router-dom";
 
 export const CardImage = styled.div`
     width: 100%;
+`;
+
+export const CardName = styled(Link)`
+    text-overflow: ellipsis;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    display: -webkit-box;
+    overflow: hidden;
 `;
 
 export const ShopIcon = styled.ul`
