@@ -5,6 +5,7 @@ import Register from "./Page/Auth/Register/Register";
 import { path } from "./Page/constants/path";
 import HomePage from "./Page/Home/HomePage";
 import NotFound from "./Page/NotFound/NotFound";
+import ProductList from "./Page/ProductList/ProductList";
 
 function Routes() {
     return (
@@ -17,6 +18,9 @@ function Routes() {
             </Route>
             <Route path={path.register}>
                 <Register></Register>
+            </Route>
+            <Route path={path.productList}>
+                <ProductList></ProductList>
             </Route>
             <Route path={path.notFound}>
                 <NotFound></NotFound>

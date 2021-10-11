@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import NavDropdown from "react-bootstrap/NavDropdown";
+import { colors } from "../../Page/constants/colors";
 
 export const Header = styled.header`
     position: fixed;
@@ -26,7 +27,7 @@ export const NavbarItem = styled.span`
     display: block;
     position: relative;
     margin: 0 1rem;
-    color: #3c4858;
+    color: ${colors.bgDark};
     font-size: 1.3rem;
     background-color: transparent !important;
     font-weight: 700;
