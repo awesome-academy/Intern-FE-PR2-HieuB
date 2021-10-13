@@ -24,6 +24,12 @@ const productsAPI = {
         return configAPI.get(url).then(function (response) {
             return response.data;
         });
+    },
+    getTotalCount: (params) => {
+        const url = "/products/";
+        return configAPI.get(url, { params }).then(function (response) {
+            return response.headers["x-total-count"];
+        });
     }
 };
 

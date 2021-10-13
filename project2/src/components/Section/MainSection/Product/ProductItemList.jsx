@@ -7,7 +7,7 @@ import RatingList from "../Rating/RatingList";
 import AddShoppingCartIcon from "@mui/icons-material/AddShoppingCart";
 import * as S from "./ProductItem.style";
 
-function ProductItemList() {
+function ProductItemList({ product }) {
     return (
         <Col xs="12" className="mt-4 pt-2">
             <Card className="border-0 shadow position-relative">
@@ -16,7 +16,7 @@ function ProductItemList() {
                         <div className="shop-image position-relative overflow-hidden">
                             <Link to="/">
                                 <img
-                                    src="https://api-ecom.duthanhduoc.com/images/1881b221-e9df-4b91-8d13-9d46c995a5d6.jpg"
+                                    src={product.image}
                                     className="img-fluid"
                                     alt="a"
                                 />
@@ -29,21 +29,22 @@ function ProductItemList() {
                                 to="/"
                                 className="text-dark product-name h2"
                             >
-                                Branded T-Shirt
+                                {product.name}
                             </S.CardName>
                             <div className="d-lg-flex align-items-center mt-2 mb-3 justify-content-between">
                                 <h6 className="text-muted font-italic mb-0 mr-3">
-                                    $16.00
+                                    {product.price}
                                     <del className="text-danger ml-4">
-                                        $21.00
+                                        {product.price_before_discount}
                                     </del>
                                 </h6>
-                                <RatingList rating={3}></RatingList>
+                                <RatingList
+                                    rating={product.rating}
+                                    sidebar={false}
+                                ></RatingList>
                             </div>
                             <p className="para-desc text-muted py-3">
-                                This is required when, for example, the final
-                                text is not yet available. Dummy text is also
-                                known as 'fill text'.
+                                {product.description}
                             </p>
                             <ul className="list-unstyled mb-0">
                                 <li className="mt-2 list-inline-item">

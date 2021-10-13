@@ -6,8 +6,10 @@ import Sidebar from "../../Sidebar/Sidebar";
 import NavPanel from "./NavPanel/NavPanel";
 import ProductItemList from "../MainSection/Product/ProductItemList";
 import Pagination from "../../Pagination/Pagination";
+import { useSelector } from "react-redux";
 
 function ProductListSection() {
+    const data = useSelector((state) => state.products.products);
     return (
         <section className="section">
             <Container>
@@ -23,7 +25,18 @@ function ProductListSection() {
                             <NavPanel></NavPanel>
                         </Row>
                         <div className="row">
-                            <ProductItemList></ProductItemList>
+                            {data.length > 0 ? (
+                                data.map((product) => {
+                                    return (
+                                        <ProductItemList
+                                            key={product.id}
+                                            product={product}
+                                        ></ProductItemList>
+                                    );
+                                })
+                            ) : (
+                                <h3>Không có kết quả phù hợp</h3>
+                            )}
                             <div className="col-12 mt-4 pt-2">
                                 <Pagination></Pagination>
                             </div>

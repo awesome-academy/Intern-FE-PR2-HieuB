@@ -12,7 +12,7 @@ export const InputSearch = styled.input`
     width: 100%;
     outline: none !important;
     padding-right: 4.5rem;
-    border: 1px solid ${colors.colorText} !important; ;
+    border: 1px solid ${colors.colorText} !important;
 `;
 
 export const InputSubmit = styled.input`
