@@ -6,6 +6,8 @@ import Row from "react-bootstrap/Row";
 import RatingList from "../Rating/RatingList";
 import AddShoppingCartIcon from "@mui/icons-material/AddShoppingCart";
 import * as S from "./ProductItem.style";
+import { path } from "../../../../Page/constants/path";
+import { generateNameId } from "../../../../utils/helper";
 
 function ProductItemList({ product }) {
     return (
@@ -14,7 +16,11 @@ function ProductItemList({ product }) {
                 <Row className="align-items-center no-gutters">
                     <Col lg="4" md="6">
                         <div className="shop-image position-relative overflow-hidden">
-                            <Link to="/">
+                            <Link
+                                to={
+                                    path.product + `/${generateNameId(product)}`
+                                }
+                            >
                                 <img
                                     src={product.image}
                                     className="img-fluid"
@@ -26,7 +32,9 @@ function ProductItemList({ product }) {
                     <Col md="6" lg="8">
                         <Card.Body className="content p-4">
                             <S.CardName
-                                to="/"
+                                to={
+                                    path.product + `/${generateNameId(product)}`
+                                }
                                 className="text-dark product-name h2"
                             >
                                 {product.name}

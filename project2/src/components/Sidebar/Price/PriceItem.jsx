@@ -10,8 +10,8 @@ import useQuery from "../../../hook/useQuery";
 function PriceItem({ price, active, setActive }) {
     const query = useQuery();
     const [prices, setPrices] = useState({
-        start: null,
-        end: null
+        start: [],
+        end: []
     });
     const history = useHistory();
     const dispatch = useDispatch();
@@ -38,10 +38,10 @@ function PriceItem({ price, active, setActive }) {
                 end: price.end
             });
         } else {
-            _filter = { ...filter, price_gte: null, price_lte: null };
+            _filter = { ...filter, price_gte: [], price_lte: [] };
             setPrices({
-                start: null,
-                end: null
+                start: [],
+                end: []
             });
         }
         dispatch(setFilter(_filter));

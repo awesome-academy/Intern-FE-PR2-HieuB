@@ -29,7 +29,7 @@ function RatingList({ rating, sidebar }) {
         if (sidebar === true) {
             let _filter;
             if (rating === star) {
-                _filter = { ...filter, rating: null };
+                _filter = { ...filter, rating: [] };
             } else {
                 _filter = { ...filter, rating: rating };
             }

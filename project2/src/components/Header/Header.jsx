@@ -31,19 +31,9 @@ function Header() {
                         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                         <Navbar.Collapse id="responsive-navbar-nav">
                             <Nav className="me-auto">
-                                <NavLink to={path.home}>
+                                <NavLink to={path.productList}>
                                     <S.NavbarItem className="navbar-item">
-                                        ĐỒNG HỒ
-                                    </S.NavbarItem>
-                                </NavLink>
-                                <NavLink to={path.home}>
-                                    <S.NavbarItem className="navbar-item">
-                                        ÁO THUN
-                                    </S.NavbarItem>
-                                </NavLink>
-                                <NavLink to={path.home}>
-                                    <S.NavbarItem className="navbar-item">
-                                        ĐIỆN THOẠI
+                                        danh sách sản phẩm
                                     </S.NavbarItem>
                                 </NavLink>
                             </Nav>
