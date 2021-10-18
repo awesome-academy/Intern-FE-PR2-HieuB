@@ -1,5 +1,6 @@
 import React from "react";
 import { Switch, Route } from "react-router-dom";
+import MainLayout from "./layout/MainLayout";
 import Login from "./Page/Auth/Login/Login";
 import Register from "./Page/Auth/Register/Register";
 import { path } from "./Page/constants/path";
@@ -12,7 +13,9 @@ function Routes() {
     return (
         <Switch>
             <Route path={path.home} exact>
-                <HomePage></HomePage>
+                <MainLayout>
+                    <HomePage></HomePage>
+                </MainLayout>
             </Route>
             <Route path={path.login}>
                 <Login></Login>
@@ -21,13 +24,19 @@ function Routes() {
                 <Register></Register>
             </Route>
             <Route path={path.productList}>
-                <ProductList></ProductList>
+                <MainLayout>
+                    <ProductList></ProductList>
+                </MainLayout>
             </Route>
             <Route path={path.productDetail}>
-                <ProductDetail></ProductDetail>
+                <MainLayout>
+                    <ProductDetail></ProductDetail>
+                </MainLayout>
             </Route>
             <Route path={path.notFound}>
-                <NotFound></NotFound>
+                <MainLayout>
+                    <NotFound></NotFound>
+                </MainLayout>
             </Route>
         </Switch>
     );
