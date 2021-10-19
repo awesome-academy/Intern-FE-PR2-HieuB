@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import HeaderCartItem from "./HeaderCartItem";
 import * as S from "./HeaderCartList.style";
 import { NavLink } from "react-router-dom";
