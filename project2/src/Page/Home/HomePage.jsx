@@ -20,11 +20,13 @@ function HomePage() {
     useEffect(() => {
         const cart = JSON.parse(localStorage.getItem("cart")) || [];
         if (cart.length) {
-            const userId = JSON.parse(localStorage.getItem("user")).user.id;
-            let check = cart.find((e) => {
-                return e.userId === userId;
-            });
-            check ? dispatch(setCart(check)) : dispatch(setCart([]));
+            const userId = JSON.parse(localStorage.getItem("user"));
+            if (userId) {
+                let check = cart.find((e) => {
+                    return e.userId === userId.user.id;
+                });
+                check ? dispatch(setCart(check)) : dispatch(setCart([]));
+            }
         }
     }, [dispatch]);
 

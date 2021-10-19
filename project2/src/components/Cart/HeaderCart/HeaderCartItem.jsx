@@ -13,7 +13,7 @@ function HeaderCartItem({ product }) {
             <div className="media-body text-left ml-3">
                 <h6 className="text-dark mb-0">{name}</h6>
                 <p className="text-muted mb-0">
-                    {price} X ${count}
+                    {price} X {count}
                 </p>
             </div>
             <h6 className="text-dark mb-0">{Number(price * count)}</h6>
