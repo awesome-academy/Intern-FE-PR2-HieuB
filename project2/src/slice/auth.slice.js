@@ -29,7 +29,7 @@ export const postLogin = createAsyncThunk(
 const auth = createSlice({
     name: "auth",
     initialState: {
-        profile: localStorage.getItem(LocalStorage.user) || {},
+        profile: JSON.parse(localStorage.getItem(LocalStorage.user)) || {},
         loading: false,
         error: ""
     },
