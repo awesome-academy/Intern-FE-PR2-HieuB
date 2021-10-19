@@ -4,6 +4,7 @@ import { useDispatch } from "react-redux";
 import Introduction from "../../components/Section/Introduction/Introduction";
 import MainSection from "../../components/Section/MainSection/MainSection";
 import Slider from "../../components/Section/Slider/Slider";
+import { setCart } from "../../slice/cart.slice";
 import { getCategories } from "../../slice/categories.slice";
 import {
     getPopularProducts,
@@ -15,6 +16,17 @@ function HomePage() {
     const [popularProducts, setPopularProducts] = useState([]);
     const [categories, setCategories] = useState([]);
     const [mostViewProducts, setMostViewProducts] = useState([]);
+
+    useEffect(() => {
+        const cart = JSON.parse(localStorage.getItem("cart")) || [];
+        if (cart.length) {
+            const userId = JSON.parse(localStorage.getItem("user")).user.id;
+            let check = cart.find((e) => {
+                return e.userId === userId;
+            });
+            check ? dispatch(setCart(check)) : dispatch(setCart([]));
+        }
+    }, [dispatch]);
 
     useEffect(() => {
         const _getCategories = async () => {

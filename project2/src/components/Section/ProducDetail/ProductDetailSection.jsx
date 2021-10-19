@@ -9,11 +9,26 @@ import { useParams } from "react-router-dom";
 import { getIdFromNameID } from "../../../utils/helper";
 import { getProductDetail } from "../../../slice/productDetail.slice";
 import { unwrapResult } from "@reduxjs/toolkit";
+import { setCart } from "../../../slice/cart.slice";
 
 function ProductDetailSection() {
     const [product, setProduct] = useState();
     const dispatch = useDispatch();
     const { id } = useParams();
+
+    useEffect(() => {
+        const userId = JSON.parse(localStorage.getItem("user")).user.id;
+        if (localStorage.getItem("cart")) {
+            let check = JSON.parse(localStorage.getItem("cart")).find((e) => {
+                return e.userId === userId;
+            });
+            if (check) {
+                dispatch(setCart(check));
+            }
+        } else {
+            dispatch(setCart([]));
+        }
+    }, [dispatch]);
 
     useEffect(() => {
         const idProduct = getIdFromNameID(id);

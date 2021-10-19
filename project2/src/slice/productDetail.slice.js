@@ -14,3 +14,8 @@ export const addToCart = createAsyncThunk("addToCart", async (body) => {
     const res = await purchaseAPI.addToCart(body);
     return res;
 });
+
+export const getOrders = createAsyncThunk("getOrders", async (params) => {
+    const res = await purchaseAPI.getOrders(params);
+    return res;
+});

@@ -8,6 +8,7 @@ import HomePage from "./Page/Home/HomePage";
 import NotFound from "./Page/NotFound/NotFound";
 import ProductDetail from "./Page/ProductDetail/ProductDetail";
 import ProductList from "./Page/ProductList/ProductList";
+import Cart from "./Page/Cart/Cart";
 
 function Routes() {
     return (
@@ -31,6 +32,11 @@ function Routes() {
             <Route path={path.productDetail}>
                 <MainLayout>
                     <ProductDetail></ProductDetail>
+                </MainLayout>
+            </Route>
+            <Route path={path.cart}>
+                <MainLayout>
+                    <Cart></Cart>
                 </MainLayout>
             </Route>
             <Route path={path.notFound}>

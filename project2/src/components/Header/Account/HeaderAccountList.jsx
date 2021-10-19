@@ -6,19 +6,14 @@ import { LocalStorage } from "../../../Page/constants/localStorage";
 import { path } from "../../../Page/constants/path";
 import { useDispatch } from "react-redux";
 import { addToCart } from "../../../slice/productDetail.slice";
+import { setCart } from "../../../slice/cart.slice";
 
 function HeaderAccountList() {
     const history = useHistory();
-    const distpatch = useDispatch();
+    const dispatch = useDispatch();
     const handleLogOut = () => {
         localStorage.removeItem(LocalStorage.user);
-        if (JSON.parse(localStorage.getItem(LocalStorage.cart))) {
-            distpatch(
-                addToCart(JSON.parse(localStorage.getItem(LocalStorage.cart)))
-            );
-            localStorage.removeItem(LocalStorage.cart);
-        }
-
+        dispatch(setCart([]));
         history.push(path.login);
     };
     return (
