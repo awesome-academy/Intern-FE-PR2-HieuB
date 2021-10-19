@@ -1130,6 +1130,30 @@
       "email": "hieu.mn3299@gmail.com",
       "password": "$2a$10$jSxDOAMsrRlv7kOlIWtiMOG1On6lmdOA.2b6fYhDsXPBonW8vqMuG",
       "id": 3
+    },
+    {
+      "email": "nguyen.minh.hieu-b@sun-asterisk.com",
+      "password": "$2a$10$M.G1XzKjur3/fkcAVykqmu5eygzG0Jy5owJIzLAHdhtn6qkQA2/a6",
+      "id": 4
+    },
+    {
+      "email": "dang.thi.thuy.hang@sun-asterisk.com",
+      "password": "$2a$10$TbLqkKJNJ1vA8zLeRnFSNeFrxTzzB7e0.892wFyGYe/tzlLvP5oE.",
+      "id": 5
+    },
+    {
+      "email": "nguyen.minh.hieu-b2@sun-asterisk.com",
+      "password": "$2a$10$wcVFk3ZHf2wQTVihEsjhvOj6ibVMjS4jCYmET47kILOTLGdWTld3.",
+      "firstName": "ff",
+      "lastName": "dd",
+      "id": 6
+    },
+    {
+      "email": "nguyen.minh.hieu-b3@sun-asterisk.com",
+      "password": "$2a$10$xqxaRWw31OJ9TQgBqsXz6eL1YkZjMA58aiRttF6EjVie9yAZy67u6",
+      "firstName": "nguyen",
+      "lastName": "hieu",
+      "id": 7
     }
   ]
 }

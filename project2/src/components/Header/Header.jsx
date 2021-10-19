@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import HeaderCartList from "../Cart/HeaderCart/HeaderCartList";
 import HeaderAccountList from "./Account/HeaderAccountList";
 import * as S from "./Header.style";
@@ -13,6 +13,9 @@ import { path } from "../../Page/constants/path";
 
 function Header() {
     const [isLogged, setIsLogged] = useState(false);
+    useEffect(() => {
+        localStorage.getItem("user") ? setIsLogged(true) : setIsLogged(false);
+    }, []);
     return (
         <S.Header id="topnav" className="defaultscroll sticky">
             <Container>
