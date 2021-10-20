@@ -9,6 +9,7 @@ import NotFound from "./Page/NotFound/NotFound";
 import ProductDetail from "./Page/ProductDetail/ProductDetail";
 import ProductList from "./Page/ProductList/ProductList";
 import Cart from "./Page/Cart/Cart";
+import Checkout from "./Page/Checkout/Checkout";
 
 function Routes() {
     return (
@@ -37,6 +38,11 @@ function Routes() {
             <Route path={path.cart}>
                 <MainLayout>
                     <Cart></Cart>
+                </MainLayout>
+            </Route>
+            <Route path={path.checkout}>
+                <MainLayout>
+                    <Checkout></Checkout>
                 </MainLayout>
             </Route>
             <Route path={path.notFound}>
