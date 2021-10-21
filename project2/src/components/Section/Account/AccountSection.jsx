@@ -8,7 +8,7 @@ import Info from "./Info/Info";
 import OrderHistory from "./OrderHistory/OrderHistory";
 import Avatar from "../../../assets/images/user/01.jpg";
 
-function AccountSection() {
+function AccountSection({ profile }) {
     return (
         <section className="section">
             <Container>
