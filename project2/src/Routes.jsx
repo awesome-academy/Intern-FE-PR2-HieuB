@@ -12,6 +12,7 @@ import Cart from "./Page/Cart/Cart";
 import Checkout from "./Page/Checkout/Checkout";
 import ThankYou from "./Page/Checkout/ThankYou";
 import UserManager from "./Page/UserManager/UserManager";
+import Admin from "./Page/Auth/Admin/Admin";
 
 function Routes() {
     return (
@@ -33,6 +34,11 @@ function Routes() {
             <Route path={path.productList}>
                 <MainLayout>
                     <ProductList></ProductList>
+                </MainLayout>
+            </Route>
+            <Route path={path.admin}>
+                <MainLayout>
+                    <Admin></Admin>
                 </MainLayout>
             </Route>
             <Route path={path.productDetail}>

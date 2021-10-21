@@ -97,12 +97,16 @@ function CartSection() {
                             </Table>
                         </S.CartTable>
                         <div className="mt-4 pt-2 text-right">
-                            <Link
-                                to={path.checkout}
-                                className="btn btn-primary"
-                            >
-                                Thanh Toán
-                            </Link>
+                            {data && data.length > 0 ? (
+                                <Link
+                                    to={path.checkout}
+                                    className="btn btn-primary"
+                                >
+                                    Thanh Toán
+                                </Link>
+                            ) : (
+                                ""
+                            )}
                         </div>
                     </Col>
                 </Row>
