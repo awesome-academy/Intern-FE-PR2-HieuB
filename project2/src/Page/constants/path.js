@@ -8,5 +8,6 @@ export const path = {
     cart: "/cart",
     checkout: "/checkout",
     thankyou: "/thankyou",
+    usermanager: "/user/profile",
     notFound: "*"
 };
