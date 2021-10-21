@@ -1,6 +1,6 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import authAPI from "../api/authAPI";
-import purchaseAPI from "../api/purchase.api";
+import purchaseAPI from "../api/purchaseApi";
 import { LocalStorage } from "../Page/constants/localStorage";
 
 export const postRegister = createAsyncThunk(
@@ -94,7 +94,7 @@ const auth = createSlice({
         },
         [postLogin.rejected]: (state, action) => {
             state.loading = false;
-            state.error = action.payload.message;
+            state.error = action.error.message;
         }
     }
 });

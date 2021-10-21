@@ -36,7 +36,7 @@ function ProductList() {
     }, [dispatch, query]);
     return (
         <>
-            <BreadCrum></BreadCrum>
+            <BreadCrum title="Danh sách sản phẩm"></BreadCrum>
             <ProductListSection></ProductListSection>
         </>
     );

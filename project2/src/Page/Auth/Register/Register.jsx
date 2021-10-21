@@ -14,6 +14,7 @@ import { rules } from "../../constants/rules";
 import { useDispatch } from "react-redux";
 import { postRegister } from "../../../slice/auth.slice";
 import { unwrapResult } from "@reduxjs/toolkit";
+import { toastAlert } from "../../../utils/helper";
 
 function Register() {
     const dispatch = useDispatch();
@@ -39,8 +40,9 @@ function Register() {
             const res = await dispatch(postRegister(body));
             unwrapResult(res);
             history.push(path.login);
+            toastAlert("Đăng ký thành công", "success");
         } catch (error) {
-            console.log(error);
+            toastAlert("Đăng ký thất bại", "err");
         }
     };
 

@@ -4,7 +4,7 @@ import * as S from "./CommentItem.style";
 import { Link } from "react-router-dom";
 import logo from "../../../../assets/images/user/01.jpg";
 
-function CommentItem() {
+function CommentItem({ comment }) {
     return (
         <S.CommentItem>
             <div className="d-flex justify-content-between">
@@ -19,16 +19,16 @@ function CommentItem() {
                     <div className="commentor-detail">
                         <h6 className="mb-0">
                             <Link to="/" className="text-dark media-heading">
-                                Lorenzo Peterson
+                                {comment.name}
                             </Link>
                         </h6>
                     </div>
                 </div>
-                <RatingList rating="5"></RatingList>
+                <RatingList rating={comment.rating}></RatingList>
             </div>
             <div className="mt-3">
                 <p className="text-muted p-3 bg-light rounded h4">
-                    " Awesome product "
+                    {`" ${comment.comment} "`}
                 </p>
             </div>
         </S.CommentItem>

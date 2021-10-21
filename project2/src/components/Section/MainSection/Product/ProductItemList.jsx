@@ -6,7 +6,7 @@ import Row from "react-bootstrap/Row";
 import RatingList from "../Rating/RatingList";
 import * as S from "./ProductItem.style";
 import { path } from "../../../../Page/constants/path";
-import { generateNameId } from "../../../../utils/helper";
+import { formatCurrency, generateNameId } from "../../../../utils/helper";
 import ButtonAddToCart from "../../../Button/ButtonAddToCart";
 
 function ProductItemList({ product }) {
@@ -41,9 +41,11 @@ function ProductItemList({ product }) {
                             </S.CardName>
                             <div className="d-lg-flex align-items-center mt-2 mb-3 justify-content-between">
                                 <h6 className="text-muted font-italic mb-0 mr-3">
-                                    {product.price}
+                                    {formatCurrency(product.price)}
                                     <del className="text-danger ml-4">
-                                        {product.price_before_discount}
+                                        {formatCurrency(
+                                            product.price_before_discount
+                                        )}
                                     </del>
                                 </h6>
                                 <RatingList

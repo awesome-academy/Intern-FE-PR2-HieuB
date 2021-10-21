@@ -9,6 +9,7 @@ import { useDispatch } from "react-redux";
 import { setCart } from "../../../slice/cart.slice";
 import { useHistory } from "react-router";
 import { path } from "../../../Page/constants/path";
+import { formatCurrency, toastAlert } from "../../../utils/helper";
 
 function ProductInformation({ product }) {
     const { name, price, price_before_discount, description, rating } = product;
@@ -120,9 +121,10 @@ function ProductInformation({ product }) {
             <div className="section-title ml-md-4">
                 <h4 className="title h3">{name}</h4>
                 <h5 className="text-muted">
-                    {price}
+                    {price && formatCurrency(price)}
                     <del className="text-danger ml-4">
-                        {price_before_discount}
+                        {price_before_discount &&
+                            formatCurrency(price_before_discount)}
                     </del>
                 </h5>
                 <RatingList rating={rating}></RatingList>

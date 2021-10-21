@@ -23,7 +23,7 @@ const categoriesSlice = createSlice({
         },
         [getCategories.rejected]: (state, action) => {
             state.loading = false;
-            state.error = action.payload;
+            state.error = action.error;
         }
     }
 });

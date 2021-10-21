@@ -5,7 +5,7 @@ import Card from "react-bootstrap/Card";
 import * as S from "./ProductItem.style";
 import { Link } from "react-router-dom";
 import { path } from "../../../../Page/constants/path";
-import { generateNameId } from "../../../../utils/helper";
+import { formatCurrency, generateNameId } from "../../../../utils/helper";
 import ButtonAddToCart from "../../../Button/ButtonAddToCart";
 
 function ProductItem({ product }) {
@@ -31,11 +31,11 @@ function ProductItem({ product }) {
                     >
                         {product.name}
                     </S.CardName>
-                    <div className="d-flex justify-content-between mt-1">
+                    <div className="d-flex justify-content-between mt-1 flex-wrap">
                         <h6 className="text-muted font-italic mb-0 mt-1">
-                            {product.price}
+                            {formatCurrency(product.price)}
                             <del className="text-danger ml-4">
-                                {product.price_before_discount}
+                                {formatCurrency(product.price_before_discount)}
                             </del>
                         </h6>
                         <RatingList rating={product.rating}></RatingList>

@@ -5,6 +5,7 @@ import { useHistory } from "react-router-dom";
 import { LocalStorage } from "../../Page/constants/localStorage";
 import { setCart } from "../../slice/cart.slice";
 import { path } from "../../Page/constants/path";
+import { toastAlert } from "../../utils/helper";
 
 function ButtonAddToCart({ product }) {
     const history = useHistory();
@@ -99,8 +100,10 @@ function ButtonAddToCart({ product }) {
                     );
                 }
             }
+            toastAlert("Thêm sản phẩm thành công", "success");
             localStorage.setItem(LocalStorage.cart, JSON.stringify(cartList));
         } else {
+            toastAlert("Bạn phải đăng nhập trước", "err");
             history.push(path.login);
         }
     };
