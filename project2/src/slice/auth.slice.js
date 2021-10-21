@@ -1,5 +1,6 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import authAPI from "../api/authAPI";
+import purchaseAPI from "../api/purchase.api";
 import { LocalStorage } from "../Page/constants/localStorage";
 
 export const postRegister = createAsyncThunk(
@@ -19,6 +20,39 @@ export const postLogin = createAsyncThunk(
     async (params, thunkAPI) => {
         try {
             const response = await authAPI.login(params);
+            return response;
+        } catch (error) {
+            return thunkAPI.rejectWithValue(error);
+        }
+    }
+);
+
+export const getMe = createAsyncThunk("auth/me", async (params, thunkAPI) => {
+    try {
+        const response = await authAPI.getMe(params);
+        return response;
+    } catch (error) {
+        return thunkAPI.rejectWithValue(error);
+    }
+});
+
+export const updateMe = createAsyncThunk(
+    "auth/updateMe",
+    async (params, thunkAPI) => {
+        try {
+            const response = await authAPI.updateMe(params);
+            return response;
+        } catch (error) {
+            return thunkAPI.rejectWithValue(error);
+        }
+    }
+);
+
+export const getPayment = createAsyncThunk(
+    "auth/getPayment",
+    async (params, thunkAPI) => {
+        try {
+            const response = await purchaseAPI.getPayment(params);
             return response;
         } catch (error) {
             return thunkAPI.rejectWithValue(error);

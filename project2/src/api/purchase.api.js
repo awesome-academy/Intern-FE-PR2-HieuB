@@ -13,6 +13,13 @@ const purchaseAPI = {
         return configAPI.post(url, params).then(function (response) {
             return response;
         });
+    },
+
+    getPayment: async (params) => {
+        const url = "/payments/";
+        return configAPI.get(url, { params }).then(function (response) {
+            return response;
+        });
     }
 };
 
