@@ -8,9 +8,9 @@ const purchaseAPI = {
         });
     },
 
-    getOrders: async (params) => {
-        const url = "/orders/?";
-        return configAPI.get(url, { params }).then(function (response) {
+    postPayment: async (params) => {
+        const url = "/payments/";
+        return configAPI.post(url, params).then(function (response) {
             return response;
         });
     }
