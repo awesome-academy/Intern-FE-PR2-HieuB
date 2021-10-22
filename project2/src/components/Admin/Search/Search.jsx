@@ -1,7 +1,19 @@
-import React from "react";
+import React, { useState } from "react";
 import Col from "react-bootstrap/Col";
 import SearchIcon from "@mui/icons-material/Search";
+import Button from "react-bootstrap/Button";
+import { useDispatch } from "react-redux";
+import { changeQAdmin } from "../../../slice/filterAdmin.slice";
 function Search() {
+    const [keyword, setKeyword] = useState("");
+
+    const dispatch = useDispatch();
+
+    const handleSearch = (e) => {
+        dispatch(changeQAdmin(e.target.value));
+        setKeyword(e.target.value);
+    };
+
     return (
         <Col xs="6">
             <div className="input-group">
@@ -10,11 +22,13 @@ function Search() {
                     type="text"
                     className="form-control"
                     placeholder="Nhập từ khóa..."
+                    onChange={handleSearch}
+                    value={keyword}
                 />
                 <span className="input-group-btn">
-                    <button className="btn btn-primary" type="button">
+                    <Button type="button">
                         <SearchIcon></SearchIcon>
-                    </button>
+                    </Button>
                 </span>
             </div>
         </Col>

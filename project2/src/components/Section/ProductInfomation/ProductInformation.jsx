@@ -111,8 +111,10 @@ function ProductInformation({ product }) {
                     );
                 }
             }
+            toastAlert("Thêm sản phẩm thành công", "success");
             localStorage.setItem(LocalStorage.cart, JSON.stringify(cartList));
         } else {
+            toastAlert("Bạn phải đăng nhập trước", "err");
             history.push(path.login);
         }
     };

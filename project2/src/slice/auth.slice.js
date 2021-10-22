@@ -68,18 +68,6 @@ const auth = createSlice({
         error: ""
     },
     extraReducers: {
-        [postRegister.fulfilled]: (state, action) => {
-            state.loading = false;
-            state.profile = action.payload.data;
-            state.error = "";
-        },
-        [postRegister.pending]: (state, action) => {
-            state.loading = true;
-        },
-        [postRegister.rejected]: (state, action) => {
-            state.loading = false;
-            state.error = action.payload.message;
-        },
         [postLogin.fulfilled]: (state, action) => {
             state.loading = false;
             state.profile = action.payload.data;
