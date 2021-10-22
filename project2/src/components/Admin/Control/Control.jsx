@@ -3,11 +3,11 @@ import Search from "../Search/Search";
 import Sort from "../Sort/Sort";
 import Row from "react-bootstrap/Row";
 
-function Control() {
+function Control({ type }) {
     return (
         <Row className="mt-4">
             <Search></Search>
-            <Sort></Sort>
+            <Sort type={type}></Sort>
         </Row>
     );
 }

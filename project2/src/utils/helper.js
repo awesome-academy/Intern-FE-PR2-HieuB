@@ -12,6 +12,11 @@ export const isName = (value) => {
     return regex.test(value);
 };
 
+export const isNumber = (value) => {
+    const regex = /^[0-9]*[1-9][0-9]*$/;
+    return regex.test(value);
+};
+
 export const isPhone = (value) => {
     const regex = /(03|05|07|08|09|01[2|6|8|9])+([0-9]{8})\b/;
     return regex.test(value);

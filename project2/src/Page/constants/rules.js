@@ -1,4 +1,4 @@
-import { isEmail, isName, isPhone } from "../../utils/helper";
+import { isEmail, isName, isNumber, isPhone } from "../../utils/helper";
 
 export const rules = {
     firstName: {
@@ -46,7 +46,9 @@ export const rules = {
     validate: {
         email: (value) => isEmail(value) || "Email không đúng định dạng",
         name: (value) => isName(value) || "Tên không đúng định dạng",
-        phone: (value) => isPhone(value) || "Số điện thoại không đúng định dạng"
+        phone: (value) =>
+            isPhone(value) || "Số điện thoại không đúng định dạng",
+        number: (value) => isNumber(value) || "Trường này phải là số"
     },
     password: {
         required: {
@@ -108,6 +110,12 @@ export const rules = {
         minLength: {
             value: 2,
             message: "Tên phải trên 2 ký tự"
+        }
+    },
+    required: {
+        required: {
+            value: true,
+            message: "Trường này là bắt buộc nhập"
         }
     }
 };

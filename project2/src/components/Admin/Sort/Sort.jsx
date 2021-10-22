@@ -7,12 +7,23 @@ import {
     changeSortAdmin
 } from "../../../slice/filterAdmin.slice";
 
-function Sort() {
+function Sort({ type }) {
     const dispatch = useDispatch();
 
     const handleSort = (sort, order) => {
         dispatch(changeSortAdmin(sort));
         dispatch(changeOrderAdmin(order));
+    };
+    const handleSortProduct = (sort, order) => {
+        console.log(sort, order);
+    };
+
+    const renderHandleSort = (type, order) => {
+        if (type === "product") {
+            return handleSortProduct("name", order);
+        } else {
+            return handleSort("email", order);
+        }
     };
 
     return (
@@ -21,7 +32,7 @@ function Sort() {
                 <span
                     className="p-3 h4 d-flex align-items-center justify-content-between"
                     onClick={() => {
-                        handleSort("email", "asc");
+                        renderHandleSort(type, "asc");
                     }}
                 >
                     Tên A-Z
@@ -29,7 +40,7 @@ function Sort() {
                 <span
                     className="p-3 h4 d-flex align-items-center justify-content-between"
                     onClick={() => {
-                        handleSort("email", "desc");
+                        renderHandleSort(type, "desc");
                     }}
                 >
                     Tên Z-A

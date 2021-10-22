@@ -14,10 +14,10 @@ import Control from "../../../components/Admin/Control/Control";
 import TaskList from "../../../components/Admin/Task/TaskList";
 import { addUser } from "../../../slice/manager.slice";
 import ProductForm from "../../../components/Admin/TaskForm/ProductForm";
+import ProductTaskList from "../../../components/Admin/Task/ProductTaskList";
 
 function Admin() {
     const [isDisplayForm, setIsDisplayForm] = useState(false);
-
     const [filterAd, setFilterAd] = useState({});
     const [userList, setUserList] = useState([]);
     const [profile, setProfile] = useState({});
@@ -102,7 +102,7 @@ function Admin() {
                             </Col>
                         </Row>
                     </Tab>
-                    <Tab eventKey="payment" title="Quản lý đơn hàng">
+                    <Tab eventKey="payment" title="Quản lý sản phẩm">
                         <Row className="mt-5">
                             {isDisplayForm === true ? (
                                 <Col xs="4">
@@ -126,16 +126,16 @@ function Admin() {
                                 >
                                     Thêm sản phẩm
                                 </Button>
-                                <Control></Control>
+                                <Control type="product"></Control>
                                 <Row className="mt-15">
                                     <Col xs="12">
-                                        <TaskList
+                                        <ProductTaskList
                                             userList={userList}
                                             handleEdit={handleEdit}
                                             setDisplayForm={(params) => {
                                                 setIsDisplayForm(params);
                                             }}
-                                        ></TaskList>
+                                        ></ProductTaskList>
                                         <Pagination
                                             admin={true}
                                             filterAdmin={filterAd}
@@ -145,7 +145,7 @@ function Admin() {
                             </Col>
                         </Row>
                     </Tab>
-                    <Tab eventKey="product" title="Quản lý sản phẩm">
+                    <Tab eventKey="product" title="Quản lý đơn hàng">
                         Quản lý sản phẩm
                     </Tab>
                 </S.AdminTabs>
