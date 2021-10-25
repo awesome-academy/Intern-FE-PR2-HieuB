@@ -9,23 +9,53 @@ import { toastAlert } from "../../../utils/helper";
 import { useDispatch } from "react-redux";
 import { unwrapResult } from "@reduxjs/toolkit";
 import {
-    addUser,
-    getTotalCountAdmin,
-    getUserAll,
-    updateUser
+    addProduct,
+    getCountPageProduct,
+    updateProduct
 } from "../../../slice/admin.slice";
 import { useSelector } from "react-redux";
-import { changePageAdmin } from "../../../slice/filterAdmin.slice";
+import { getProducts } from "../../../slice/products.slice";
+import { changePageAdminProduct } from "../../../slice/filterAdminProduct.slice";
 
 function ProductForm({ setDisplayForm }) {
     const dispatch = useDispatch();
+
+    const filter = useSelector((state) => state.filterAdminProduct);
+    const profile = useSelector((state) => state.manager);
 
     const {
         handleSubmit,
         register,
         reset,
+        getValues,
         formState: { errors }
-    } = useForm();
+    } = useForm({
+        defaultValues: {
+            name: profile.type === "editProduct" ? profile.product.name : "",
+            image: profile.type === "editProduct" ? profile.product.image : "",
+            image1:
+                profile.type === "editProduct" ? profile.product.images[0] : "",
+            image2:
+                profile.type === "editProduct" ? profile.product.images[1] : "",
+            image3:
+                profile.type === "editProduct" ? profile.product.images[2] : "",
+            image4:
+                profile.type === "editProduct" ? profile.product.images[3] : "",
+            price: profile.type === "editProduct" ? profile.product.price : "",
+            description:
+                profile.type === "editProduct"
+                    ? profile.product.description
+                    : "",
+            price_before_discount:
+                profile.type === "editProduct"
+                    ? profile.product.price_before_discount
+                    : "",
+            quantity:
+                profile.type === "editProduct" ? profile.product.quantity : "",
+            categoryID:
+                profile.type === "editProduct" ? profile.product.categoryID : ""
+        }
+    });
 
     const handleClass = (name, baseClass = "form-control") => {
         return `${baseClass} ${errors[name] ? "is-invalid" : ""}`;
@@ -43,7 +73,42 @@ function ProductForm({ setDisplayForm }) {
     };
 
     const handleAddProduct = async (data) => {
-        console.log(data);
+        const {
+            name,
+            image,
+            image1,
+            image2,
+            image3,
+            image4,
+            price,
+            description,
+            price_before_discount,
+            quantity,
+            categoryID
+        } = data;
+        const body = {
+            name,
+            image,
+            images: [image1, image2, image3, image4],
+            price: Number(price),
+            description,
+            price_before_discount: Number(price_before_discount),
+            quantity: Number(quantity),
+            categoryID: Number(categoryID),
+            rating: 0,
+            view: 0
+        };
+        try {
+            const data = await dispatch(addProduct(body));
+            unwrapResult(data);
+            handleClear();
+            toastAlert("Thêm sản phẩm thành công", "success");
+        } catch (error) {
+            toastAlert("Thêm sản phẩm thất bại", "error");
+        }
+        dispatch(getProducts(filter));
+        dispatch(changePageAdminProduct(1));
+        dispatch(getCountPageProduct(filter));
     };
 
     const handleClear = () => {
@@ -51,10 +116,43 @@ function ProductForm({ setDisplayForm }) {
         setDisplayForm(false);
     };
 
+    const handleUpdateProduct = async (data) => {
+        const body = {
+            name: data.name,
+            image: data.image,
+            images: [data.image1, data.image2, data.image3, data.image4],
+            price: Number(data.price),
+            description: data.description,
+            price_before_discount: Number(data.price_before_discount),
+            quantity: Number(data.quantity),
+            categoryID: Number(data.categoryID)
+        };
+        const params = {
+            id: profile.product.id,
+            body
+        };
+
+        try {
+            const data = dispatch(updateProduct(params));
+            unwrapResult(data);
+            toastAlert("Update thành công", "success");
+            handleClear();
+        } catch (error) {
+            toastAlert("Update thất bại", "error");
+        }
+        dispatch(getProducts(filter));
+        dispatch(changePageAdminProduct(1));
+        dispatch(getCountPageProduct(filter));
+    };
+
     return (
         <S.Panel>
             <div className="panel-heading d-flex align-items-center justify-content-between">
-                <h3 className="panel-title">Thêm sản phẩm</h3>
+                <h3 className="panel-title">
+                    {profile.type === "editProduct"
+                        ? "Sửa sản phẩm"
+                        : "Thêm sản phẩm"}
+                </h3>
                 <HighlightOffIcon
                     onClick={() => {
                         setDisplayForm(false);
@@ -62,7 +160,13 @@ function ProductForm({ setDisplayForm }) {
                 ></HighlightOffIcon>
             </div>
             <div className="panel-body">
-                <Form onSubmit={handleSubmit(handleAddProduct)}>
+                <Form
+                    onSubmit={handleSubmit(
+                        profile.type === "editProduct"
+                            ? handleUpdateProduct
+                            : handleAddProduct
+                    )}
+                >
                     <Form.Group className="form-group mb-4 mb-4">
                         <Form.Label>Tên sản phẩm :</Form.Label>
                         <input
@@ -171,17 +275,22 @@ function ProductForm({ setDisplayForm }) {
                         <input
                             type="text"
                             className={`form-control ${handleClass(
-                                "priceBeforeDisCount"
+                                "price_before_discount"
                             )}`}
-                            name="priceBeforeDisCount"
-                            {...register("priceBeforeDisCount", {
+                            name="price_before_discount"
+                            {...register("price_before_discount", {
                                 ...rules.required,
+
                                 validate: {
-                                    number: rules.validate.number
+                                    number: rules.validate.number,
+                                    checkPrice: (value) =>
+                                        Number(value) >
+                                            Number(getValues("price")) ||
+                                        "Giá trước khi giảm phải lớn hơn giá đã giảm"
                                 }
                             })}
                         />
-                        <ErrorMessage name="priceBeforeDisCount"></ErrorMessage>
+                        <ErrorMessage name="price_before_discount"></ErrorMessage>
                     </Form.Group>
                     <Form.Group className="form-group mb-4">
                         <Form.Label>Số lượng :</Form.Label>
@@ -205,10 +314,10 @@ function ProductForm({ setDisplayForm }) {
                         <Form.Label>Thể loại :</Form.Label>
                         <Form.Select
                             className={`form-control ${handleClass(
-                                "category"
+                                "categoryID"
                             )}`}
-                            name="category"
-                            {...register("category")}
+                            name="categoryID"
+                            {...register("categoryID")}
                         >
                             <option value={1}>Áo thun</option>
                             <option value={2}>Đồng hồ</option>
@@ -216,7 +325,9 @@ function ProductForm({ setDisplayForm }) {
                         </Form.Select>
                     </Form.Group>
                     <div className="text-center mt-5">
-                        <Button type="submit">Thêm</Button>
+                        <Button type="submit">
+                            {profile.type === "editProduct" ? "Sửa" : "Thêm"}
+                        </Button>
                         &nbsp;
                         <Button
                             type="button"

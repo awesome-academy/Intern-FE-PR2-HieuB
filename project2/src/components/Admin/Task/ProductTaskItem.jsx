@@ -1,11 +1,21 @@
-import React from "react";
+import React, { useState } from "react";
 import CreateIcon from "@mui/icons-material/Create";
 import * as S from "./TaskItem.style";
 import Button from "react-bootstrap/Button";
 import DeleteForeverIcon from "@mui/icons-material/DeleteForever";
 import { formatCurrency } from "../../../utils/helper";
+import ModalConfirm from "../../Modal/ModalConfirm";
+import { useDispatch } from "react-redux";
+import { editProduct } from "../../../slice/manager.slice";
 
-function ProductTaskItem({ product }) {
+function ProductTaskItem({ product, setDisplayForm }) {
+    const dispatch = useDispatch();
+
+    const [show, setShow] = useState(false);
+
+    const handleClose = () => setShow(false);
+    const handleShow = () => setShow(true);
+
     const {
         id,
         image,
@@ -37,6 +47,11 @@ function ProductTaskItem({ product }) {
         }
     };
 
+    const handleEdit = () => {
+        dispatch(editProduct(product));
+        setDisplayForm(true);
+    };
+
     return (
         <>
             <tr>
@@ -59,6 +74,7 @@ function ProductTaskItem({ product }) {
                         <Button
                             type="button"
                             className="btn-warning d-flex align-items-center mx-2"
+                            onClick={handleEdit}
                         >
                             <CreateIcon></CreateIcon>
                             Sửa
@@ -66,6 +82,7 @@ function ProductTaskItem({ product }) {
                         <Button
                             type="button"
                             className="btn-danger d-flex align-items-center mx-2"
+                            onClick={handleShow}
                         >
                             <DeleteForeverIcon></DeleteForeverIcon>
                             Xoá
@@ -73,6 +90,12 @@ function ProductTaskItem({ product }) {
                     </div>
                 </td>
             </tr>
+            <ModalConfirm
+                show={show}
+                handleClose={handleClose}
+                product={product}
+                type="adminProduct"
+            ></ModalConfirm>
         </>
     );
 }

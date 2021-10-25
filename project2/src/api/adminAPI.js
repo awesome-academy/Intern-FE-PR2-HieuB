@@ -18,6 +18,24 @@ const adminAPI = {
         return configAPI.patch(url, params.body).then(function (response) {
             return response;
         });
+    },
+    addProduct: async (body) => {
+        const url = "/products/";
+        return configAPI.post(url, body).then(function (response) {
+            return response;
+        });
+    },
+    deleteProduct: async (id) => {
+        const url = `/products/${id}`;
+        return configAPI.delete(url).then(function (response) {
+            return response;
+        });
+    },
+    updateProduct: async (params) => {
+        const url = `/products/${params.id}`;
+        return configAPI.patch(url, params.body).then(function (response) {
+            return response;
+        });
     }
 };
 

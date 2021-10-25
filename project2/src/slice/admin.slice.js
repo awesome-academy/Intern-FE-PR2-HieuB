@@ -37,11 +37,11 @@ export const getTotalCountAdmin = createAsyncThunk(
     }
 );
 
-export const deleteUser = createAsyncThunk(
-    "admin/deleteUser",
+export const deleteProduct = createAsyncThunk(
+    "admin/deleteProduct",
     async (id, thunkAPI) => {
         try {
-            const response = await adminAPI.deleteUser(id);
+            const response = await adminAPI.deleteProduct(id);
             return response;
         } catch (error) {
             return thunkAPI.rejectWithValue(error);
@@ -61,11 +61,35 @@ export const updateUser = createAsyncThunk(
     }
 );
 
+export const updateProduct = createAsyncThunk(
+    "admin/updateProduct",
+    async (params, thunkAPI) => {
+        try {
+            const response = await adminAPI.updateProduct(params);
+            return response;
+        } catch (error) {
+            return thunkAPI.rejectWithValue(error);
+        }
+    }
+);
+
 export const getCountPageProduct = createAsyncThunk(
     "admin/getCountProduct",
     async (params, thunkAPI) => {
         try {
             const response = await productsAPI.getTotalCount(params);
+            return response;
+        } catch (error) {
+            return thunkAPI.rejectWithValue(error);
+        }
+    }
+);
+
+export const addProduct = createAsyncThunk(
+    "admin/addProduct",
+    async (params, thunkAPI) => {
+        try {
+            const response = await adminAPI.addProduct(params);
             return response;
         } catch (error) {
             return thunkAPI.rejectWithValue(error);

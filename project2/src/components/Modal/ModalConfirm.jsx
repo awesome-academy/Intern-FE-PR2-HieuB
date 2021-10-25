@@ -1,36 +1,57 @@
+import { unwrapResult } from "@reduxjs/toolkit";
 import React from "react";
 import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
 import { useDispatch, useSelector } from "react-redux";
 import { LocalStorage } from "../../Page/constants/localStorage";
+import { deleteProduct, getCountPageProduct } from "../../slice/admin.slice";
 import { setCart } from "../../slice/cart.slice";
+import { changePageAdminProduct } from "../../slice/filterAdminProduct.slice";
+import { getProducts } from "../../slice/products.slice";
 import { toastAlert } from "../../utils/helper";
 
-function ModalConfirm({ show, handleClose, product }) {
+function ModalConfirm({ show, handleClose, product, type }) {
     const handleCloseModal = () => {
         handleClose(false);
     };
     const data = useSelector((value) => value.cart);
+    const filter = useSelector((state) => state.filterAdminProduct);
+
     const dispatch = useDispatch();
-    const handleDelete = () => {
-        let result = data.product.filter((item) => {
-            return item.id !== product.id;
-        });
-        let body = {
-            ...data,
-            product: result
-        };
-        let userId = JSON.parse(localStorage.getItem(LocalStorage.user)).user
-            .id;
-        let cartList = JSON.parse(localStorage.getItem(LocalStorage.cart));
-        cartList = cartList.filter((item) => {
-            return item.userId !== userId;
-        });
-        cartList.push(body);
-        dispatch(setCart(body));
-        toastAlert("Xoá sản phẩm thành công!!!", "success");
-        localStorage.setItem(LocalStorage.cart, JSON.stringify(cartList));
+
+    const handleDelete = async () => {
+        if (type === "adminProduct") {
+            try {
+                const data = await dispatch(deleteProduct(product.id));
+                unwrapResult(data);
+                toastAlert("Xoá sản phẩm thành công", "success");
+            } catch (error) {
+                toastAlert("Xoá sản phẩm thất bại", "error");
+            }
+            dispatch(getProducts(filter));
+            dispatch(changePageAdminProduct(1));
+            dispatch(getCountPageProduct(filter));
+        } else {
+            let result = data.product.filter((item) => {
+                return item.id !== product.id;
+            });
+            let body = {
+                ...data,
+                product: result
+            };
+            let userId = JSON.parse(localStorage.getItem(LocalStorage.user))
+                .user.id;
+            let cartList = JSON.parse(localStorage.getItem(LocalStorage.cart));
+            cartList = cartList.filter((item) => {
+                return item.userId !== userId;
+            });
+            cartList.push(body);
+            dispatch(setCart(body));
+            toastAlert("Xoá sản phẩm thành công!!!", "success");
+            localStorage.setItem(LocalStorage.cart, JSON.stringify(cartList));
+        }
     };
+
     return (
         <>
             <Modal show={show} onHide={handleCloseModal}>
