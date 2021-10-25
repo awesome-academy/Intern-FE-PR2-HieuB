@@ -2,7 +2,7 @@ import configAPI from "./configAPI";
 
 const adminAPI = {
     getUser: async (params) => {
-        const url = "/users";
+        const url = "/users/";
         return configAPI.get(url, { params }).then(function (response) {
             return response;
         });
@@ -34,6 +34,12 @@ const adminAPI = {
     updateProduct: async (params) => {
         const url = `/products/${params.id}`;
         return configAPI.patch(url, params.body).then(function (response) {
+            return response;
+        });
+    },
+    getPayment: async (params) => {
+        const url = "/payments/";
+        return configAPI.get(url, { params }).then(function (response) {
             return response;
         });
     }

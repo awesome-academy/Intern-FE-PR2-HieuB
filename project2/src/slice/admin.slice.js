@@ -97,6 +97,18 @@ export const addProduct = createAsyncThunk(
     }
 );
 
+export const getPayment = createAsyncThunk(
+    "admin/getPayment",
+    async (params, thunkAPI) => {
+        try {
+            const response = await adminAPI.getPayment(params);
+            return response;
+        } catch (error) {
+            return thunkAPI.rejectWithValue(error);
+        }
+    }
+);
+
 const adminUser = createSlice({
     name: "admin",
     initialState: {

@@ -13,7 +13,6 @@ import {
 
 function Sort({ type }) {
     const dispatch = useDispatch();
-
     const handleSort = (sort, order) => {
         dispatch(changeSortAdmin(sort));
         dispatch(changeOrderAdmin(order));

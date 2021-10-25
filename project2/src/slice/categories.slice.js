@@ -10,8 +10,8 @@ const categoriesSlice = createSlice({
     name: "categories",
     initialState: {
         loading: false,
-        error: "",
-        categories: []
+        categories: [],
+        error: ""
     },
     extraReducers: {
         [getCategories.pending]: (state, action) => {
