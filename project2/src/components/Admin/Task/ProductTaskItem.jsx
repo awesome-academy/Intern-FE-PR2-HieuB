@@ -3,37 +3,55 @@ import CreateIcon from "@mui/icons-material/Create";
 import * as S from "./TaskItem.style";
 import Button from "react-bootstrap/Button";
 import DeleteForeverIcon from "@mui/icons-material/DeleteForever";
+import { formatCurrency } from "../../../utils/helper";
 
-function ProductTaskItem() {
-    const renderLabel = (role) => {
-        if (role === "admin") {
+function ProductTaskItem({ product }) {
+    const {
+        id,
+        image,
+        categoryID,
+        description,
+        name,
+        quantity,
+        price,
+        price_before_discount
+    } = product;
+
+    const renderLabel = (id) => {
+        if (id === 1) {
             return "label-danger";
-        } else if (role === "user") {
+        } else if (id === 2) {
             return "label-success";
         } else {
             return "label-default";
         }
     };
 
+    const renderCategory = (id) => {
+        if (id === 1) {
+            return "Áo Thun";
+        } else if (id === 2) {
+            return "Đồng Hồ";
+        } else {
+            return "Điện Thoại";
+        }
+    };
+
     return (
         <>
             <tr>
-                <td className="text-center h4">1</td>
+                <td className="text-center h4">{id}</td>
+                <td className="text-center h4">{name}</td>
+                <td className="text-center h4 ">{image}</td>
+                <td className="text-center h4 ">{description}</td>
+                <td className="text-center h4">{formatCurrency(price)}</td>
                 <td className="text-center h4">
-                    [KHUYẾN MÃI 35%] Áo Thun POLO Nam, Tay Ngắn Áo Cổ Sọc, Chất
-                    Liệu Cá Sấu Cao Cấp - Nhiều màu- Đủ Size
+                    {formatCurrency(price_before_discount)}
                 </td>
-                <td className="text-center h4 ">
-                    https://api-ecom.duthanhduoc.com/images/8fdcc6d3-70ea-4853-954e-b8776fbab6fa.jpg
-                </td>
-                <td className="text-center h4 ">
-                    Dòng này để mọi người biết product có description :v
-                </td>
-                <td className="text-center h4">100.000</td>
-                <td className="text-center h4">200.000</td>
+                <td className="text-center h4 ">{quantity}</td>
                 <td className="text-center h4">
-                    <S.TaskLabel className={`label label-success`}>
-                        Áo thun
+                    <S.TaskLabel className={`label ${renderLabel(categoryID)}`}>
+                        {renderCategory(categoryID)}
                     </S.TaskLabel>
                 </td>
                 <td className="text-center">

@@ -72,9 +72,9 @@ function TaskForm({ setDisplayForm }) {
                 toastAlert("Đăng ký thất bại", "error");
             }
         }
-        dispatch(getTotalCountAdmin(filterAdmin));
         dispatch(getUserAll(filterAdmin));
         dispatch(changePageAdmin(1));
+        dispatch(getTotalCountAdmin(filterAdmin));
     };
 
     const handleClear = () => {

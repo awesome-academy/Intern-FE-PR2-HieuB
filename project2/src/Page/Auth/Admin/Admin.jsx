@@ -2,7 +2,11 @@ import React, { useEffect, useState } from "react";
 import Tab from "react-bootstrap/Tab";
 import Container from "react-bootstrap/Container";
 import * as S from "./Admin.style";
-import { getTotalCountAdmin, getUserAll } from "../../../slice/admin.slice";
+import {
+    getCountPageProduct,
+    getTotalCountAdmin,
+    getUserAll
+} from "../../../slice/admin.slice";
 import { unwrapResult } from "@reduxjs/toolkit";
 import { useDispatch, useSelector } from "react-redux";
 import Button from "react-bootstrap/Button";
@@ -19,12 +23,14 @@ import ProductTaskList from "../../../components/Admin/Task/ProductTaskList";
 function Admin() {
     const [isDisplayForm, setIsDisplayForm] = useState(false);
     const [filterAd, setFilterAd] = useState({});
+    const [filterProduct, setFilterProduct] = useState({});
     const [userList, setUserList] = useState([]);
     const [profile, setProfile] = useState({});
 
     const dispatch = useDispatch();
 
     const filterAdmin = useSelector((state) => state.filterAdmin);
+    const filterAdminProduct = useSelector((state) => state.filterAdminProduct);
 
     useEffect(() => {
         const _getUserAll = async () => {
@@ -41,6 +47,17 @@ function Admin() {
         };
         _getTotalCount();
     }, [dispatch, filterAdmin]);
+
+    useEffect(() => {
+        const _getTotalCount = async () => {
+            const count = await dispatch(
+                getCountPageProduct(filterAdminProduct)
+            );
+            const res = unwrapResult(count);
+            setFilterProduct({ ...filterAdminProduct, count: res });
+        };
+        _getTotalCount();
+    }, [dispatch, filterAdminProduct]);
 
     const handleEdit = (type, data) => {
         setProfile({
@@ -83,7 +100,7 @@ function Admin() {
                                 >
                                     Thêm Người dùng
                                 </Button>
-                                <Control></Control>
+                                <Control type="user"></Control>
                                 <Row className="mt-15">
                                     <Col xs="12">
                                         <TaskList
@@ -95,6 +112,7 @@ function Admin() {
                                         ></TaskList>
                                         <Pagination
                                             admin={true}
+                                            type="user"
                                             filterAdmin={filterAd}
                                         ></Pagination>
                                     </Col>
@@ -138,7 +156,8 @@ function Admin() {
                                         ></ProductTaskList>
                                         <Pagination
                                             admin={true}
-                                            filterAdmin={filterAd}
+                                            type="product"
+                                            filterAdmin={filterAdminProduct}
                                         ></Pagination>
                                     </Col>
                                 </Row>

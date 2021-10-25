@@ -6,6 +6,10 @@ import {
     changeOrderAdmin,
     changeSortAdmin
 } from "../../../slice/filterAdmin.slice";
+import {
+    changeOrderAdminProduct,
+    changeSortAdminProduct
+} from "../../../slice/filterAdminProduct.slice";
 
 function Sort({ type }) {
     const dispatch = useDispatch();
@@ -14,8 +18,10 @@ function Sort({ type }) {
         dispatch(changeSortAdmin(sort));
         dispatch(changeOrderAdmin(order));
     };
+
     const handleSortProduct = (sort, order) => {
-        console.log(sort, order);
+        dispatch(changeSortAdminProduct(sort));
+        dispatch(changeOrderAdminProduct(order));
     };
 
     const renderHandleSort = (type, order) => {

@@ -46,6 +46,11 @@ function ProductForm({ setDisplayForm }) {
         console.log(data);
     };
 
+    const handleClear = () => {
+        reset();
+        setDisplayForm(false);
+    };
+
     return (
         <S.Panel>
             <div className="panel-heading d-flex align-items-center justify-content-between">
@@ -213,7 +218,11 @@ function ProductForm({ setDisplayForm }) {
                     <div className="text-center mt-5">
                         <Button type="submit">Thêm</Button>
                         &nbsp;
-                        <Button type="button" className="btn-danger">
+                        <Button
+                            type="button"
+                            className="btn-danger"
+                            onClick={handleClear}
+                        >
                             Hủy Bỏ
                         </Button>
                     </div>

@@ -52,7 +52,7 @@ function CartSection() {
                             <Table className="table-center table-padding mb-0">
                                 <thead>
                                     <tr>
-                                        <th className="py-3 mw-20" />
+                                        <th className="py-3" />
                                         <th className="py-3 h4 mw-30">
                                             Sản phẩm
                                         </th>
