@@ -34,7 +34,8 @@ function Register() {
             email,
             password,
             address: "",
-            phone: ""
+            phone: "",
+            role: "user"
         };
         try {
             const res = await dispatch(postRegister(body));
@@ -42,7 +43,7 @@ function Register() {
             history.push(path.login);
             toastAlert("Đăng ký thành công", "success");
         } catch (error) {
-            toastAlert("Đăng ký thất bại", "err");
+            toastAlert("Tài khoản đã được đăng ký", "err");
         }
     };
 

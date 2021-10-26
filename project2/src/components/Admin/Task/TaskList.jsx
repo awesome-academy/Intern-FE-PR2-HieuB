@@ -17,7 +17,6 @@ function TaskList({ handleEdit, setDisplayForm }) {
     const dispatch = useDispatch();
 
     const list = useSelector((state) => state.adminUser.profile);
-
     const handleEditUser = (type, data) => {
         handleEdit(type, data);
     };

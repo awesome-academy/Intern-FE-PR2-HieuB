@@ -38,6 +38,7 @@ function ProductDetailSection() {
         };
         _getProductItem();
     }, [dispatch, id]);
+
     return (
         <section className="section pb-0">
             <Container>

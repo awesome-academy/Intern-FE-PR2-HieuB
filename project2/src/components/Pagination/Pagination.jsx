@@ -9,17 +9,23 @@ import { path } from "../../Page/constants/path";
 import qs from "query-string";
 import { changePageAdmin } from "../../slice/filterAdmin.slice";
 import { changePageAdminProduct } from "../../slice/filterAdminProduct.slice";
+import { changePageAdminPayment } from "../../slice/filterAdminPayment.slice";
 
 function Pagination({ admin, filterAdmin, type }) {
     const history = useHistory();
+
     const dispatch = useDispatch();
 
     const [totalPage, setTotalPage] = useState();
 
     const filter = useSelector((state) => state.filter);
     const test = useSelector((state) => state.adminUser.countPage);
+
     const filterProductAdmin = useSelector(
         (state) => state.adminUser.countPageProduct
+    );
+    const filterPaymentAdmin = useSelector(
+        (state) => state.adminUser.countPagePayment
     );
 
     useEffect(() => {
@@ -28,6 +34,8 @@ function Pagination({ admin, filterAdmin, type }) {
                 setTotalPage(filterProductAdmin);
             } else if (admin === true && type === "user") {
                 setTotalPage(test);
+            } else if (admin === true && type === "payment") {
+                setTotalPage(filterPaymentAdmin);
             } else {
                 const data = await dispatch(getTotalPage(filter));
                 const res = unwrapResult(data);
@@ -35,7 +43,15 @@ function Pagination({ admin, filterAdmin, type }) {
             }
         };
         _getTotalPage();
-    }, [dispatch, filter, admin, test, type, filterProductAdmin]);
+    }, [
+        dispatch,
+        filter,
+        admin,
+        test,
+        type,
+        filterProductAdmin,
+        filterPaymentAdmin
+    ]);
 
     const total =
         admin === true
@@ -47,6 +63,8 @@ function Pagination({ admin, filterAdmin, type }) {
             dispatch(changePageAdmin(e.selected + 1));
         } else if (admin === true && type === "product") {
             dispatch(changePageAdminProduct(e.selected + 1));
+        } else if (admin === true && type === "payment") {
+            dispatch(changePageAdminPayment(e.selected + 1));
         } else {
             const _filter = { ...filter, _page: e.selected + 1 };
             history.push(path.productList + `?${qs.stringify(_filter)}`);

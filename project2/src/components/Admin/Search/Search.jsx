@@ -8,7 +8,6 @@ import { changeQAdminProduct } from "../../../slice/filterAdminProduct.slice";
 
 function Search({ type }) {
     const [keyword, setKeyword] = useState("");
-
     const dispatch = useDispatch();
 
     const handleSearch = (e) => {

@@ -85,6 +85,18 @@ export const getCountPageProduct = createAsyncThunk(
     }
 );
 
+export const getCountPagePayment = createAsyncThunk(
+    "admin/getCountPayment",
+    async (params, thunkAPI) => {
+        try {
+            const response = await adminAPI.getTotalCountPayment(params);
+            return response;
+        } catch (error) {
+            return thunkAPI.rejectWithValue(error);
+        }
+    }
+);
+
 export const addProduct = createAsyncThunk(
     "admin/addProduct",
     async (params, thunkAPI) => {
@@ -116,7 +128,8 @@ const adminUser = createSlice({
         loading: false,
         error: "",
         countPage: "",
-        countPageProduct: ""
+        countPageProduct: "",
+        countPagePayment: ""
     },
     extraReducers: {
         [getUserAll.fulfilled]: (state, action) => {
@@ -152,6 +165,18 @@ const adminUser = createSlice({
             state.loading = true;
         },
         [getCountPageProduct.rejected]: (state, action) => {
+            state.loading = false;
+            state.error = action.error.message;
+        },
+        [getCountPagePayment.fulfilled]: (state, action) => {
+            state.loading = false;
+            state.countPagePayment = action.payload;
+            state.error = "";
+        },
+        [getCountPagePayment.pending]: (state, action) => {
+            state.loading = true;
+        },
+        [getCountPagePayment.rejected]: (state, action) => {
             state.loading = false;
             state.error = action.error.message;
         }

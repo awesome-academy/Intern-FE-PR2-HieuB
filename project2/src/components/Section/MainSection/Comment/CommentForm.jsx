@@ -29,7 +29,7 @@ function CommentForm({ product }) {
             rating: checkRating,
             comment: comment,
             productId: product.id,
-            name: userInfo.user.firstName + userInfo.user.lastName
+            name: userInfo.user.firstName + " " + userInfo.user.lastName
         };
         dispatch(postComment(body));
         setCheckRating(5);

@@ -144,7 +144,6 @@ function ProductForm({ setDisplayForm }) {
         dispatch(changePageAdminProduct(1));
         dispatch(getCountPageProduct(filter));
     };
-
     return (
         <S.Panel>
             <div className="panel-heading d-flex align-items-center justify-content-between">

@@ -114,8 +114,6 @@ function QuantitySelect({ handleSetQuantity, count, cartItem, product }) {
                 />
                 <input
                     type="number"
-                    step={1}
-                    min={1}
                     name="quantity"
                     value={quantity}
                     title="Qty"

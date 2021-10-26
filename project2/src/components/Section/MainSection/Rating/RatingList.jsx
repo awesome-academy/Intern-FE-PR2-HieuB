@@ -11,9 +11,11 @@ import useQuery from "../../../../hook/useQuery";
 function RatingList({ rating, sidebar }) {
     const query = useQuery();
     const [star, setStar] = useState();
+
     useEffect(() => {
         setStar(Number(query.rating));
     }, [query]);
+
     const renderRating = (ratings) => {
         let rating = [];
         for (let i = 1; i <= ratings; i++) {
@@ -25,6 +27,7 @@ function RatingList({ rating, sidebar }) {
     const dispatch = useDispatch();
 
     const filter = useSelector((state) => state.filter);
+
     const handleRating = (rating) => {
         if (sidebar === true) {
             let _filter;
@@ -37,6 +40,7 @@ function RatingList({ rating, sidebar }) {
             history.push(path.productList + `?${qs.stringify(_filter)}`);
         }
     };
+
     return (
         <S.RatingList
             className="list-unstyled text-warning my-3 d-flex"

@@ -20,5 +20,8 @@ export const TaskLabel = styled.span`
         &.label-success {
             background-color: ${colors.colorSuccess};
         }
+        &.label-default {
+            background-color: ${colors.colorGray};
+        }
     }
 `;
